@@ -4,7 +4,7 @@ import './App.scoped.css';
 import Home from './sections/Home/Home';
 
 
-function App() {
+const App: React.FC = () => {
   const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light');
 
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="app" data-theme={theme}>
-      <Home/>
+      <Home theme={theme}/>
       <button onClick={switchTheme}>
         Switch to {theme === 'light' ? 'Dark' : 'Light'} Theme
       </button>
