@@ -23,7 +23,7 @@ function Home() {
           Software Developer with a passion for design
         </h>
         <p class='p1'>
-          Hi there, I'm Kenny!. I specialize in implementing elegant and user-friendly digital experiences.
+          Hi there, I'm Kenny! I specialize in implementing elegant and user-friendly digital experiences.
         </p>
         <div>
         <Grid
