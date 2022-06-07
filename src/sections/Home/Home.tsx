@@ -16,18 +16,10 @@ const Home: React.FC<HomeProps> = ({theme}) => {
           Software Developer with a passion for design
         </h1>
         <p style={styles.p}>
-          Hi there, I'm Kenny! I specialize in implementing elegant and user-friendly digital experiences.
+          Hi there, I'm Kenny! I'm a software developer with a passion for design, & currently attending the University of Toronto.
         </p>
         <div>
-          <Grid
-            container
-            direction="row"
-            justifyContent="flex-end"
-            alignItems="center"
-          >
-            <SearchForm theme={theme}/>
-            <button style={styles.ctaButton}> Get in touch </button>
-          </Grid>
+        <button className="cta-button" style={styles.ctaButton}> Connect with me </button>
         </div>
 
       </header>
@@ -45,20 +37,19 @@ const styles = {
     padding: '12.5px 26px',
     borderRadius: '16px',
     borderWidth: '0px',
-    position: 'absolute',
-    marginRight: '16px',
     cursor: 'pointer',
   },
-  inputBase: {
-    borderRadius: '32px',
+  secondaryButton: {
+    backgroundColor: 'var(--container-primary)',
+    color: 'var(--on-container-primary)',
+    fontSize: 16,
+    fontWeight: 500,
     fontFamily: 'Poppins',
-    fontWeight: '500',
-    outlineWidth: '0px',
-    border: '0px',
-    padding: '25px 181px 25px 32px',
-    outline: 'none',
-    color: 'var(--text-primary)',
-    backgroundColor: 'var(--surface)',
+    padding: '12.5px 26px',
+    borderRadius: '16px',
+    borderWidth: '0px',
+    cursor: 'pointer',
+    marginLeft: '16px'
   },
   p: {
     fontFamily: 'Poppins',
@@ -71,7 +62,7 @@ const styles = {
   h1:           {
     fontWeight: 600,
     letterSpacing: '-4px',
-    maxWidth: '800px',
+    maxWidth: '900px',
     fontSize: '72px',
     lineHeight: '80px',
     color: 'var(--text-primary)',

@@ -20,13 +20,31 @@
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
+    font-family: "Euclid", "Arial", sans-serif;
     color: white;
   }
 
   .email-textfield {
     padding-left: 16;
   }
+
+  .cta-button {
+    margin-bottom: 0px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
   
+
+  .cta-button:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: 0 10px 20px rgba(124, 82, 100, 0.1);
+  }
+
+  .cta-button:hover.dark {
+    filter: brightness(150%);
+    box-shadow: 0 10px 20px rgba(124, 82, 100);
+  }
   .Home-link {
     color: #61dafb;
   }

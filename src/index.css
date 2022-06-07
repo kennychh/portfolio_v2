@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family:'Poppins', sans-serif, 'Euclid', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family:'Poppins', sans-serif, 'Euclid', sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -10,26 +10,26 @@ body {
 }
 
 code {
-  font-family: 'Poppins', 'Euclid',source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: 'Poppins', 'Euclid', sans-serif,source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
 @font-face {
   font-family: Euclid;
   font-weight: 400;
-  src: url(./fonts/Euclid-Regular.ttf);
+  src: url('./fonts/Euclid Circular A Regular.ttf');
 }
 
 @font-face {
   font-family: Euclid;
   font-weight: 500;
-  src:  url(./fonts/Euclid-Medium.ttf);
+  src:  url('./fonts/Euclid Circular A Medium.ttf');
 }
 
 @font-face {
   font-family: Euclid;
   font-weight: 600;
-  src:  url(./fonts/Euclid-SemiBold.ttf);
+  src:  url('./fonts/Euclid Circular A SemiBold.ttf');
 }
 
 :root {

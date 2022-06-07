@@ -1,6 +1,7 @@
 import React from 'react';
 import useLocalStorage from 'use-local-storage';
 import './App.scoped.css';
+import {NavigationBar}  from './components/NavigationBar/NavigationBar';
 import Home from './sections/Home/Home';
 
 
@@ -15,6 +16,7 @@ const App: React.FC = () => {
 
   return (
     <div className="app" data-theme={theme}>
+      <NavigationBar/>
       <Home theme={theme}/>
       <button onClick={switchTheme}>
         Switch to {theme === 'light' ? 'Dark' : 'Light'} Theme

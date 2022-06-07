@@ -1,18 +1,29 @@
 import './SearchForm.css';
-import React, { useRef } from 'react';
-import { FormControl, InputBase } from "@mui/material"
+import React from 'react';
+import { FormControl, Grid } from "@mui/material"
+import useCollapse from 'react-collapsed';
 
 type SearchFormProps = {
     theme: string;
-    width?: string;
     placeholder?: string;
 }
-export const SearchForm: React.FC<SearchFormProps> = ({ width = '600px', placeholder = 'Enter your email', theme }) => {
+export const SearchForm: React.FC<SearchFormProps> = ({ placeholder = 'Subject: Say Hello!', theme }) => {
+    const [focused, setFocused] = React.useState(false)
+    const onFocus = () => setFocused(true)
+    const onBlur = () => setFocused(false)
     return (
         <div style={{ textAlign: 'center' }}>
-            <FormControl className="search-form" sx={styles.formControl(width)}>
-                <input className={`form-control form-control-lg ${theme}`} placeholder={placeholder} style={styles.inputBase} />
-            </FormControl>
+            <Grid
+                container
+                direction="column"
+                justifyContent="flex-end"
+                alignItems="start"
+            >
+                <div className={`search-form ${focused ? 'focused' : ''}`} >
+                    <input onFocus={onFocus} onBlur={onBlur} className={`form-control form-control-lg ${theme}`} placeholder={placeholder} style={styles.inputBase} />
+                </div>
+                
+            </Grid>
         </div>
     );
 }
@@ -28,7 +39,8 @@ const styles = {
         fontWeight: '500',
         outlineWidth: '0px',
         border: '0px',
-        padding: '27.5px 181px 27.5px 32px',
         outline: 'none',
+        width: '400px',
+        padding:' 0px 181px 0px 32px',
     },
 }
