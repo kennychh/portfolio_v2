@@ -1,19 +1,26 @@
 import './Home.css';
 import React from 'react';
 import { Grid } from "@mui/material"
-import { SearchForm, Button } from '../../components/';
+import { SearchForm, Button } from '../../components';
+import coffeCup from '../../assets/coffee_cup.png';
+import fire from '../../assets/fire.png';
+import handshake from '../../assets/handshake.png';
+import sakura from '../../assets/sakura.png';
+import sunglasses from '../../assets/sunglasses.png';
+import useWindowDimensions from '../../utils.js';
 
 type HomeProps = {
   theme: string;
 }
 const Home: React.FC<HomeProps> = ({theme}) => {
+  const { height, width } = useWindowDimensions();
+  var navBarHeight = '-80px';
   return (
-    <div className="Home" style={{textAlign: 'center'}}>
-      <header className="Home-header">
-        <h1 style={
+    <div className="Home" style={{marginTop: navBarHeight}}>
+      <h1 style={
           styles.h1
         }>
-          Software Developer with a passion for design
+          Building elegant & user-friendly digital experiences
         </h1>
         <p style={styles.p}>
           Hi there, I'm Kenny! I'm a software developer with a passion for design, & currently attending the University of Toronto.
@@ -21,8 +28,10 @@ const Home: React.FC<HomeProps> = ({theme}) => {
         <div>
         <button className="cta-button" style={styles.ctaButton}> Connect with me </button>
         </div>
-
-      </header>
+        <img src={fire} className="home-image fire" />
+        <img src={sunglasses} className="home-image sunglasses" />
+        <img src={sakura} className="home-image sakura" />
+        <img src={handshake} className="home-image handshake" />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import './NavigationBar.css'
 import React from 'react';
 import { FormControl, Grid } from "@mui/material"
 import { maxWidth } from '@mui/system';
+import zIndex from '@mui/material/styles/zIndex';
 
 export const NavigationBar: React.FC = () => {
     return (
@@ -59,16 +60,18 @@ const styles = {
         outline: 'none',
         width: '100%',
         height: '80px',
+        display: 'flex',
         overflowX: 'clip',
         backgroundColor: 'var(--background)',
         position: 'sticky',
         top: '0',
+        zIndex: '1',
     },
     navigationBarItems: {
         padding: '0px 30px 0px 30px',
         maxWidth: '1440px',
         width: '100%',
-        margin: '0 auto'
+        margin: '0 auto',
     },
     sectionLinkContainer: {
         display: 'flex',

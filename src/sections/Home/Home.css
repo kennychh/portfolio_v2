@@ -1,59 +1,86 @@
+.Home-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+  .home-image {
+    position: absolute;
+    animation: home-image-animate 1 1s ease;
+  }
+  .home-image.sunglasses {
+    top: calc(50% + 50px);
+    left: max(calc(50% - 750px), 70px);
+    transform: rotate(-22.5deg);
+  }
+  .home-image.handshake {
+    top: calc(50% + 125px);
+    left: min(calc(50% + 300px), calc(100% - 550px));
+    transform: rotate(12.25deg);
+  }
+  .home-image.sakura {
+    top: calc(50% - 350px);
+    left: min(calc(100% - 450px), calc(50% + 450px));
+  }
+  .home-image.fire {
+    top: calc(50% - 400px);
+    left: max(calc(50% - 900px), 50px);
+  }
+}
+
 .Home {
-    text-align: center;
-  }
-  
-  .Home-logo {
-    height: 40vmin;
-    pointer-events: none;
-  }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .Home-logo {
-      animation: Home-logo-spin infinite 20s linear;
-    }
-  }
-  
-  .Home-header {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    font-family: "Euclid", "Arial", sans-serif;
-    color: white;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  font-family: "Euclid", "Arial", sans-serif;
+  background-color: var(--background);
+}
+
+.email-textfield {
+  padding-left: 16;
+}
+
+.cta-button {
+  margin-bottom: 0px;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+
+.cta-button:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 10px 20px rgba(124, 82, 100, 0.1);
+}
+
+.cta-button:hover.dark {
+  filter: brightness(150%);
+  box-shadow: 0 10px 20px rgba(124, 82, 100);
+}
+
+.Home-link {
+  color: #61dafb;
+}
+
+
+@keyframes home-image-animate {
+  0% {
+    display: none;
+    opacity: 0;
   }
 
-  .email-textfield {
-    padding-left: 16;
+  1% {
+    display: block;
+    opacity: 0;
   }
 
-  .cta-button {
-    margin-bottom: 0px;
-    -webkit-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
+  100% {
+    display: block;
+    opacity: 1;
   }
-  
-
-  .cta-button:hover {
-    transform: translateY(-0.25rem);
-    box-shadow: 0 10px 20px rgba(124, 82, 100, 0.1);
-  }
-
-  .cta-button:hover.dark {
-    filter: brightness(150%);
-    box-shadow: 0 10px 20px rgba(124, 82, 100);
-  }
-  .Home-link {
-    color: #61dafb;
-  }
-  
-  @keyframes Home-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
+}
