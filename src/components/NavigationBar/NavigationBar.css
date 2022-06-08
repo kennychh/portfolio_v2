@@ -1,0 +1,16 @@
+.navbar-cta-button {
+    margin-bottom: 0px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar-cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(96, 82, 166, 0.1);
+}
+
+.navbar-cta-button:hover.dark {
+    filter: brightness(150%);
+    box-shadow: 0 10px 20px rgba(96, 82, 166);
+}

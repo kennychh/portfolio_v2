@@ -1,4 +1,4 @@
-
+import './NavigationBar.css'
 import React from 'react';
 import { FormControl, Grid } from "@mui/material"
 import { maxWidth } from '@mui/system';
@@ -30,7 +30,7 @@ export const NavigationBar: React.FC = () => {
                         Contact
                     </li>
                 </ul>
-                <button className="cta-button" style={styles.ctaButton}> Let's chat </button>
+                <button className="navbar-cta-button" style={styles.ctaButton}> Let's chat </button>
 
 
             </Grid>
@@ -54,9 +54,6 @@ const styles = {
         cursor: 'pointer',
       },
     navigationBar: {
-        fontFamily: 'Poppins',
-        fontSize: '16px',
-        fontWeight: '500',
         outlineWidth: '0px',
         border: '0px',
         outline: 'none',
@@ -83,7 +80,10 @@ const styles = {
     sectionLink: {
         margin: '0 1.6rem',
         alignItems: 'center',
-        display: 'flex'
+        display: 'flex',
+        fontFamily: 'Poppins',
+        fontSize: '16px',
+        fontWeight: '500',
     },
     title: {
         fontFamily: ' "Euclid", "Arial", sans-serif',
