@@ -16,7 +16,7 @@
   }
   .home-image.handshake {
     top: calc(50% + 125px);
-    left: min(calc(50% + 300px), calc(100% - 550px));
+    left: min(calc(50% + 600px), calc(100% - 650px));
     transform: rotate(12.25deg);
   }
   .home-image.sakura {
@@ -38,7 +38,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   font-family: "Euclid", "Arial", sans-serif;
-  background-color: var(--background);
 }
 
 .email-textfield {
@@ -55,7 +54,7 @@
 
 .cta-button:hover {
   transform: translateY(-0.25rem);
-  box-shadow: 0 10px 20px rgba(124, 82, 100, 0.1);
+  box-shadow: 0 10px 20px rgba(0,0,0, 0.1);
 }
 
 .cta-button:hover.dark {
@@ -68,19 +67,3 @@
 }
 
 
-@keyframes home-image-animate {
-  0% {
-    display: none;
-    opacity: 0;
-  }
-
-  1% {
-    display: block;
-    opacity: 0;
-  }
-
-  100% {
-    display: block;
-    opacity: 1;
-  }
-}

@@ -62,7 +62,6 @@ const styles = {
         height: '80px',
         display: 'flex',
         overflowX: 'clip',
-        backgroundColor: 'var(--background)',
         position: 'sticky',
         top: '0',
         zIndex: '1',

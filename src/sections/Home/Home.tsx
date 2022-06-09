@@ -25,21 +25,15 @@ const Home: React.FC<HomeProps> = ({theme}) => {
         <p style={styles.p}>
           Hi there, I'm Kenny! I'm a software developer with a passion for design, & currently attending the University of Toronto.
         </p>
-        <div>
         <button className="cta-button" style={styles.ctaButton}> Connect with me </button>
-        </div>
-        <img src={fire} className="home-image fire" />
-        <img src={sunglasses} className="home-image sunglasses" />
-        <img src={sakura} className="home-image sakura" />
-        <img src={handshake} className="home-image handshake" />
     </div>
   );
 }
 
 const styles = {
   ctaButton: {
-    backgroundColor: 'var(--container-tertiary)',
-    color: 'var(--on-container-tertiary)',
+    backgroundColor: 'var(--on-background)',
+    color: 'var(--background)',
     fontSize: 16,
     fontWeight: 500,
     fontFamily: 'Poppins',
@@ -47,6 +41,7 @@ const styles = {
     borderRadius: '16px',
     borderWidth: '0px',
     cursor: 'pointer',
+    zIndex: 1,
   },
   secondaryButton: {
     backgroundColor: 'var(--container-primary)',
@@ -66,7 +61,8 @@ const styles = {
     fontSize: '18px',
     maxWidth: '560px',
     color: 'var(--text-primary)',
-    paddingBottom: '20px'
+    paddingBottom: '48px',
+    zIndex: 1
   },
   h1:           {
     fontWeight: 600,
@@ -75,8 +71,9 @@ const styles = {
     fontSize: '72px',
     lineHeight: '80px',
     color: 'var(--text-primary)',
-    paddingBottom: '20px',
+    paddingBottom: '24px',
     margin: 0,
+    zIndex: 1,
   }
 
 }

@@ -2,6 +2,9 @@ import React from 'react';
 import useLocalStorage from 'use-local-storage';
 import './App.scoped.css';
 import {NavigationBar}  from './components/NavigationBar/NavigationBar';
+import purpleCircle from './assets/purple_circle.png';
+import pinkCirlce from './assets/pink_circle.png';
+import background from './assets/Slide 16_9 - 1.png';
 import Home from './sections/Home/Home';
 
 
@@ -16,6 +19,7 @@ const App: React.FC = () => {
 
   return (
     <div className="app" data-theme={theme}>
+      <img src={background} className="cirlce-image"></img>
       <NavigationBar/>
       <Home theme={theme}/>
       <button onClick={switchTheme}>

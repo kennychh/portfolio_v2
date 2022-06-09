@@ -7,6 +7,7 @@ body {
     sans-serif;
   max-width: 100%;
   overflow-x: hidden;
+  background-color: var(--background);
 }
 
 code {
@@ -34,10 +35,12 @@ code {
 
 :root {
   --background: rgb(255, 251, 255);
-  --onBackground: rgb(28, 27, 30);
+  --on-background: rgb(28, 27, 30);
   --surface: rgb(243, 237, 247);
   --text-primary: rgb(28, 27, 30);
   --text-secondary: rgb(96, 92, 113);
+  --primary: rgb(72, 57, 141);
+  --on-primary: rgb(229, 225, 229);
   --container-primary: rgb(231, 222, 255);
   --on-container-primary: rgb(28, 1, 97);
   --container-secondary: rgb(230, 223, 249);
@@ -48,7 +51,7 @@ code {
 
 [data-theme='dark'] {
   --background: rgb(28, 27, 30);
-  --onBackground: rgb(229, 225, 229);
+  --on-background: rgb(229, 225, 229);
   --surface: rgb(42, 40, 49);
   --text-primary: rgb(229, 225, 229);
   --text-secondary: rgb(201, 195, 220);
