@@ -10,7 +10,7 @@ export const NavigationBar: React.FC = () => {
             <Grid
                 container
                 direction="row"
-                justifyContent="flex-start"
+                justifyContent="space-between"
                 alignItems="center"
                 style={styles.navigationBarItems}
             >
@@ -31,7 +31,16 @@ export const NavigationBar: React.FC = () => {
                         Contact
                     </li>
                 </ul>
-                <button className="navbar-cta-button" style={styles.ctaButton}> Let's chat </button>
+                <div style={styles.navItems}>
+                <li style={styles.navLink}>
+                        Theme
+                    </li>
+                    <li style={styles.navLink}>
+                        Resume
+                    </li>
+                    <button className="navbar-cta-button" style={styles.ctaButton}> Let's chat </button>
+                </div>
+
 
 
             </Grid>
@@ -53,7 +62,8 @@ const styles = {
         borderRadius: '16px',
         borderWidth: '0px',
         cursor: 'pointer',
-      },
+        margin: '0 0 0 1.2rem',
+    },
     navigationBar: {
         outlineWidth: '0px',
         border: '0px',
@@ -68,24 +78,41 @@ const styles = {
     },
     navigationBarItems: {
         padding: '0px 30px 0px 30px',
-        maxWidth: '1440px',
+        // maxWidth: '1440px',
         width: '100%',
         margin: '0 auto',
     },
     sectionLinkContainer: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        width: '100%',
         display: 'flex',
-        flex: '1 1 auto',
         justifyContent: 'center',
         listStyleType: 'none',
         padding: '0',
     },
     sectionLink: {
-        margin: '0 1.6rem',
+        margin: '0 1.2rem',
         alignItems: 'center',
         display: 'flex',
         fontFamily: 'Poppins',
         fontSize: '16px',
         fontWeight: '500',
+    },
+    navItems: {
+        display: 'flex',
+        float: 'left',
+        alignItems: 'center',
+    },
+    navLink: {
+        listStyleType: 'none',
+        fontFamily: 'Poppins',
+        fontSize: '16px',
+        fontWeight: '500',
+        margin: '0 1.2rem',
     },
     title: {
         fontFamily: ' "Euclid", "Arial", sans-serif',
