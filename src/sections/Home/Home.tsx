@@ -7,6 +7,7 @@ import fire from '../../assets/fire.png';
 import handshake from '../../assets/handshake.png';
 import sakura from '../../assets/sakura.png';
 import sunglasses from '../../assets/sunglasses.png';
+import background from '../../assets/Slide 16_9 - 1.png';
 import useWindowDimensions from '../../utils.js';
 
 type HomeProps = {
@@ -17,6 +18,7 @@ const Home: React.FC<HomeProps> = ({theme}) => {
   var navBarHeight = '-80px';
   return (
     <div className="Home" style={{marginTop: navBarHeight}}>
+      <img src={background} className="cirlce-image"></img>
       <h1 style={
           styles.h1
         }>

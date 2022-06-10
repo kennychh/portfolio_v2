@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import useLocalStorage from 'use-local-storage';
 import './App.scoped.css';
 import {NavigationBar}  from './components/NavigationBar/NavigationBar';
@@ -17,16 +17,41 @@ const App: React.FC = () => {
     setTheme(newTheme);
   }
 
+  const checkpoint = 500;
+  const [navBarColor, setNavBarColor] = useState("")
+ 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll <= checkpoint) {
+        var opacity = 1 - currentScroll / checkpoint;
+      } else {
+        opacity = 0;
+      }
+      if (currentScroll >=100){
+        setNavBarColor('var(--background)')
+      }
+      else {
+        setNavBarColor('')
+      }
+      const homeElement = document.querySelector<HTMLElement>('.Home')!;
+      // @ts-ignore: Object is possibly 'null'.
+      homeElement.style.opacity = opacity;
+      // @ts-ignore: Object is possibly 'null'.
+    });
+  }, [])
+
   return (
     <div className="app" data-theme={theme}>
-      <img src={background} className="cirlce-image"></img>
-      <NavigationBar/>
+      <NavigationBar backgroundColor={navBarColor} />
       <Home theme={theme}/>
-      <button onClick={switchTheme}>
+      {/* <button onClick={switchTheme}>
         Switch to {theme === 'light' ? 'Dark' : 'Light'} Theme
-      </button>
+      </button> */}
+      <div style={{height: 1000}}/>
     </div>
   );
 }
+
 
 export default App;

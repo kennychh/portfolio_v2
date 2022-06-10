@@ -4,9 +4,13 @@ import { FormControl, Grid } from "@mui/material"
 import { maxWidth } from '@mui/system';
 import zIndex from '@mui/material/styles/zIndex';
 
-export const NavigationBar: React.FC = () => {
+type NavigationBarProps = {
+    backgroundColor: string;
+  }
+
+export const NavigationBar: React.FC<NavigationBarProps> = ({backgroundColor = ""}) => {
     return (
-        <div style={styles.navigationBar}>
+        <div style={styles.navigationBar(backgroundColor)}>
             <Grid
                 container
                 direction="row"
@@ -64,7 +68,7 @@ const styles = {
         cursor: 'pointer',
         margin: '0 0 0 1.2rem',
     },
-    navigationBar: {
+    navigationBar: (backgroundColor: string) => ({
         outlineWidth: '0px',
         border: '0px',
         outline: 'none',
@@ -75,7 +79,9 @@ const styles = {
         position: 'sticky',
         top: '0',
         zIndex: '1',
-    },
+        backgroundColor: backgroundColor,
+        transition:' all 0.2s ease-in'
+    }),
     navigationBarItems: {
         padding: '0px 30px 0px 30px',
         // maxWidth: '1440px',
