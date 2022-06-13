@@ -1,18 +1,12 @@
-import './About.css';
+import './Portfolio.css';
 import React, { useEffect, useState } from 'react';
 import { Grid } from "@mui/material"
 import { SearchForm, Button } from '../../components';
-import coffeCup from '../../assets/coffee_cup.png';
-import fire from '../../assets/fire.png';
-import handshake from '../../assets/handshake.png';
-import sakura from '../../assets/sakura.png';
-import sunglasses from '../../assets/sunglasses.png';
-import background from '../../assets/Slide 16_9 - 1.png';
 import useWindowDimensions from '../../utils.js';
 import { AnimationOnScroll } from 'react-animation-on-scroll/dist/js/components';
 
 
-const About: React.FC = () => {
+const Portfolio: React.FC = () => {
     const { height, width } = useWindowDimensions();
     var navBarHeight = '-80px';
     const [squeeze, setSqueeze] = useState(true)
@@ -29,10 +23,10 @@ const About: React.FC = () => {
     });
 
     return (
-        <div className='about-container'>
+        <div className='portfolio-container'>
             <h1 style={
                 styles.h1
-            }>About me</h1>
+            }>Some things I've built</h1>
         </div>
     );
 }
@@ -74,11 +68,11 @@ const styles = {
     h1: {
         fontWeight: 600,
         letterSpacing: '-4px',
-        maxWidth: '900px',
+        maxWidth: '700px',
         fontSize: '72px',
         lineHeight: '80px',
         color: 'var(--text-primary)',
-        paddingBottom: '24px',
+        paddingBottom: '16px',
         margin: 0,
         zIndex: 0,
     },
@@ -101,4 +95,4 @@ const styles = {
 
 }
 
-export default About;
+export default Portfolio;
