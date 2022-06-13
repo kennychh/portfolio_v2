@@ -47,8 +47,6 @@
   -moz-box-shadow: 1px 15px 40px 5px rgba(0,0,0,0.075);
   width: 100%;
   margin: auto;
-  border-bottom-left-radius: 56px;
-  border-bottom-right-radius: 56px;
 }
 
 .circle {
@@ -69,25 +67,33 @@
 @keyframes home-container-squeeze {
   0% {
     width: 100%;
+    border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
   }
   100% {
     width: 96%;
+    border-bottom-left-radius: 56px;
+  border-bottom-right-radius: 56px;
   }
 }
 
 @keyframes home-container-unsqueeze {
   0% {
     width: 96%;
+    border-bottom-left-radius: 56px;
+  border-bottom-right-radius: 56px;
   }
   100% {
     width: 100%;
+    border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
   }
 }
 
 .cirlce-image {
   position: fixed;
   z-index: 0;
-  opacity: 1;
+  opacity: 0.8;
   left: 50%;
 top: 50%;
 transform: translate(-50%, -50%);

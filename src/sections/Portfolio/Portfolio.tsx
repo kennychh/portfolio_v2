@@ -10,17 +10,6 @@ const Portfolio: React.FC = () => {
     const { height, width } = useWindowDimensions();
     var navBarHeight = '-80px';
     const [squeeze, setSqueeze] = useState(true)
-    window.addEventListener("scroll", () => {
-        const currentScroll = window.pageYOffset;
-        const homeContainerElement = document.querySelector<HTMLElement>('.home-container')!;
-        if (currentScroll >= 500 && squeeze) {
-            homeContainerElement.style.animation = 'home-container-squeeze 1 0.5s ease-in-out forwards';
-            setSqueeze(false)
-        } else if (currentScroll < 500 && !squeeze) {
-            homeContainerElement.style.animation = 'home-container-unsqueeze 1 0.5s ease-in-out forwards';
-            setSqueeze(true)
-        }
-    });
 
     return (
         <div className='portfolio-container'>
