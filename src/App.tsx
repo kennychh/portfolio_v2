@@ -6,6 +6,7 @@ import purpleCircle from './assets/purple_circle.png';
 import pinkCirlce from './assets/pink_circle.png';
 import background from './assets/Slide 16_9 - 1.png';
 import Home from './sections/Home/Home';
+import About from './sections/About/About';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import "animate.css/animate.min.css";
 
@@ -47,8 +48,7 @@ const App: React.FC = () => {
     <div className="app" data-theme={theme}>
       <NavigationBar backgroundColor={navBarColor} />
       <Home theme={theme} />
-      <div style={{ height: 1000, alignItems: 'center', display: 'flex', justifyContent:'center'}}>
-      </div>
+      <About/>
     </div>
   );
 }

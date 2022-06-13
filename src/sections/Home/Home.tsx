@@ -40,15 +40,15 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           Building elegant & user-friendly digital experiences
         </h1>
         <p style={styles.p}>
-          Hi there, I'm Kenny! I'm a software developer with a passion for design, & currently attending the University of Toronto.
+        Hey there! I'm Kenny, a Software Developer with a passion for design.
         </p>
         <button className="cta-button" style={styles.ctaButton}> Connect with me </button>
       </div>
       <div style={styles.homeLowerSection}>
-        <AnimationOnScroll animateIn="animate__fadeInUp" duration={1} animateOnce={true}>
+        <AnimationOnScroll animateIn="animate__fadeIn" duration={1}>
           <h2 style={
             styles.h2
-          }>Look what i am doing</h2>
+          }>Check out what I have to offer!</h2>
         </AnimationOnScroll>
       </div>
     </div>
@@ -83,7 +83,7 @@ const styles = {
   p: {
     fontFamily: 'Poppins',
     fontWeight: '400',
-    fontSize: '18px',
+    fontSize: '22px',
     maxWidth: '560px',
     color: 'var(--text-primary)',
     paddingBottom: '48px',
@@ -102,9 +102,8 @@ const styles = {
   },
   h2: {
     fontWeight: 600,
-    letterSpacing: '-2px',
     maxWidth: '900px',
-    fontSize: '60px',
+    fontSize: '52px',
     lineHeight: '60px',
     color: 'var(--text-primary)',
     paddingBottom: '24px',
