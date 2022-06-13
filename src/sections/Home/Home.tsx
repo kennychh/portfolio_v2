@@ -45,10 +45,14 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         <button className="cta-button" style={styles.ctaButton}> Connect with me </button>
       </div>
       <div style={styles.homeLowerSection}>
+
         <AnimationOnScroll animateIn="animate__fadeIn" duration={1}>
-          <h2 style={
+        <h2 style={
             styles.h2
           }>Check out what I have to offer!</h2>
+        <div className='circle'>
+        <img src={sunglasses} style={{position: 'absolute'}}/>
+        </div>
         </AnimationOnScroll>
       </div>
     </div>
@@ -111,8 +115,9 @@ const styles = {
     zIndex: 1,
   },
   homeLowerSection: {
-    height: '800px',
+    height: '900px',
     alignItems: 'center',
+    flexDirection: 'column',
     display: 'flex',
     justifyContent: 'center',
   }

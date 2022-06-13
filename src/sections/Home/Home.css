@@ -51,6 +51,21 @@
   border-bottom-right-radius: 56px;
 }
 
+.circle {
+  background-color: var(--container-primary);
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  margin-top: 64px;
+  -moz-border-radius: 250px; 
+   -webkit-border-radius: 250px; 
+   border-radius: 250px;
+}
+
 @keyframes home-container-squeeze {
   0% {
     width: 100%;
