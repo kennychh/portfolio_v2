@@ -36,9 +36,6 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({backgroundColor = "
                     </li>
                 </ul>
                 <div style={styles.navItems}>
-                <li style={styles.navLink}>
-                        Theme
-                    </li>
                     <li style={styles.navLink}>
                         Resume
                     </li>
@@ -84,7 +81,7 @@ const styles = {
     }),
     navigationBarItems: {
         padding: '0px 30px 0px 30px',
-        // maxWidth: '1440px',
+        maxWidth: '1440px',
         width: '100%',
         margin: '0 auto',
     },

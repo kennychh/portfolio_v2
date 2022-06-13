@@ -42,3 +42,14 @@
       opacity: 1;
     }
   }
+  
+  h1 {
+    font-weight: 600;
+    letter-spacing: '-4px';
+    max-width: '900px';
+    line-height: '80px';
+    color: 'var(--text-primary)';
+    padding-bottom: '24px';
+    margin: 0;
+    z-index: 1;
+  }

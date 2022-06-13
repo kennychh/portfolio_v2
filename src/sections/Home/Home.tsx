@@ -1,5 +1,5 @@
 import './Home.css';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Grid } from "@mui/material"
 import { SearchForm, Button } from '../../components';
 import coffeCup from '../../assets/coffee_cup.png';
@@ -9,17 +9,32 @@ import sakura from '../../assets/sakura.png';
 import sunglasses from '../../assets/sunglasses.png';
 import background from '../../assets/Slide 16_9 - 1.png';
 import useWindowDimensions from '../../utils.js';
+import { AnimationOnScroll } from 'react-animation-on-scroll/dist/js/components';
 
 type HomeProps = {
   theme: string;
 }
-const Home: React.FC<HomeProps> = ({theme}) => {
+const Home: React.FC<HomeProps> = ({ theme }) => {
   const { height, width } = useWindowDimensions();
   var navBarHeight = '-80px';
+  const [squeeze, setSqueeze] = useState(true)
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+    const homeContainerElement = document.querySelector<HTMLElement>('.home-container')!;
+    if (currentScroll >= 500 && squeeze) {
+      homeContainerElement.style.animation = 'home-container-squeeze 1 0.5s ease-in-out forwards';
+      setSqueeze(false)
+    } else if (currentScroll < 500 && !squeeze) {
+      homeContainerElement.style.animation = 'home-container-unsqueeze 1 0.5s ease-in-out forwards';
+      setSqueeze(true)
+    }
+  });
+
   return (
-    <div className="Home" style={{marginTop: navBarHeight}}>
-      <img src={background} className="cirlce-image"></img>
-      <h1 style={
+    <div className='home-container'>
+      <div className="Home" style={{ marginTop: navBarHeight }}>
+        <img src={background} className="cirlce-image"></img>
+        <h1 style={
           styles.h1
         }>
           Building elegant & user-friendly digital experiences
@@ -28,6 +43,14 @@ const Home: React.FC<HomeProps> = ({theme}) => {
           Hi there, I'm Kenny! I'm a software developer with a passion for design, & currently attending the University of Toronto.
         </p>
         <button className="cta-button" style={styles.ctaButton}> Connect with me </button>
+      </div>
+      <div style={styles.homeLowerSection}>
+        <AnimationOnScroll animateIn="animate__fadeInUp" duration={1} animateOnce={true}>
+          <h2 style={
+            styles.h2
+          }>Look what i am doing</h2>
+        </AnimationOnScroll>
+      </div>
     </div>
   );
 }
@@ -66,7 +89,7 @@ const styles = {
     paddingBottom: '48px',
     zIndex: 1
   },
-  h1:           {
+  h1: {
     fontWeight: 600,
     letterSpacing: '-4px',
     maxWidth: '900px',
@@ -76,6 +99,23 @@ const styles = {
     paddingBottom: '24px',
     margin: 0,
     zIndex: 1,
+  },
+  h2: {
+    fontWeight: 600,
+    letterSpacing: '-2px',
+    maxWidth: '900px',
+    fontSize: '60px',
+    lineHeight: '60px',
+    color: 'var(--text-primary)',
+    paddingBottom: '24px',
+    margin: 0,
+    zIndex: 1,
+  },
+  homeLowerSection: {
+    height: '800px',
+    alignItems: 'center',
+    display: 'flex',
+    justifyContent: 'center',
   }
 
 }
