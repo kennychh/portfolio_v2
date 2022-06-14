@@ -46,11 +46,13 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         <button className="cta-button" style={styles.ctaButton}> Connect with me </button>
       </div>
       <div style={styles.homeLowerSection}>
-
-        <AnimationOnScroll animateIn="animate__fadeIn" duration={1}>
+        <AnimationOnScroll animateIn="animate__fadeIn" duration={1}  animateOnce={true}>
         <h2 style={
             styles.h2
           }>Check out what I have to offer!</h2>
+        </AnimationOnScroll>
+
+        <AnimationOnScroll animateIn="animate__zoomIn" duration={1} animateOnce={true}>
         <div className='circle'>
         <img src={sunglasses} style={{position: 'absolute'}}/>
         </div>

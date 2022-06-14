@@ -29,6 +29,13 @@
   }
 }
 
+.example-container div {
+  background: var(--container-primary);
+  border-radius: 30px;
+  width: 150px;
+  height: 150px;
+}
+
 .Home {
   text-align: center;
   min-height: 100vh;
