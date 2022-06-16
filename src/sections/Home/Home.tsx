@@ -38,7 +38,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         <h1 style={
           styles.h1
         }>
-          Building elegant & user-friendly digital experiences
+          Building elegant & efficient digital experiences
         </h1>
         <p style={styles.p}>
         Hey there! I'm Kenny, a Software Developer with a passion for design.
@@ -46,13 +46,13 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         <button className="cta-button" style={styles.ctaButton}> Connect with me </button>
       </div>
       <div style={styles.homeLowerSection}>
-        <AnimationOnScroll animateIn="animate__fadeIn" duration={1}  animateOnce={true}>
+        <AnimationOnScroll animateIn="animate__fadeIn" duration={1}>
         <h2 style={
             styles.h2
           }>Check out what I have to offer!</h2>
         </AnimationOnScroll>
 
-        <AnimationOnScroll animateIn="animate__zoomIn" duration={1} animateOnce={true}>
+        <AnimationOnScroll animateIn="animate__zoomIn" duration={1}>
         <div className='circle'>
         <img src={sunglasses} style={{position: 'absolute'}}/>
         </div>
@@ -103,7 +103,7 @@ const styles = {
     fontSize: '72px',
     lineHeight: '80px',
     color: 'var(--text-primary)',
-    paddingBottom: '24px',
+    paddingBottom: '32px',
     margin: 0,
     zIndex: 1,
   },
