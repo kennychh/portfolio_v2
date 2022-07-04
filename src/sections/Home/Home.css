@@ -42,6 +42,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 200px;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   font-family: "Euclid", "Arial", sans-serif;
@@ -98,7 +99,7 @@
 }
 
 .cirlce-image {
-  position: fixed;
+  position: absolute;
   z-index: 0;
   opacity: 0.8;
   left: 50%;

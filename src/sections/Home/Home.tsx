@@ -22,10 +22,10 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
   window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset;
     const homeContainerElement = document.querySelector<HTMLElement>('.home-container')!;
-    if (currentScroll >= 1000 && squeeze) {
+    if (currentScroll >= 300 && squeeze) {
       homeContainerElement.style.animation = 'home-container-squeeze 1 0.5s ease-in-out forwards';
       setSqueeze(false)
-    } else if (currentScroll < 1000 && !squeeze) {
+    } else if (currentScroll < 300 && !squeeze) {
       homeContainerElement.style.animation = 'home-container-unsqueeze 1 0.5s ease-in-out forwards';
       setSqueeze(true)
     }
@@ -44,19 +44,6 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         Hey there! I'm Kenny, a Software Developer with a passion for design.
         </p>
         <button className="cta-button" style={styles.ctaButton}> Connect with me </button>
-      </div>
-      <div style={styles.homeLowerSection}>
-        <AnimationOnScroll animateIn="animate__fadeIn" duration={1}>
-        <h2 style={
-            styles.h2
-          }>Check out what I have to offer!</h2>
-        </AnimationOnScroll>
-
-        <AnimationOnScroll animateIn="animate__zoomIn" duration={1}>
-        <div className='circle'>
-        <img src={sunglasses} style={{position: 'absolute'}}/>
-        </div>
-        </AnimationOnScroll>
       </div>
     </div>
   );
