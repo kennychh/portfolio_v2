@@ -36,22 +36,30 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
     <div className='home-container'>
       <div className="Home" style={{ marginTop: navBarHeight }}>
         <img src={background} className="cirlce-image"></img>
-        <h1 style={
-          styles.h1
-        }>
+        <h1 style={styles.h1}>
           Building elegant digital experiences
         </h1>
         <p style={styles.p}>
-        Hey there! I'm Kenny, a Software Developer with a passion for designing digital applications.
+          Hey there! I'm Kenny, a Software Developer with a passion for designing digital applications.
         </p>
         <button className="cta-button" style={styles.ctaButton}> Connect with me </button>
-        <img src={Star} alt="Star" style={styles.star}/>
+        <div style={styles.more}>
+          <img src={Star} alt="Star" style={styles.star} />
+          <p style={styles.moreText}>
+            Scroll for more
+          </p>
+        </div>
       </div>
     </div>
   );
 }
 
 const styles = {
+  more: {
+    position: 'absolute',
+    bottom: 0,
+    zIndex: 1,
+  },
   star: {
     marginTop: '48px',
     zIndex: 1,
@@ -89,6 +97,12 @@ const styles = {
     paddingBottom: '48px',
     zIndex: 1
   },
+  moreText: {
+    fontFamily: 'Poppins',
+    fontWeight: '400',
+    fontSize: '16px',
+    color: 'var(--text-primary)',
+  },
   h1: {
     fontWeight: 500,
     letterSpacing: '-4px',
@@ -97,7 +111,6 @@ const styles = {
     lineHeight: '80px',
     color: 'var(--text-primary)',
     paddingBottom: '32px',
-    margin: 0,
     zIndex: 1,
   },
   h2: {
