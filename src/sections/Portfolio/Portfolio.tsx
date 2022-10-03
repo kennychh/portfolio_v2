@@ -16,11 +16,18 @@ const Portfolio: React.FC = () => {
             <h1 style={
                 styles.h1
             }>Some things I've built</h1>
+            <img src={require('../../assets/Silver.png')} width='400px' style={
+                styles.phone
+            }/>
         </div>
     );
 }
 
 const styles = {
+    phone: {
+        alignItems: 'start',
+        justifyContent: 'center',
+    },
     ctaButton: {
         backgroundColor: 'var(--on-background)',
         color: 'var(--background)',
@@ -55,7 +62,7 @@ const styles = {
         zIndex: 1
     },
     h1: {
-        fontWeight: 600,
+        fontWeight: 500,
         letterSpacing: '-4px',
         maxWidth: '700px',
         fontSize: '72px',

@@ -7,6 +7,7 @@ import fire from '../../assets/fire.png';
 import handshake from '../../assets/handshake.png';
 import sakura from '../../assets/sakura.png';
 import sunglasses from '../../assets/sunglasses.png';
+import Star from "../../assets/star.svg"
 import background from '../../assets/Slide 16_9 - 1.png';
 import useWindowDimensions from '../../utils.js';
 import { AnimationOnScroll } from 'react-animation-on-scroll/dist/js/components';
@@ -38,18 +39,23 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         <h1 style={
           styles.h1
         }>
-          Building elegant & efficient digital experiences
+          Building elegant digital experiences
         </h1>
         <p style={styles.p}>
-        Hey there! I'm Kenny, a Software Developer with a passion for design.
+        Hey there! I'm Kenny, a Software Developer with a passion for designing digital applications.
         </p>
         <button className="cta-button" style={styles.ctaButton}> Connect with me </button>
+        <img src={Star} alt="Star" style={styles.star}/>
       </div>
     </div>
   );
 }
 
 const styles = {
+  star: {
+    marginTop: '48px',
+    zIndex: 1,
+  },
   ctaButton: {
     backgroundColor: 'var(--on-background)',
     color: 'var(--background)',
@@ -78,13 +84,13 @@ const styles = {
     fontFamily: 'Poppins',
     fontWeight: '400',
     fontSize: '22px',
-    maxWidth: '560px',
+    maxWidth: '600px',
     color: 'var(--text-primary)',
     paddingBottom: '48px',
     zIndex: 1
   },
   h1: {
-    fontWeight: 600,
+    fontWeight: 500,
     letterSpacing: '-4px',
     maxWidth: '900px',
     fontSize: '72px',
