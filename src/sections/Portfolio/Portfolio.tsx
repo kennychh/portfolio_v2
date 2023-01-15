@@ -11,10 +11,14 @@ const Portfolio: React.FC = () => {
   const [squeeze, setSqueeze] = useState(true);
 
   return (
-    <div style={styles.portfolioContainer}>
-      <h1 style={styles.h1}>Some things I've built</h1>
+    <div style={styles.portfolioContainer} className='portfolio-container'>
+      <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce>
+        <h1 style={styles.h1}>Some things I've built</h1>
+      </AnimationOnScroll>
       <div className="phone-container">
-        <img src={require("../../assets/Silver.png")} style={styles.phone} />
+      <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce>
+      <img src={require("../../assets/Silver.png")} style={styles.phone} />
+      </AnimationOnScroll>
       </div>
       <div style={{ height: 1000 }} />
     </div>
@@ -26,7 +30,10 @@ const styles = {
     textAlign: "center",
     flexDirection: "column",
     alignItems: "center",
-    display: "flex",
+    justifyContent: 'center',
+    paddingTop: '240px',
+  },
+  container: {
     padding: "240px 30px 0px 30px",
     maxWidth: "1440px",
     width: "100%",
@@ -71,11 +78,10 @@ const styles = {
   h1: {
     fontWeight: 500,
     letterSpacing: "-4px",
-    maxWidth: "700px",
     fontSize: "72px",
     lineHeight: "80px",
     color: "var(--text-primary)",
-    paddingBottom: "16px",
+    paddingBottom: "32px",
     margin: 0,
     zIndex: 0,
   },

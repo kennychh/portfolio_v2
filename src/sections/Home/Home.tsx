@@ -18,19 +18,6 @@ type HomeProps = {
 const Home: React.FC<HomeProps> = ({ theme }) => {
   const { height, width } = useWindowDimensions();
   var navBarHeight = '-80px';
-  const [squeeze, setSqueeze] = useState(true)
-
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset;
-    const homeContainerElement = document.querySelector<HTMLElement>('.home-container')!;
-    if (currentScroll >= 300 && squeeze) {
-      homeContainerElement.style.animation = 'home-container-squeeze 1 0.5s ease-in-out forwards';
-      setSqueeze(false)
-    } else if (currentScroll < 300 && !squeeze) {
-      homeContainerElement.style.animation = 'home-container-unsqueeze 1 0.5s ease-in-out forwards';
-      setSqueeze(true)
-    }
-  });
 
   return (
     <div className='home-container'>
@@ -40,7 +27,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           Building elegant digital experiences
         </h1>
         <p style={styles.p}>
-          Hey there! I'm Kenny, a Software Developer with a passion for designing digital applications.
+          Hey there! I'm Kenny, a Software Developer with a passion for building beautiful digital applications.
         </p>
         <button className="cta-button" style={styles.ctaButton}> Connect with me </button>
         <div style={styles.more}>
