@@ -1,7 +1,8 @@
   .phone-container {
     top:calc((100vh - 700px)/2);
     position: sticky;
-    align-self: flex-start;
+    display: flex;
+    align-items: flex-start;
   }
   .portfolio-container {
   width: 100%;

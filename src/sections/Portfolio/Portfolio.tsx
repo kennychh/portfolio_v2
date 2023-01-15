@@ -12,12 +12,12 @@ const Portfolio: React.FC = () => {
 
   return (
     <div style={styles.portfolioContainer} className='portfolio-container'>
-      <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce>
+      <AnimationOnScroll animateIn="animate__fadeInUp">
         <h1 style={styles.h1}>Some things I've built</h1>
       </AnimationOnScroll>
-      <div className="phone-container">
-      <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce>
-      <img src={require("../../assets/Silver.png")} style={styles.phone} />
+      <div className="phone-container" style={styles.container}>
+        <AnimationOnScroll animateIn="animate__fadeInLeft">
+        <img src={require("../../assets/Silver.png")} style={styles.phone} />
       </AnimationOnScroll>
       </div>
       <div style={{ height: 1000 }} />
@@ -34,7 +34,7 @@ const styles = {
     paddingTop: '240px',
   },
   container: {
-    padding: "240px 30px 0px 30px",
+    padding: "0px 30px 0px 30px",
     maxWidth: "1440px",
     width: "100%",
     margin: "0 auto",
