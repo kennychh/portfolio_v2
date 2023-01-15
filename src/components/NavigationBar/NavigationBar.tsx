@@ -73,9 +73,9 @@ const styles = {
         height: '80px',
         display: 'flex',
         overflowX: 'clip',
-        position: 'sticky',
+        position: 'fixed',
         top: '0',
-        zIndex: '1',
+        zIndex: '100',
         backgroundColor: backgroundColor,
         transition:' all 0.2s ease-in'
     }),

@@ -46,9 +46,10 @@ const App: React.FC = () => {
 
   return (
     <div className="app" data-theme={theme}>
-      <NavigationBar backgroundColor={navBarColor} />
       <Home theme={theme} />
       <Portfolio/>
+      <div style={{height: 1000}}/>
+      <NavigationBar backgroundColor={navBarColor} />
     </div>
   );
 }

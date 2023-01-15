@@ -12,21 +12,32 @@ const Portfolio: React.FC = () => {
     const [squeeze, setSqueeze] = useState(true)
 
     return (
-        <div className='portfolio-container'>
+        <div style={styles.portfolioContainer}>
             <h1 style={
                 styles.h1
             }>Some things I've built</h1>
-            <img src={require('../../assets/Silver.png')} width='400px' style={
-                styles.phone
-            }/>
+            <div className='phone-container'>
+                <img src={require('../../assets/Silver.png')} style={styles.phone}/>
+            </div>
+            <div style={{height: 1000}}/>
         </div>
     );
 }
 
 const styles = {
+    portfolioContainer: {
+        marginTop: '240px',
+        textAlign: 'center',
+    flexDirection: 'column',
+    alignItems: 'center',
+    display: 'flex',
+        padding: '0px 30px 0px 30px',
+        maxWidth: '1440px',
+        width: '100%',
+        margin: '0 auto',
+    },
     phone: {
-        alignItems: 'start',
-        justifyContent: 'center',
+        maxWidth: '400px',
     },
     ctaButton: {
         backgroundColor: 'var(--on-background)',

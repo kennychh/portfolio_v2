@@ -1,9 +1,5 @@
-.portfolio-container {
-    margin-top: 240px;
-    width: 100%;
-    height: 1000px;
-    text-align: center;
-  flex-direction: column;
-  align-items: center;
-    display: flex;
+  .phone-container {
+    top:calc((100vh - 700px)/2);
+    position: sticky;
+    align-self: flex-start;
   }
