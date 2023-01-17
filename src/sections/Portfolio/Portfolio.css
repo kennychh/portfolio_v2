@@ -1,5 +1,5 @@
   .phone-container {
-    top:calc((100vh - 700px)/2);
+    top:calc((100vh - 600px)/2);
     position: sticky;
     display: flex;
     align-items: flex-start;

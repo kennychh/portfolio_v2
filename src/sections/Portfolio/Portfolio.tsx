@@ -4,6 +4,7 @@ import { Grid } from "@mui/material";
 import { SearchForm, Button } from "../../components";
 import useWindowDimensions from "../../utils.js";
 import { AnimationOnScroll } from "react-animation-on-scroll/dist/js/components";
+import { width } from "@mui/system";
 
 const Portfolio: React.FC = () => {
   const { height, width } = useWindowDimensions();
@@ -11,16 +12,34 @@ const Portfolio: React.FC = () => {
   const [squeeze, setSqueeze] = useState(true);
 
   return (
-    <div style={styles.portfolioContainer} className='portfolio-container'>
-      <AnimationOnScroll animateIn="animate__fadeInUp">
-        <h1 style={styles.h1}>Some things I've built</h1>
-      </AnimationOnScroll>
-      <div className="phone-container" style={styles.container}>
-        <AnimationOnScroll animateIn="animate__fadeInLeft">
-        <img src={require("../../assets/Silver.png")} style={styles.phone} />
-      </AnimationOnScroll>
+    <div style={styles.portfolioContainer} className="portfolio-container">
+      <div style={styles.container}>
+        <AnimationOnScroll animateIn="animate__fadeInUp">
+          <h1 style={styles.h1}>Some things I've built</h1>
+        </AnimationOnScroll>
+        <div className="phone-container" style={styles.phoneContainer}>
+          <AnimationOnScroll animateIn="animate__fadeInLeft">
+            <img
+              src={require("../../assets/flight_app.gif")}
+              style={styles.phone}
+            />
+          </AnimationOnScroll>
+        </div>
+        <AnimationOnScroll animateIn="animate__fadeIn" animateOut="animate_fadeOut" style={styles.flightP}>
+          <p style={styles.p}>
+            Our smart tools make your max refund a sure thing. Easily find every
+            deduction and optimize your return. Find a better refund and we’ll
+            give you back what you paid to file (up to $50).
+          </p>
+        </AnimationOnScroll>
+        <AnimationOnScroll animateIn="animate__fadeIn" animateOut="animate_fadeOut" style={styles.flightP}>
+          <p style={styles.p}>
+            Our smart tools make your max refund a sure thing. Easily find every
+            deduction and optimize your return. Find a better refund and we’ll
+            give you back what you paid to file (up to $50).
+          </p>
+        </AnimationOnScroll>
       </div>
-      <div style={{ height: 1000 }} />
     </div>
   );
 };
@@ -30,17 +49,26 @@ const styles = {
     textAlign: "center",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: 'center',
-    paddingTop: '240px',
+    justifyContent: "center",
+    paddingTop: "240px",
   },
-  container: {
-    padding: "0px 30px 0px 30px",
-    maxWidth: "1440px",
+  phoneContainer: {
     width: "100%",
     margin: "0 auto",
   },
+  container: {
+    maxWidth: "1216px",
+    textAlign: "center",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    margin: "0 auto",
+  },
   phone: {
-    maxWidth: "400px",
+    maxHeight: "600px",
+    borderRadius: "32px",
+    marginLeft: "30px",
+    marginBottom: '192px'
   },
   ctaButton: {
     backgroundColor: "var(--on-background)",
@@ -71,9 +99,13 @@ const styles = {
     fontWeight: "400",
     fontSize: "22px",
     maxWidth: "560px",
+    textAlign: "start",
     color: "var(--text-primary)",
-    paddingBottom: "48px",
-    zIndex: 1,
+    margin: "auto",
+    float: "right",
+  },
+  flightP: {
+    height: '100vh'
   },
   h1: {
     fontWeight: 500,
@@ -81,7 +113,7 @@ const styles = {
     fontSize: "72px",
     lineHeight: "80px",
     color: "var(--text-primary)",
-    paddingBottom: "32px",
+    paddingBottom: "192px",
     margin: 0,
     zIndex: 0,
   },
