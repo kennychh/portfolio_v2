@@ -5,6 +5,7 @@ import { SearchForm, Button } from "../../components";
 import useWindowDimensions from "../../utils.js";
 import { AnimationOnScroll } from "react-animation-on-scroll/dist/js/components";
 import { width } from "@mui/system";
+import GithubLogo from "../../assets/icons/github.svg";
 
 function useIsVisible(ref: any) {
   const [isIntersecting, setIntersecting] = useState(false);
@@ -51,10 +52,13 @@ const Portfolio: React.FC = () => {
           <img
             className="phone"
             src={require("../../assets/flight_app.gif")}
-            style={{...styles.phone, ...{
-              opacity: isWeatherVisible ? "0" : "1",
-              transition: "opacity 0.5s ease-in-out",
-            },}}
+            style={{
+              ...styles.phone,
+              ...{
+                opacity: isWeatherVisible ? "0" : "1",
+                transition: "opacity 0.5s ease-in-out",
+              },
+            }}
           />
           <div
             style={{
@@ -66,7 +70,7 @@ const Portfolio: React.FC = () => {
             }}
           >
             <img
-            className="phone"
+              className="phone"
               src={require("../../assets/weather_app.png")}
               style={styles.phone}
             />
@@ -75,7 +79,7 @@ const Portfolio: React.FC = () => {
         <AnimationOnScroll
           animateIn="animate__fadeIn"
           animateOut="animate_fadeOut"
-          style={{...styles.flightP, ...{marginTop: '-700px'}}}
+          style={{ ...styles.flightP, ...{ marginTop: "-700px" } }}
         >
           <div ref={flightRef}>
             <h3 style={styles.h3}>Personal Project</h3>
@@ -85,7 +89,9 @@ const Portfolio: React.FC = () => {
             A mobile app implemented using Expo and utilized FlightLabs REST
             API. Allows users to search for the best flights search with prices.
           </p>
-          <img src={require("../../assets/icons/github.svg")} />
+          <div className="link-button" style={styles.iconContainer}>
+            <img src={GithubLogo} style={styles.icon} />
+          </div>
         </AnimationOnScroll>
         <div ref={weatherRef}>
           <AnimationOnScroll
@@ -99,8 +105,11 @@ const Portfolio: React.FC = () => {
             </div>
             <p style={styles.p}>
               A React Native mobile app using OpenWeather's Weather API . Shows
-              users the current temperate and weather information for the day.
+              users the current temperature and weather information for the day.
             </p>
+            <div className="link-button" style={styles.iconContainer}>
+            <img src={GithubLogo} style={styles.icon} />
+          </div>
           </AnimationOnScroll>
         </div>
       </div>
@@ -109,6 +118,20 @@ const Portfolio: React.FC = () => {
 };
 
 const styles = {
+  icon: {
+    width: "24px",
+  },
+  iconContainer: {
+    width: '48px',
+    height: '48px',
+    alignItems: "center",
+    justifyContent: "center",
+    display: 'flex',
+    borderRadius: '50%',
+    marginLeft: 'auto',
+    marginTop: '16px'
+
+  },
   portfolioContainer: {
     textAlign: "center",
     flexDirection: "column",
@@ -181,7 +204,7 @@ const styles = {
     flexDirection: "column",
     maxWidth: "560px",
     marginLeft: "auto",
-    marginRight: '30px'
+    marginRight: "30px",
   },
   h1: {
     fontWeight: 500,

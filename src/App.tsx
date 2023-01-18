@@ -100,7 +100,7 @@ const App: React.FC = () => {
   return (
     <div className="app" data-theme={theme}>
       <NavigationBar backgroundColor={navBarColor} />
-      <Home theme={theme} />
+      <Home theme={'light'} />
       <div ref={portfolioRef}>
       <Portfolio />
       </div>
