@@ -104,7 +104,7 @@ const Portfolio: React.FC = () => {
               <h2 style={styles.h2}>Weather App</h2>
             </div>
             <p style={styles.p}>
-              A React Native mobile app using OpenWeather's Weather API . Shows
+              A Flutter mobile app using OpenWeather's Weather API . Shows
               users the current temperature and weather information for the day.
             </p>
             <div className="link-button" style={styles.iconContainer}>

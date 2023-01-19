@@ -16,14 +16,12 @@
   }
 
   .link-button {
-    border: 2px solid #e3e1e6;
-    background-color: transparent;
+    background-color: #F2F2F2;
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 
 .link-button:hover {
-  border: 2px solid #efedf1;
-  background-color: #efedf1;
+  background-color: #E5E5E5;
 }
