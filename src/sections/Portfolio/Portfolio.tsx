@@ -1,7 +1,7 @@
 import "./Portfolio.css";
 import React, { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
-import { SearchForm, Button } from "../../components";
+import { SearchForm, Button, SectionTitle } from "../../components";
 import useWindowDimensions from "../../utils.js";
 import { AnimationOnScroll } from "react-animation-on-scroll/dist/js/components";
 import { width } from "@mui/system";
@@ -42,9 +42,7 @@ const Portfolio: React.FC = () => {
   return (
     <div style={styles.portfolioContainer} className="portfolio-container">
       <div style={styles.container}>
-        <AnimationOnScroll animateIn="animate__fadeInUp">
-          <h1 style={styles.h1}>Some things I've built</h1>
-        </AnimationOnScroll>
+        <SectionTitle title={"Some things I built"}/>
         <AnimationOnScroll
           style={styles.phoneContainer}
           animateIn="animate__fadeInLeft"
@@ -217,11 +215,10 @@ const styles = {
   h2: {
     fontWeight: 600,
     fontSize: "52px",
-    lineHeight: "60px",
     color: "var(--text-primary)",
     textAlign: "start",
     marginTop: 0,
-    paddingBottom: "32px",
+    marginBottom: '32px'
   },
   h3: {
     fontWeight: 500,

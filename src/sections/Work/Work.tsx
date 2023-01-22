@@ -1,7 +1,7 @@
 import "./Work.css";
 import React, { useEffect, useState } from "react";
 import { Grid } from "@mui/material";
-import { SearchForm, Button } from "../../components";
+import { SearchForm, Button, SectionTitle } from "../../components";
 import useWindowDimensions from "../../utils.js";
 import { AnimationOnScroll } from "react-animation-on-scroll/dist/js/components";
 import { width } from "@mui/system";
@@ -25,13 +25,48 @@ function useIsVisible(ref: any) {
 }
 
 const Work: React.FC = () => {
-
   return (
-    <div style={styles.portfolioContainer} className="portfolio-container">
+    <div style={styles.sectionContainer} className="work-container">
       <div style={styles.container}>
-        <AnimationOnScroll animateIn="animate__fadeInUp">
-          <h1 style={styles.h1}>Work Experience</h1>
-        </AnimationOnScroll>
+        <SectionTitle title={"Work experience"} />
+        <div style={{ display: "flex", flexDirection: "row" }}>
+        <div style={styles.imageContainer}>
+          <img
+            src={require("../../assets/hellofresh_logo.png")}
+            style={styles.image}
+          />
+        </div>
+        <div style={styles.paragraph}>
+        <h2 style={styles.h2}>HelloFresh</h2>
+          <h3 style={styles.h3}>Junior Software Developer</h3>
+          <h4 style={styles.h4}>May 2021 - August 2022</h4>
+          <p style={styles.p}>
+            <ul style={{paddingInlineStart: '20px', marginBlockStart: '0px'}}>
+              <li>
+                Built and maintained front end features for the React Native
+                application. Developed new screens and components for this
+                feature
+              </li>
+              <li>
+                Worked with the design team to ensure that the website was
+                visually appealing and user-friendly
+              </li>
+              <li>
+                Provided tech support and solutions. Over the work term, various
+                bugs were fixed for the app
+              </li>
+              <li>
+                Released and maintained applications to both Google Play Store
+                and Apple App Store
+              </li>
+              <li>
+                Collaborated with the back-end development team to ensure
+                seamless integration of the front-end and back-end systems
+              </li>
+            </ul>
+          </p>
+        </div>
+      </div>
       </div>
     </div>
   );
@@ -42,22 +77,35 @@ const styles = {
     width: "24px",
   },
   iconContainer: {
-    width: '48px',
-    height: '48px',
+    width: "48px",
+    height: "48px",
     alignItems: "center",
     justifyContent: "center",
-    display: 'flex',
-    borderRadius: '50%',
-    marginLeft: 'auto',
-    marginTop: '16px'
-
+    display: "flex",
+    borderRadius: "50%",
+    marginTop: "16px",
   },
-  portfolioContainer: {
+  sectionContainer: {
     textAlign: "center",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     paddingTop: "240px",
+    margin: "auto",
+    minHeight: "100vh",
+  },
+  imageContainer: {
+    width: "428px",
+    height: "428px",
+    backgroundColor: "#E4EFEB",
+    alignItems: "center",
+    justifyContent: "center",
+    display: "flex",
+    borderRadius: "50%",
+    marginLeft: "30px",
+  },
+  image: {
+    maxWidth: "300px",
   },
   phoneContainer: {
     top: "calc((100vh - 600px)/2)",
@@ -79,6 +127,7 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     margin: "0 auto",
+    paddingBottom: '192px'
   },
   phone: {
     maxHeight: "600px",
@@ -113,13 +162,12 @@ const styles = {
   p: {
     fontFamily: "Poppins",
     fontWeight: "400",
-    fontSize: "22px",
+    fontSize: "18px",
     textAlign: "start",
     color: "var(--text-primary)",
     float: "right",
   },
-  flightP: {
-    height: "100vh",
+  paragraph: {
     display: "flex",
     flexDirection: "column",
     maxWidth: "560px",
@@ -141,7 +189,7 @@ const styles = {
     color: "var(--text-primary)",
     textAlign: "start",
     marginTop: 0,
-    paddingBottom: "32px",
+    marginBottom: '32px'
   },
   h3: {
     fontWeight: 500,
@@ -150,6 +198,14 @@ const styles = {
     color: "var(--text-primary)",
     textAlign: "start",
     margin: 0,
+  },
+  h4: {
+    fontWeight: 500,
+    fontSize: "18px",
+    color: "var(--text-primary)",
+    textAlign: "start",
+    marginTop: 0,
+    marginBottom: '32px'
   },
   homeLowerSection: {
     height: "800px",

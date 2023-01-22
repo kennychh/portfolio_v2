@@ -45,8 +45,11 @@ const App: React.FC = () => {
 
   const [homeSqueeze, setHomeSqueeze] = useState(true);
   const [portfolioSqueeze, setPortfolioSqueeze] = useState(true);
+  const [workSqueeze, setWorkSqueeze] = useState(true);
   const portfolioRef = React.createRef<HTMLInputElement>();
   const isPortfolioVisible = useIsVisible(portfolioRef);
+  const workRef = React.createRef<HTMLInputElement>();
+  const isWorkVisible = useIsVisible(workRef);
   const xRef = React.createRef<HTMLInputElement>();
   const isXVisible = useIsVisible(xRef);
   const homeContainerElement = document.querySelector<HTMLElement>(
@@ -54,6 +57,10 @@ const App: React.FC = () => {
   )!;
   const portfolioContainerElement = document.querySelector<HTMLElement>(
     ".portfolio-container"
+  )!;
+
+  const workContainerElement = document.querySelector<HTMLElement>(
+    ".work-container"
   )!;
 
   useEffect(() => {
@@ -69,14 +76,26 @@ const App: React.FC = () => {
   }, [isPortfolioVisible]);
 
   useEffect(() => {
-    if (isXVisible && portfolioSqueeze) {
+    if (isWorkVisible && portfolioSqueeze) {
       portfolioContainerElement.style.animation =
         "container-squeeze 1 0.5s ease-in-out forwards";
       setPortfolioSqueeze(false);
-    } else if (!isXVisible && !portfolioSqueeze) {
+    } else if (!isWorkVisible && !portfolioSqueeze) {
       portfolioContainerElement.style.animation =
         "container-unsqueeze 1 0.5s ease-in-out forwards";
       setPortfolioSqueeze(true);
+    }
+  }, [isWorkVisible]);
+
+  useEffect(() => {
+    if (isXVisible && workSqueeze) {
+      workContainerElement.style.animation =
+        "container-squeeze 1 0.5s ease-in-out forwards";
+      setWorkSqueeze(false);
+    } else if (!isXVisible && !workSqueeze) {
+      workContainerElement.style.animation =
+        "container-unsqueeze 1 0.5s ease-in-out forwards";
+      setWorkSqueeze(true);
     }
   }, [isXVisible]);
 
@@ -104,9 +123,10 @@ const App: React.FC = () => {
       <div ref={portfolioRef}>
         <Portfolio />
       </div>
-      <div ref={xRef}>
+      <div ref={workRef}>
         <Work />
       </div>
+      <div style={{ height: "100vh" }} ref={xRef}/>
     </div>
   );
 };
