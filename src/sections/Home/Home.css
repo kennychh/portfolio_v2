@@ -45,7 +45,6 @@
   padding-bottom: 200px;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  font-family: "Euclid", "Arial", sans-serif;
   transition: opacity 0.1s;
 }
 

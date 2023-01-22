@@ -7,6 +7,7 @@ import pinkCirlce from "./assets/pink_circle.png";
 import background from "./assets/Slide 16_9 - 1.png";
 import Home from "./sections/Home/Home";
 import Portfolio from "./sections/Portfolio/Portfolio";
+import Work from "./sections/Work/Work";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import "animate.css/animate.min.css";
 
@@ -55,7 +56,7 @@ const App: React.FC = () => {
     ".portfolio-container"
   )!;
 
-  useEffect(()=> {
+  useEffect(() => {
     if (isPortfolioVisible && homeSqueeze) {
       homeContainerElement.style.animation =
         "container-squeeze 1 0.5s ease-in-out forwards";
@@ -65,20 +66,19 @@ const App: React.FC = () => {
         "container-unsqueeze 1 0.5s ease-in-out forwards";
       setHomeSqueeze(true);
     }
-  }, [isPortfolioVisible])
-  
-  useEffect(()=> {
-    if (isXVisible && portfolioSqueeze){
+  }, [isPortfolioVisible]);
+
+  useEffect(() => {
+    if (isXVisible && portfolioSqueeze) {
       portfolioContainerElement.style.animation =
         "container-squeeze 1 0.5s ease-in-out forwards";
       setPortfolioSqueeze(false);
-    }
-    else if (!isXVisible && !portfolioSqueeze){
+    } else if (!isXVisible && !portfolioSqueeze) {
       portfolioContainerElement.style.animation =
         "container-unsqueeze 1 0.5s ease-in-out forwards";
       setPortfolioSqueeze(true);
     }
-  }, [isXVisible])
+  }, [isXVisible]);
 
   window.addEventListener("scroll", () => {
     const currentScroll = window.pageYOffset;
@@ -98,13 +98,15 @@ const App: React.FC = () => {
     // @ts-ignore: Object is possibly 'null'.
   });
   return (
-    <div className="app" data-theme={'light'}>
+    <div className="app">
       <NavigationBar backgroundColor={navBarColor} />
-      <Home theme={'light'} />
+      <Home theme={"light"} />
       <div ref={portfolioRef}>
-      <Portfolio />
+        <Portfolio />
       </div>
-      <div style={{ height: 1000 }} ref={xRef} />
+      <div ref={xRef}>
+        <Work />
+      </div>
     </div>
   );
 };

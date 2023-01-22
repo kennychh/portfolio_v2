@@ -1,0 +1,27 @@
+  .phone-container {
+    top:calc((100vh - 600px)/2);
+    position: sticky;
+    display: flex;
+    align-items: flex-start;
+  }
+  .portfolio-container {
+  width: 100%;
+  margin: auto;
+  }
+
+  .phone {
+    box-shadow: 1px 15px 40px 5px rgba(0,0,0,0.075);
+  -webkit-box-shadow: 1px 15px 40px 5px rgba(0,0,0,0.075);
+  -moz-box-shadow: 1px 15px 40px 5px rgba(0,0,0,0.075);
+  }
+
+  .link-button {
+    background-color: #F2F2F2;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.link-button:hover {
+  background-color: #E5E5E5;
+}
