@@ -98,7 +98,7 @@ const App: React.FC = () => {
     // @ts-ignore: Object is possibly 'null'.
   });
   return (
-    <div className="app" data-theme={theme}>
+    <div className="app" data-theme={'light'}>
       <NavigationBar backgroundColor={navBarColor} />
       <Home theme={'light'} />
       <div ref={portfolioRef}>
