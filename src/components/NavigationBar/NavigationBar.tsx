@@ -80,7 +80,7 @@ const styles = {
         transition:' all 0.2s ease-in'
     }),
     navigationBarItems: {
-        padding: '0px 30px 0px 30px',
+        padding: '0px 32px 0px 32px',
         maxWidth: '1440px',
         width: '100%',
         margin: '0 auto',

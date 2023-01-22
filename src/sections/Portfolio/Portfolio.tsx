@@ -43,6 +43,7 @@ const Portfolio: React.FC = () => {
     <div style={styles.portfolioContainer} className="portfolio-container">
       <div style={styles.container}>
         <SectionTitle title={"Some things I built"}/>
+        <div style={styles.rowContainer}>
         <AnimationOnScroll
           style={styles.phoneContainer}
           animateIn="animate__fadeInLeft"
@@ -74,10 +75,11 @@ const Portfolio: React.FC = () => {
             />
           </div>
         </AnimationOnScroll>
+        <div style={{gridColumn: '8 / span 5',}}>
         <AnimationOnScroll
           animateIn="animate__fadeIn"
           animateOut="animate_fadeOut"
-          style={{ ...styles.flightP, ...{ marginTop: "-700px" } }}
+          style={{ ...styles.flightP }}
         >
           <div ref={flightRef}>
             <h3 style={styles.h3}>Personal Project</h3>
@@ -110,6 +112,8 @@ const Portfolio: React.FC = () => {
           </div>
           </AnimationOnScroll>
         </div>
+        </div>
+        </div>
       </div>
     </div>
   );
@@ -118,6 +122,16 @@ const Portfolio: React.FC = () => {
 const styles = {
   icon: {
     width: "24px",
+  },
+  rowContainer: {
+    display: "grid",
+    maxWidth: "100%",
+    gridTemplateColumns: "repeat(12, minmax(0px, 1fr))",
+    gridAutoFlow: "row",
+    height: "auto",
+    gridAutoRows: "minmax(5px, auto)",
+    gap: "3.2rem 0px",
+    columnGap: "32px",
   },
   iconContainer: {
     width: '48px',
@@ -138,10 +152,12 @@ const styles = {
     paddingTop: "240px",
   },
   phoneContainer: {
+    gridColumn: '2 / span 5',
     top: "calc((100vh - 600px)/2)",
     position: "sticky",
     display: "flex",
     alignItems: "flex-start",
+    alignSelf: 'start'
   },
   phoneContainer2: {
     width: "100%",
@@ -151,18 +167,17 @@ const styles = {
     alignItems: "flex-start",
   },
   container: {
-    maxWidth: "1216px",
+    maxWidth: "1280px",
     textAlign: "center",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     margin: "0 auto",
+    padding: '0 32px 192px 32px',
   },
   phone: {
     maxHeight: "600px",
     borderRadius: "32px",
-    marginLeft: "30px",
-    marginBottom: "192px",
   },
   ctaButton: {
     backgroundColor: "var(--on-background)",
@@ -202,7 +217,6 @@ const styles = {
     flexDirection: "column",
     maxWidth: "560px",
     marginLeft: "auto",
-    marginRight: "30px",
   },
   h1: {
     fontWeight: 500,

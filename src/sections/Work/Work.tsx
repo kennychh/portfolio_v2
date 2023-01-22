@@ -29,44 +29,51 @@ const Work: React.FC = () => {
     <div style={styles.sectionContainer} className="work-container">
       <div style={styles.container}>
         <SectionTitle title={"Work experience"} />
-        <div style={{ display: "flex", flexDirection: "row" }}>
-        <div style={styles.imageContainer}>
-          <img
-            src={require("../../assets/hellofresh_logo.png")}
-            style={styles.image}
-          />
+        <div style={styles.rowContainer}>
+          <div style={styles.imageContainer}>
+            <img
+              src={require("../../assets/hellofresh_logo.png")}
+              style={styles.image}
+            />
+          </div>
+          <div style={{gridColumn: '8 / span 5'}}>
+            <div style={styles.paragraph}>
+              <h2 style={styles.h2}>HelloFresh</h2>
+              <h3 style={styles.h3}>Junior Software Developer</h3>
+              <h4 style={styles.h4}>May 2021 - August 2022</h4>
+              <p style={styles.p}>
+                <ul
+                  style={{
+                    paddingInlineStart: "20px",
+                    marginBlockStart: "0px",
+                  }}
+                >
+                  <li>
+                    Built and maintained front end features for the React Native
+                    application. Developed new screens and components for this
+                    feature
+                  </li>
+                  <li>
+                    Worked with the design team to ensure that the website was
+                    visually appealing and user-friendly
+                  </li>
+                  <li>
+                    Provided tech support and solutions. Over the work term,
+                    various bugs were fixed for the app
+                  </li>
+                  <li>
+                    Released and maintained applications to both Google Play
+                    Store and Apple App Store
+                  </li>
+                  <li>
+                    Collaborated with the back-end development team to ensure
+                    seamless integration of the front-end and back-end systems
+                  </li>
+                </ul>
+              </p>
+            </div>
+          </div>
         </div>
-        <div style={styles.paragraph}>
-        <h2 style={styles.h2}>HelloFresh</h2>
-          <h3 style={styles.h3}>Junior Software Developer</h3>
-          <h4 style={styles.h4}>May 2021 - August 2022</h4>
-          <p style={styles.p}>
-            <ul style={{paddingInlineStart: '20px', marginBlockStart: '0px'}}>
-              <li>
-                Built and maintained front end features for the React Native
-                application. Developed new screens and components for this
-                feature
-              </li>
-              <li>
-                Worked with the design team to ensure that the website was
-                visually appealing and user-friendly
-              </li>
-              <li>
-                Provided tech support and solutions. Over the work term, various
-                bugs were fixed for the app
-              </li>
-              <li>
-                Released and maintained applications to both Google Play Store
-                and Apple App Store
-              </li>
-              <li>
-                Collaborated with the back-end development team to ensure
-                seamless integration of the front-end and back-end systems
-              </li>
-            </ul>
-          </p>
-        </div>
-      </div>
       </div>
     </div>
   );
@@ -75,6 +82,16 @@ const Work: React.FC = () => {
 const styles = {
   icon: {
     width: "24px",
+  },
+  rowContainer: {
+    display: "grid",
+    maxWidth: "100%",
+    gridTemplateColumns: "repeat(12, minmax(0px, 1fr))",
+    gridAutoFlow: "row",
+    height: "auto",
+    gridAutoRows: "minmax(5px, auto)",
+    gap: "3.2rem 0px",
+    columnGap: "32px",
   },
   iconContainer: {
     width: "48px",
@@ -95,17 +112,20 @@ const styles = {
     minHeight: "100vh",
   },
   imageContainer: {
-    width: "428px",
-    height: "428px",
+    gridRowEnd: 'span 1',
+    gridColumnEnd: 'span 5',
+    aspectRatio: '1/1',
     backgroundColor: "#E4EFEB",
     alignItems: "center",
     justifyContent: "center",
     display: "flex",
     borderRadius: "50%",
-    marginLeft: "30px",
+    minWidth: '300px'
   },
   image: {
-    maxWidth: "300px",
+    maxWidth: "100%",
+    minWidth: '0px',
+    margin: '0 20%'
   },
   phoneContainer: {
     top: "calc((100vh - 600px)/2)",
@@ -121,13 +141,13 @@ const styles = {
     alignItems: "flex-start",
   },
   container: {
-    maxWidth: "1216px",
+    maxWidth: "1280px",
     textAlign: "center",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     margin: "0 auto",
-    paddingBottom: '192px'
+    padding: '0 32px 192px 32px',
   },
   phone: {
     maxHeight: "600px",
@@ -172,7 +192,6 @@ const styles = {
     flexDirection: "column",
     maxWidth: "560px",
     marginLeft: "auto",
-    marginRight: "30px",
   },
   h1: {
     fontWeight: 500,
@@ -189,7 +208,7 @@ const styles = {
     color: "var(--text-primary)",
     textAlign: "start",
     marginTop: 0,
-    marginBottom: '32px'
+    marginBottom: "32px",
   },
   h3: {
     fontWeight: 500,
@@ -205,7 +224,7 @@ const styles = {
     color: "var(--text-primary)",
     textAlign: "start",
     marginTop: 0,
-    marginBottom: '32px'
+    marginBottom: "32px",
   },
   homeLowerSection: {
     height: "800px",
