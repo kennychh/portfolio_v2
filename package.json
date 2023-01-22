@@ -2,8 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://kennychh.github.io/portfolio_v2",
-  "proxy": "http://localhost:5000",
+  "homepage": ".",
   "dependencies": {
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
