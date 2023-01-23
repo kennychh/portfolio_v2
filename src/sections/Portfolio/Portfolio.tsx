@@ -221,7 +221,7 @@ const styles = {
   },
   h1: {
     fontWeight: 500,
-    letterSpacing: "-4px",
+    letterSpacing: "-2px",
     fontSize: "72px",
     lineHeight: "80px",
     color: "var(--text-primary)",
@@ -230,6 +230,7 @@ const styles = {
   h2: {
     fontWeight: 500,
     fontSize: "52px",
+    letterSpacing: "-2px",
     color: "var(--text-primary)",
     textAlign: "start",
     marginTop: 0,
