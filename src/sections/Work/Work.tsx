@@ -29,14 +29,17 @@ const Work: React.FC = () => {
     <div style={styles.sectionContainer} className="work-container">
       <div style={styles.container}>
         <SectionTitle title={"Work experience"} />
-        <div style={styles.rowContainer}>
+        <AnimationOnScroll
+          style={styles.rowContainer}
+          animateIn="animate__fadeIn"
+        >
           <div style={styles.imageContainer}>
             <img
               src={require("../../assets/hellofresh_logo.png")}
               style={styles.image}
             />
           </div>
-          <div style={{gridColumn: '8 / span 5'}}>
+          <div style={{ gridColumn: "8 / span 5" }}>
             <div style={styles.paragraph}>
               <h2 style={styles.h2}>HelloFresh</h2>
               <h3 style={styles.h3}>Junior Software Developer</h3>
@@ -73,7 +76,7 @@ const Work: React.FC = () => {
               </p>
             </div>
           </div>
-        </div>
+        </AnimationOnScroll>
       </div>
     </div>
   );
@@ -112,20 +115,20 @@ const styles = {
     minHeight: "100vh",
   },
   imageContainer: {
-    gridRowEnd: 'span 1',
-    gridColumnEnd: 'span 5',
-    aspectRatio: '1/1',
+    gridRowEnd: "span 1",
+    gridColumnEnd: "span 5",
+    aspectRatio: "1/1",
     backgroundColor: "#E4EFEB",
     alignItems: "center",
     justifyContent: "center",
     display: "flex",
     borderRadius: "50%",
-    minWidth: '300px'
+    minWidth: "300px",
   },
   image: {
     maxWidth: "100%",
-    minWidth: '0px',
-    margin: '0 20%'
+    minWidth: "0px",
+    margin: "0 20%",
   },
   phoneContainer: {
     top: "calc((100vh - 600px)/2)",
@@ -147,7 +150,7 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     margin: "0 auto",
-    padding: '0 32px 192px 32px',
+    padding: "0 32px 192px 32px",
   },
   phone: {
     maxHeight: "600px",
