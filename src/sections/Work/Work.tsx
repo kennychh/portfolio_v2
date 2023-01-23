@@ -205,7 +205,7 @@ const styles = {
     marginBottom: "192px",
   },
   h2: {
-    fontWeight: 600,
+    fontWeight: 500,
     fontSize: "52px",
     lineHeight: "60px",
     color: "var(--text-primary)",
