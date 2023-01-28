@@ -27,17 +27,8 @@ function useIsVisible(ref: any) {
 const Portfolio: React.FC = () => {
   const flightRef = React.createRef<HTMLInputElement>();
   const isFlightVisible = useIsVisible(flightRef);
-  const [showFlight, setShowFlight] = useState(true);
   const weatherRef = React.createRef<HTMLInputElement>();
   const isWeatherVisible = useIsVisible(weatherRef);
-
-  useEffect(() => {
-    if (isFlightVisible) {
-      setShowFlight(true);
-    } else if (isWeatherVisible) {
-      setShowFlight(false);
-    }
-  }, [isFlightVisible]);
 
   return (
     <div style={styles.portfolioContainer} className="portfolio-container">
@@ -48,22 +39,11 @@ const Portfolio: React.FC = () => {
             style={styles.phoneContainer}
             animateIn="animate__fadeInLeft"
           >
-            <img
-              className="phone"
-              src={require("../../assets/flight_app.gif")}
-              style={{
-                ...styles.phone,
-                ...{
-                  opacity: isWeatherVisible ? "0" : "1",
-                  transition: "opacity 0.5s ease-in-out",
-                },
-              }}
-            />
             <div
               style={{
                 ...styles.phoneContainer2,
                 ...{
-                  opacity: !isWeatherVisible ? "0" : "1",
+                  opacity: isFlightVisible ? "0" : "1",
                   transition: "opacity 0.5s ease-in-out",
                 },
               }}
@@ -74,6 +54,17 @@ const Portfolio: React.FC = () => {
                 style={styles.phone}
               />
             </div>
+            <img
+              className="phone"
+              src={require("../../assets/flight_app.gif")}
+              style={{
+                ...styles.phone,
+                ...{
+                  opacity: !isFlightVisible ? "0" : "1",
+                  transition: "opacity 0.5s ease-in-out",
+                },
+              }}
+            />
           </AnimationOnScroll>
           <div style={{ gridColumn: "8 / span 5"}}>
             <AnimationOnScroll
