@@ -1,28 +1,8 @@
 import "./Work.css";
-import React, { useEffect, useState } from "react";
-import { Grid } from "@mui/material";
-import { SearchForm, Button, SectionTitle } from "../../components";
-import useWindowDimensions from "../../utils.js";
+import React from "react";
+import { SectionTitle } from "../../components";
 import { AnimationOnScroll } from "react-animation-on-scroll/dist/js/components";
-import { width } from "@mui/system";
-import GithubLogo from "../../assets/icons/github.svg";
-
-function useIsVisible(ref: any) {
-  const [isIntersecting, setIntersecting] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) =>
-      setIntersecting(entry.isIntersecting)
-    );
-
-    observer.observe(ref.current);
-    return () => {
-      observer.disconnect();
-    };
-  }, [ref]);
-
-  return isIntersecting;
-}
+import { ArrowRight } from "../../assets/icons/ArrowRight.js";
 
 const Work: React.FC = () => {
   return (
@@ -53,27 +33,29 @@ const Work: React.FC = () => {
                 >
                   <li>
                     Built and maintained front end features for the React Native
-                    application. Developed new screens and components for this
-                    feature
+                    application such as screens and components.
                   </li>
                   <li>
                     Worked with the design team to ensure that the website was
                     visually appealing and user-friendly
                   </li>
                   <li>
-                    Provided tech support and solutions. Over the work term,
-                    various bugs were fixed for the app
+                    Provided unit and integration tests to components.
                   </li>
                   <li>
                     Released and maintained applications to both Google Play
                     Store and Apple App Store
                   </li>
                   <li>
-                    Collaborated with the back-end development team to ensure
-                    seamless integration of the front-end and back-end systems
+                    Collaborated with the back-end development team and UI/UX team to ensure
+                    seamless integration
                   </li>
                 </ul>
               </p>
+            </div>
+            <div style={styles.ctaButton} className={'link-button'}>
+              Read more
+              <ArrowRight style={styles.icon} />
             </div>
           </div>
         </AnimationOnScroll>
@@ -84,7 +66,9 @@ const Work: React.FC = () => {
 
 const styles = {
   icon: {
-    width: "24px",
+    paddingLeft: '4px',
+    justifyContent: 'center',
+    display: 'flex'
   },
   rowContainer: {
     display: "grid",
@@ -95,15 +79,6 @@ const styles = {
     gridAutoRows: "minmax(5px, auto)",
     gap: "3.2rem 0px",
     columnGap: "32px",
-  },
-  iconContainer: {
-    width: "48px",
-    height: "48px",
-    alignItems: "center",
-    justifyContent: "center",
-    display: "flex",
-    borderRadius: "50%",
-    marginTop: "16px",
   },
   sectionContainer: {
     textAlign: "center",
@@ -130,19 +105,6 @@ const styles = {
     minWidth: "0px",
     margin: "0 20%",
   },
-  phoneContainer: {
-    top: "calc((100vh - 600px)/2)",
-    position: "sticky",
-    display: "flex",
-    alignItems: "flex-start",
-  },
-  phoneContainer2: {
-    width: "100%",
-    top: 0,
-    position: "absolute",
-    display: "flex",
-    alignItems: "flex-start",
-  },
   container: {
     maxWidth: "1280px",
     textAlign: "center",
@@ -152,35 +114,19 @@ const styles = {
     margin: "0 auto",
     padding: "0 32px 192px 32px",
   },
-  phone: {
-    maxHeight: "600px",
-    borderRadius: "32px",
-    marginLeft: "30px",
-    marginBottom: "192px",
-  },
   ctaButton: {
-    backgroundColor: "var(--on-background)",
-    color: "var(--background)",
     fontSize: 16,
     fontWeight: 500,
     fontFamily: "Poppins",
-    padding: "12.5px 26px",
-    borderRadius: "16px",
+    padding: "16px 32px",
+    borderRadius: "32px",
     borderWidth: "0px",
     cursor: "pointer",
-    zIndex: 1,
-  },
-  secondaryButton: {
-    backgroundColor: "var(--container-primary)",
-    color: "var(--on-container-primary)",
-    fontSize: 16,
-    fontWeight: 500,
-    fontFamily: "Poppins",
-    padding: "12.5px 26px",
-    borderRadius: "16px",
-    borderWidth: "0px",
-    cursor: "pointer",
-    marginLeft: "16px",
+    float: "right",
+    display: "flex",
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: '32px'
   },
   p: {
     fontFamily: "Poppins",
@@ -189,20 +135,13 @@ const styles = {
     textAlign: "start",
     color: "var(--text-primary)",
     float: "right",
+    marginBottom: '0px'
   },
   paragraph: {
     display: "flex",
     flexDirection: "column",
     maxWidth: "560px",
     marginLeft: "auto",
-  },
-  h1: {
-    fontWeight: 500,
-    letterSpacing: "-4px",
-    fontSize: "72px",
-    lineHeight: "80px",
-    color: "var(--text-primary)",
-    marginBottom: "192px",
   },
   h2: {
     fontWeight: 500,
@@ -229,12 +168,6 @@ const styles = {
     textAlign: "start",
     marginTop: 0,
     marginBottom: "32px",
-  },
-  homeLowerSection: {
-    height: "800px",
-    alignItems: "center",
-    display: "flex",
-    justifyContent: "center",
   },
 };
 

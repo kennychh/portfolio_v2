@@ -8,6 +8,7 @@ import background from "./assets/Slide 16_9 - 1.png";
 import Home from "./sections/Home/Home";
 import Portfolio from "./sections/Portfolio/Portfolio";
 import Work from "./sections/Work/Work";
+import Contact from "./sections/Contact/Contact"
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import "animate.css/animate.min.css";
 
@@ -64,38 +65,38 @@ const App: React.FC = () => {
   )!;
 
   useEffect(() => {
-    if (isPortfolioVisible && homeSqueeze) {
+    if (isWorkVisible && homeSqueeze) {
       homeContainerElement.style.animation =
         "container-squeeze 1 0.5s ease-in-out forwards";
       setHomeSqueeze(false);
-    } else if (!isPortfolioVisible && !homeSqueeze) {
+    } else if (!isWorkVisible && !homeSqueeze) {
       homeContainerElement.style.animation =
         "container-unsqueeze 1 0.5s ease-in-out forwards";
       setHomeSqueeze(true);
     }
-  }, [isPortfolioVisible]);
-
-  useEffect(() => {
-    if (isWorkVisible && portfolioSqueeze) {
-      portfolioContainerElement.style.animation =
-        "container-squeeze 1 0.5s ease-in-out forwards";
-      setPortfolioSqueeze(false);
-    } else if (!isWorkVisible && !portfolioSqueeze) {
-      portfolioContainerElement.style.animation =
-        "container-unsqueeze 1 0.5s ease-in-out forwards";
-      setPortfolioSqueeze(true);
-    }
   }, [isWorkVisible]);
 
   useEffect(() => {
-    if (isXVisible && workSqueeze) {
+    if (isPortfolioVisible && workSqueeze) {
       workContainerElement.style.animation =
         "container-squeeze 1 0.5s ease-in-out forwards";
-      setWorkSqueeze(false);
-    } else if (!isXVisible && !workSqueeze) {
+        setWorkSqueeze(false);
+    } else if (!isPortfolioVisible && !workSqueeze) {
       workContainerElement.style.animation =
         "container-unsqueeze 1 0.5s ease-in-out forwards";
-      setWorkSqueeze(true);
+        setWorkSqueeze(true);
+    }
+  }, [isPortfolioVisible]);
+
+  useEffect(() => {
+    if (isXVisible && portfolioSqueeze) {
+      portfolioContainerElement.style.animation =
+        "container-squeeze 1 0.5s ease-in-out forwards";
+      setPortfolioSqueeze(false);
+    } else if (!isXVisible && !portfolioSqueeze) {
+      portfolioContainerElement.style.animation =
+        "container-unsqueeze 1 0.5s ease-in-out forwards";
+        setPortfolioSqueeze(true);
     }
   }, [isXVisible]);
 
@@ -120,13 +121,15 @@ const App: React.FC = () => {
     <div className="app">
       <NavigationBar backgroundColor={navBarColor} />
       <Home theme={"light"} />
-      <div ref={portfolioRef}>
-        <Portfolio />
-      </div>
       <div ref={workRef}>
         <Work />
       </div>
-      <div style={{ height: "100vh" }} ref={xRef}/>
+      <div ref={portfolioRef}>
+        <Portfolio />
+      </div>
+      <div ref={xRef}>
+        <Contact/>
+      </div>
     </div>
   );
 };

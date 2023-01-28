@@ -15,7 +15,7 @@
   -moz-box-shadow: 1px 15px 40px 5px rgba(0,0,0,0.075);
   }
 
-  .link-button {
+.link-button {
     background-color: #F2F2F2;
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;

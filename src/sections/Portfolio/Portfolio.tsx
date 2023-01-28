@@ -94,7 +94,7 @@ const Portfolio: React.FC = () => {
                 <img src={GithubLogo} style={styles.icon} />
               </div>
             </AnimationOnScroll>
-            <div ref={weatherRef}>
+            <div>
               <AnimationOnScroll
                 animateIn="animate__fadeIn"
                 animateOut="animate_fadeOut"
@@ -104,7 +104,7 @@ const Portfolio: React.FC = () => {
                   <h3 style={styles.h3}>Personal Project</h3>
                   <h2 style={styles.h2}>Weather App</h2>
                 </div>
-                <p style={styles.p}>
+                <p style={styles.p} ref={weatherRef}>
                   A Flutter mobile app using OpenWeather's Weather API . Shows
                   users the current temperature and weather information for the
                   day.
@@ -124,6 +124,7 @@ const Portfolio: React.FC = () => {
 const styles = {
   icon: {
     width: "24px",
+    padding: '12px',
   },
   rowContainer: {
     display: "grid",
@@ -136,8 +137,6 @@ const styles = {
     columnGap: "32px",
   },
   iconContainer: {
-    width: "48px",
-    height: "48px",
     alignItems: "center",
     justifyContent: "center",
     display: "flex",
@@ -151,6 +150,7 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     paddingTop: "240px",
+    margin: "auto",
   },
   phoneContainer: {
     gridColumn: "2 / span 5",

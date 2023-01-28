@@ -76,7 +76,7 @@
   border-bottom-right-radius: 0px;
   }
   100% {
-    width: 96%;
+    width: calc(100% - 64px);
     border-bottom-left-radius: 56px;
   border-bottom-right-radius: 56px;
   box-shadow: 1px 15px 40px 5px rgba(0,0,0,0.075);
@@ -87,7 +87,7 @@
 
 @keyframes container-unsqueeze {
   0% {
-    width: 96%;
+    width: calc(100% - 64px);
     border-bottom-left-radius: 56px;
   border-bottom-right-radius: 56px;
   box-shadow: 1px 15px 40px 5px rgba(0,0,0,0.075);
