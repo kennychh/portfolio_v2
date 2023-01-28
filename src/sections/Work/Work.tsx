@@ -33,27 +33,25 @@ const Work: React.FC = () => {
                 >
                   <li>
                     Built and maintained front end features for the React Native
-                    application such as screens and components.
+                    application such as screens and components
                   </li>
                   <li>
-                    Worked with the design team to ensure that the website was
-                    visually appealing and user-friendly
+                    Worked with the design team to ensure user-friendliness and
+                    visual appeal of mobile application
                   </li>
-                  <li>
-                    Provided unit and integration tests to components.
-                  </li>
+                  <li>Provided unit and integration tests to components</li>
                   <li>
                     Released and maintained applications to both Google Play
                     Store and Apple App Store
                   </li>
                   <li>
-                    Collaborated with the back-end development team and UI/UX team to ensure
-                    seamless integration
+                    Collaborated with the back-end development team to ensure
+                    seamless integration of the front-end and back-end systems
                   </li>
                 </ul>
               </p>
             </div>
-            <div style={styles.ctaButton} className={'link-button'}>
+            <div style={styles.ctaButton} className={"link-button"}>
               Read more
               <ArrowRight style={styles.icon} />
             </div>
@@ -66,9 +64,9 @@ const Work: React.FC = () => {
 
 const styles = {
   icon: {
-    paddingLeft: '4px',
-    justifyContent: 'center',
-    display: 'flex'
+    paddingLeft: "4px",
+    justifyContent: "center",
+    display: "flex",
   },
   rowContainer: {
     display: "grid",
@@ -124,9 +122,9 @@ const styles = {
     cursor: "pointer",
     float: "right",
     display: "flex",
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: '32px'
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: "32px",
   },
   p: {
     fontFamily: "Poppins",
@@ -135,7 +133,7 @@ const styles = {
     textAlign: "start",
     color: "var(--text-primary)",
     float: "right",
-    marginBottom: '0px'
+    marginBottom: "0px",
   },
   paragraph: {
     display: "flex",
