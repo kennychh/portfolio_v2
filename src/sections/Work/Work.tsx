@@ -7,23 +7,18 @@ import { ArrowRight } from "../../assets/icons/ArrowRight.js";
 const Work: React.FC = () => {
   return (
     <div style={styles.sectionContainer} className="work-container">
+              <SectionTitle title={"Work experience"} />
+      <div style={{margin: '0px 32px 0px 32px'}}>
       <div style={styles.container}>
-        <SectionTitle title={"Work experience"} />
         <AnimationOnScroll
           style={styles.rowContainer}
           animateIn="animate__fadeIn"
         >
-          <div style={styles.imageContainer}>
-            <img
-              src={require("../../assets/hellofresh_logo.png")}
-              style={styles.image}
-            />
-          </div>
-          <div style={{ gridColumn: "8 / span 5" }}>
+          <div style={{ gridColumnEnd: "span 6", gridRowEnd: "span 1",}}>
             <div style={styles.paragraph}>
               <h2 style={styles.h2}>HelloFresh</h2>
               <h3 style={styles.h3}>Junior Software Developer</h3>
-              <h4 style={styles.h4}>May 2021 - August 2022</h4>
+              <h4 style={styles.h4}>(16 months) May 2021 - August 2022 </h4>
               <p style={styles.p}>
                 <ul
                   style={{
@@ -32,8 +27,8 @@ const Work: React.FC = () => {
                   }}
                 >
                   <li>
-                    Built and maintained front end features for the React Native
-                    application such as screens and components
+                    Built and maintained front-end features for React Native
+                    application
                   </li>
                   <li>
                     Worked with the design team to ensure user-friendliness and
@@ -41,22 +36,25 @@ const Work: React.FC = () => {
                   </li>
                   <li>Provided unit and integration tests to components</li>
                   <li>
-                    Released and maintained applications to both Google Play
-                    Store and Apple App Store
-                  </li>
-                  <li>
                     Collaborated with the back-end development team to ensure
-                    seamless integration of the front-end and back-end systems
+                    seamless integration between systems
                   </li>
                 </ul>
               </p>
             </div>
-            <div style={styles.ctaButton} className={"link-button"}>
+            <div style={styles.ctaButton} className={"cta-button"}>
               Read more
               <ArrowRight style={styles.icon} />
             </div>
           </div>
+          <div style={styles.imageContainer}>
+            <img
+              src={require("../../assets/hellofresh_logo.png")}
+              style={styles.image}
+            />
+          </div>
         </AnimationOnScroll>
+      </div>
       </div>
     </div>
   );
@@ -77,6 +75,7 @@ const styles = {
     gridAutoRows: "minmax(5px, auto)",
     gap: "3.2rem 0px",
     columnGap: "32px",
+    margin: '64px'
   },
   sectionContainer: {
     textAlign: "center",
@@ -86,31 +85,32 @@ const styles = {
     paddingTop: "240px",
     margin: "auto",
     minHeight: "100vh",
+    paddingBottom: '192px',
   },
   imageContainer: {
-    gridRowEnd: "span 1",
-    gridColumnEnd: "span 5",
+    gridColumn: "8 / span 5",
     aspectRatio: "1/1",
-    backgroundColor: "#E4EFEB",
     alignItems: "center",
     justifyContent: "center",
+    alignSelf: 'center',
     display: "flex",
-    borderRadius: "50%",
     minWidth: "300px",
+    maxWidth: '400px'
   },
   image: {
     maxWidth: "100%",
     minWidth: "0px",
-    margin: "0 20%",
   },
   container: {
-    maxWidth: "1280px",
+    maxWidth: "1216px",
     textAlign: "center",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
     margin: "0 auto",
-    padding: "0 32px 192px 32px",
+    display: 'flex',
+    backgroundColor: "#E4EFEB",
+    borderRadius: '56px'
   },
   ctaButton: {
     fontSize: 16,
@@ -120,11 +120,12 @@ const styles = {
     borderRadius: "32px",
     borderWidth: "0px",
     cursor: "pointer",
-    float: "right",
+    float: "left",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     marginTop: "32px",
+    backgroundColor: 'white'
   },
   p: {
     fontFamily: "Poppins",
@@ -160,12 +161,12 @@ const styles = {
     margin: 0,
   },
   h4: {
-    fontWeight: 500,
+    fontWeight: 400,
     fontSize: "18px",
     color: "var(--text-primary)",
     textAlign: "start",
     marginTop: 0,
-    marginBottom: "32px",
+    marginBottom: "16px",
   },
 };
 

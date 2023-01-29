@@ -134,6 +134,7 @@ const styles = {
     borderRadius: "50%",
     marginLeft: "auto",
     marginTop: "16px",
+    cursor: "pointer",
   },
   portfolioContainer: {
     textAlign: "center",
