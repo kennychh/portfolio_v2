@@ -10,7 +10,7 @@ import Portfolio from "./sections/Portfolio/Portfolio";
 import Work from "./sections/Work/Work";
 import Contact from "./sections/Contact/Contact";
 import { AnimationOnScroll } from "react-animation-on-scroll";
-import { PHONE_WIDTH } from "../../my-app/src/constants.js";
+import { TABLET_WIDTH } from "../../my-app/src/constants.js";
 import "animate.css/animate.min.css";
 
 const { innerWidth: width } = window;
@@ -135,7 +135,6 @@ const App: React.FC = () => {
   return (
     <div
       className="app"
-      style={width >= PHONE_WIDTH ? {} : { overflow: "hidden" }}
     >
       <NavigationBar backgroundColor={navBarColor} />
       <Home theme={"light"} />

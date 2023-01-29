@@ -50,9 +50,10 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 const styles = {
   homeContainer: {
     marginTop: '-80px',
-    marginLeft: "32px",
-    marginRight: "32px",
-    paddingBottom: '192px'
+    paddingLeft: "32px",
+    paddingRight: "32px",
+    paddingBottom: '192px',
+    overflow: 'hidden'
   },
   more: {
     position: "absolute",
