@@ -4,7 +4,7 @@ import { SectionTitle } from "../../components";
 import { AnimationOnScroll } from "react-animation-on-scroll/dist/js/components";
 import { ArrowRight } from "../../assets/icons/ArrowRight.js";
 import useWindowDimensions from "../../utils.js";
-import { TABLET_WIDTH } from "../../constants.js";
+import { TABLET_WIDTH, PHONE_WIDTH } from "../../constants.js";
 
 const Work: React.FC = () => {
   const { height, width } = useWindowDimensions();
@@ -16,8 +16,24 @@ const Work: React.FC = () => {
           : { ...styles.paragraph, alignItems: "center" }
       }
     >
-      <h2 style={styles.h2}>HelloFresh</h2>
-      <h3 style={styles.h3}>Junior Software Developer</h3>
+      <h2
+        style={
+          width >= TABLET_WIDTH
+            ? styles.h2
+            : width >= PHONE_WIDTH
+            ? { ...styles.h2, fontSize: "42px" }
+            : { ...styles.h2, fontSize: "42px", textAlign: "center" }
+        }
+      >
+        HelloFresh
+      </h2>
+      <h3
+        style={
+          width >= PHONE_WIDTH ? styles.h3 : { ...styles.h3, fontSize: "18px" }
+        }
+      >
+        Junior Software Developer
+      </h3>
       <h4 style={styles.h4}>May 2021 - August 2022 </h4>
       <p
         style={
@@ -93,11 +109,26 @@ const Work: React.FC = () => {
         ) : (
           <div style={styles.container}>
             <AnimationOnScroll
-              style={styles.rowContainer}
+              style={
+                width >= PHONE_WIDTH
+                  ? styles.rowContainer
+                  : { ...styles.rowContainer, margin: "32px" }
+              }
               animateIn="animate__fadeIn"
             >
               <div>
-                <div style={styles.imageContainer}>{logo}</div>
+                <div
+                  style={
+                    width >= PHONE_WIDTH
+                      ? { ...styles.imageContainer, aspectRatio: "1/1" }
+                      : {
+                          ...styles.imageContainer,
+                          margin: "32px 32px 32px 32px",
+                        }
+                  }
+                >
+                  {logo}
+                </div>
                 {paragraph}
                 {button}
               </div>
@@ -130,13 +161,11 @@ const styles = {
     margin: "auto",
   },
   imageContainer: {
-    aspectRatio: "1/1",
     alignItems: "center",
     justifyContent: "center",
     alignSelf: "center",
     margin: "auto",
     display: "flex",
-    minWidth: "300px",
     maxWidth: "400px",
   },
   image: {

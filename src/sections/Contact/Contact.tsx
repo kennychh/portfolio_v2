@@ -27,12 +27,12 @@ const Contact: React.FC = () => {
           style={
             width >= TABLET_WIDTH
               ? styles.h2
-              : { ...styles.h2, fontSize: "48px" }
+              : { ...styles.h2, fontSize: "42px" }
           }
         >
           Thanks for stopping by!
         </h2>
-        <h4 style={styles.h4}>Feel free to reach out or to say hello!😊</h4>
+        <h4 style={styles.h4}>Feel free to reach out or to say hello!</h4>
         <h4 style={styles.h4}>hoiyat0210@gmail.com</h4>
         <div style={styles.socials}>
           <div className="link-button" style={styles.iconContainer}>

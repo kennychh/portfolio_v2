@@ -69,8 +69,8 @@ const Portfolio: React.FC = () => {
             width >= TABLET_WIDTH
               ? styles.h2
               : width >= PHONE_WIDTH
-              ? { ...styles.h2, fontSize: "48px" }
-              : { ...styles.h2, fontSize: "48px", textAlign: "center" }
+              ? { ...styles.h2, fontSize: "42px" }
+              : { ...styles.h2, fontSize: "42px", textAlign: "center" }
           }
         >
           {name}

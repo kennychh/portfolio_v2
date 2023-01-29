@@ -17,21 +17,16 @@ type HomeProps = {
 };
 const Home: React.FC<HomeProps> = ({ theme }) => {
   const { height, width } = useWindowDimensions();
-  var navBarHeight = "-80px";
 
   return (
     <div className="home-container">
       <div
         className="Home"
-        style={{
-          marginTop: navBarHeight,
-          paddingLeft: "32px",
-          paddingRight: "32px",
-        }}
+        style={width >= TABLET_WIDTH ? styles.homeContainer : {...styles.homeContainer, paddingBottom: '160px'}}
       >
         <img src={background} className="cirlce-image" />
         <h1
-          style={width >= TABLET_WIDTH ? styles.h1 : { ...styles.h1, fontSize: "64px" }}
+          style={width >= TABLET_WIDTH ? styles.h1 : { ...styles.h1, fontSize: "56px" }}
         >
           Building elegant digital experiences
         </h1>
@@ -43,16 +38,22 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           {" "}
           Connect with me{" "}
         </button>
-        <div style={styles.more}>
+        {/* <div style={styles.more}>
           <img src={Star} alt="Star" style={styles.star} />
           <p style={styles.moreText}>Scroll for more</p>
-        </div>
+        </div> */}
       </div>
     </div>
   );
 };
 
 const styles = {
+  homeContainer: {
+    marginTop: '-80px',
+    marginLeft: "32px",
+    marginRight: "32px",
+    paddingBottom: '192px'
+  },
   more: {
     position: "absolute",
     bottom: 0,
