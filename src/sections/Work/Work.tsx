@@ -22,7 +22,7 @@ const Work: React.FC = () => {
             ? styles.h2
             : width >= PHONE_WIDTH
             ? { ...styles.h2, fontSize: "42px" }
-            : { ...styles.h2, fontSize: "42px", textAlign: "center" }
+            : { ...styles.h2, fontSize: "42px", textAlign: "center", marginBottom: "16px" }
         }
       >
         HelloFresh
