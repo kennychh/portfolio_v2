@@ -3,58 +3,107 @@ import React from "react";
 import { SectionTitle } from "../../components";
 import { AnimationOnScroll } from "react-animation-on-scroll/dist/js/components";
 import { ArrowRight } from "../../assets/icons/ArrowRight.js";
+import useWindowDimensions from "../../utils.js";
+import { TABLET_WIDTH } from "../../constants.js";
 
 const Work: React.FC = () => {
+  const { height, width } = useWindowDimensions();
+  const paragraph = (
+    <div
+      style={
+        width >= TABLET_WIDTH
+          ? styles.paragraph
+          : { ...styles.paragraph, alignItems: "center" }
+      }
+    >
+      <h2 style={styles.h2}>HelloFresh</h2>
+      <h3 style={styles.h3}>Junior Software Developer</h3>
+      <h4 style={styles.h4}>May 2021 - August 2022 </h4>
+      <p
+        style={
+          width >= TABLET_WIDTH
+            ? styles.p
+            : { ...styles.p, fontSize: "18px", textAlign: "center" }
+        }
+      >
+        Built and maintained front-end features for multi-brand application
+        using React Native.
+      </p>
+    </div>
+  );
+  const logo = (
+    <img
+      src={require("../../assets/hellofresh_logo.png")}
+      style={styles.image}
+    />
+  );
+  const button = (
+    <div
+      style={
+        width >= TABLET_WIDTH
+          ? styles.ctaButton
+          : { ...styles.ctaButton, margin: "32px auto 0px auto" }
+      }
+      className={"cta-button"}
+    >
+      Read more
+      <ArrowRight style={styles.icon} stroke={"white"} />
+    </div>
+  );
   return (
-    <div style={styles.sectionContainer} className="work-container">
-              <SectionTitle title={"Work experience"} />
-      <div style={{margin: '0px 32px 0px 32px'}}>
-      <div style={styles.container}>
-        <AnimationOnScroll
-          style={styles.rowContainer}
-          animateIn="animate__fadeIn"
-        >
-          <div style={{ gridColumnEnd: "span 6", gridRowEnd: "span 1",}}>
-            <div style={styles.paragraph}>
-              <h2 style={styles.h2}>HelloFresh</h2>
-              <h3 style={styles.h3}>Junior Software Developer</h3>
-              <h4 style={styles.h4}>(16 months) May 2021 - August 2022 </h4>
-              <p style={styles.p}>
-                <ul
-                  style={{
-                    paddingInlineStart: "20px",
-                    marginBlockStart: "0px",
-                  }}
-                >
-                  <li>
-                    Built and maintained front-end features for React Native
-                    application
-                  </li>
-                  <li>
-                    Worked with the design team to ensure user-friendliness and
-                    visual appeal of mobile application
-                  </li>
-                  <li>Provided unit and integration tests to components</li>
-                  <li>
-                    Collaborated with the back-end development team to ensure
-                    seamless integration between systems
-                  </li>
-                </ul>
-              </p>
-            </div>
-            <div style={styles.ctaButton} className={"cta-button"}>
-              Read more
-              <ArrowRight style={styles.icon} stroke={'white'}/>
-            </div>
+    <div
+      style={
+        width >= TABLET_WIDTH
+          ? styles.sectionContainer
+          : {
+              ...styles.sectionContainer,
+              paddingBottom: "160px",
+              paddingTop: "160px",
+            }
+      }
+      className="work-container"
+    >
+      <div style={{ padding: "0 32px 0px 32px" }}>
+        <SectionTitle title={"Work experience"} />
+        {width >= TABLET_WIDTH ? (
+          <div style={styles.container}>
+            <AnimationOnScroll
+              style={{
+                ...styles.rowContainer,
+                gridTemplateColumns: "repeat(12, minmax(0px, 1fr))",
+                display: "grid",
+                gridAutoFlow: "row",
+                gridAutoRows: "minmax(5px, auto)",
+                gap: "3.2rem 0px",
+                columnGap: "32px",
+              }}
+              animateIn="animate__fadeIn"
+            >
+              <div style={{ gridColumnEnd: "span 6", gridRowEnd: "span 1" }}>
+                {paragraph}
+                {button}
+              </div>
+              <div
+                style={{ ...styles.imageContainer, gridColumn: "8 / span 5" }}
+              >
+                {logo}
+              </div>
+            </AnimationOnScroll>
           </div>
-          <div style={styles.imageContainer}>
-            <img
-              src={require("../../assets/hellofresh_logo.png")}
-              style={styles.image}
-            />
+        ) : (
+          <div style={styles.container}>
+            <AnimationOnScroll
+              style={styles.rowContainer}
+              animateIn="animate__fadeIn"
+            >
+              <div>
+                <div style={styles.imageContainer}>{logo}</div>
+                {paragraph}
+                {button}
+              </div>
+            </AnimationOnScroll>
           </div>
-        </AnimationOnScroll>
-      </div>
+        )}
       </div>
     </div>
   );
@@ -67,35 +116,28 @@ const styles = {
     display: "flex",
   },
   rowContainer: {
-    display: "grid",
     maxWidth: "100%",
-    gridTemplateColumns: "repeat(12, minmax(0px, 1fr))",
-    gridAutoFlow: "row",
     height: "auto",
-    gridAutoRows: "minmax(5px, auto)",
-    gap: "3.2rem 0px",
-    columnGap: "32px",
-    margin: '64px'
+    margin: "64px",
   },
   sectionContainer: {
     textAlign: "center",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: "240px",
+    paddingTop: "192px",
+    paddingBottom: "192px",
     margin: "auto",
-    minHeight: "100vh",
-    paddingBottom: '192px',
   },
   imageContainer: {
-    gridColumn: "8 / span 5",
     aspectRatio: "1/1",
     alignItems: "center",
     justifyContent: "center",
-    alignSelf: 'center',
+    alignSelf: "center",
+    margin: "auto",
     display: "flex",
     minWidth: "300px",
-    maxWidth: '400px'
+    maxWidth: "400px",
   },
   image: {
     maxWidth: "100%",
@@ -108,9 +150,9 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     margin: "0 auto",
-    display: 'flex',
+    display: "flex",
     backgroundColor: "#E4EFEB",
-    borderRadius: '56px'
+    borderRadius: "56px",
   },
   ctaButton: {
     fontSize: 16,
@@ -120,13 +162,13 @@ const styles = {
     borderRadius: "32px",
     borderWidth: "0px",
     cursor: "pointer",
-    float: "left",
+    width: "fit-content",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginTop: "32px",
-    backgroundColor: '#056835',
-    color: 'white'
+    margin: "32px 0px 0px 0px",
+    backgroundColor: "#056835",
+    color: "white",
   },
   p: {
     fontFamily: "Poppins",
@@ -136,6 +178,7 @@ const styles = {
     color: "var(--text-primary)",
     float: "right",
     marginBottom: "0px",
+    marginTop: "32px",
   },
   paragraph: {
     display: "flex",
@@ -167,7 +210,7 @@ const styles = {
     color: "var(--text-primary)",
     textAlign: "start",
     marginTop: 0,
-    marginBottom: "16px",
+    marginBottom: "0px",
   },
 };
 

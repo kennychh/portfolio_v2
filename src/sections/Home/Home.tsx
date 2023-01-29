@@ -11,7 +11,7 @@ import Star from "../../assets/star.svg";
 import background from "../../assets/Slide 16_9 - 1.png";
 import useWindowDimensions from "../../utils.js";
 import { AnimationOnScroll } from "react-animation-on-scroll/dist/js/components";
-
+import { TABLET_WIDTH } from "../../constants.js";
 type HomeProps = {
   theme: string;
 };
@@ -21,12 +21,23 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 
   return (
     <div className="home-container">
-      <div className="Home" style={{ marginTop: navBarHeight }}>
+      <div
+        className="Home"
+        style={{
+          marginTop: navBarHeight,
+          paddingLeft: "32px",
+          paddingRight: "32px",
+        }}
+      >
         <img src={background} className="cirlce-image" />
-        <h1 style={styles.h1}>Building elegant digital experiences</h1>
-        <p style={styles.p}>
-          Hey there! I'm Kenny, a Front End Developer with a passion for creating
-          beautiful digital applications.
+        <h1
+          style={width >= TABLET_WIDTH ? styles.h1 : { ...styles.h1, fontSize: "64px" }}
+        >
+          Building elegant digital experiences
+        </h1>
+        <p style={width >= TABLET_WIDTH ? styles.p : { ...styles.p, fontSize: "18px" }}>
+          Hey there! I'm Kenny, a Front End Developer with a passion for
+          creating beautiful digital applications.
         </p>
         <button className="cta-button" style={styles.ctaButton}>
           {" "}
@@ -57,8 +68,8 @@ const styles = {
     fontSize: 16,
     fontWeight: 500,
     fontFamily: "Poppins",
-    padding: '16px 32px',
-    borderRadius: '32px',
+    padding: "16px 32px",
+    borderRadius: "32px",
     borderWidth: "0px",
     cursor: "pointer",
     zIndex: 1,
@@ -69,8 +80,8 @@ const styles = {
     fontSize: 16,
     fontWeight: 500,
     fontFamily: "Poppins",
-    padding: '16px 32px',
-    borderRadius: '32px',
+    padding: "16px 32px",
+    borderRadius: "32px",
     borderWidth: "0px",
     cursor: "pointer",
     marginLeft: "16px",

@@ -5,15 +5,33 @@ import { AnimationOnScroll } from "react-animation-on-scroll/dist/js/components"
 import { ArrowRight } from "../../assets/icons/ArrowRight.js";
 import GithubLogo from "../../assets/icons/github.svg";
 import { InstagramLogo, LinkedinLogo } from "../../assets/icons";
+import useWindowDimensions from "../../utils.js";
+import { TABLET_WIDTH } from "../../constants.js";
 
 const Contact: React.FC = () => {
+  const { height, width } = useWindowDimensions();
   return (
     <div style={{ padding: "0px 32px 0px 32px" }}>
       <AnimationOnScroll
         animateIn="animate__fadeIn"
-        style={styles.sectionContainer}
+        style={
+          width >= TABLET_WIDTH
+            ? styles.sectionContainer
+            : {
+                ...styles.sectionContainer,
+                paddingTop: "160px",
+              }
+        }
       >
-        <h2 style={styles.h2}>Thanks for stopping by!</h2>
+        <h2
+          style={
+            width >= TABLET_WIDTH
+              ? styles.h2
+              : { ...styles.h2, fontSize: "48px" }
+          }
+        >
+          Thanks for stopping by!
+        </h2>
         <h4 style={styles.h4}>Feel free to reach out or to say hello!😊</h4>
         <h4 style={styles.h4}>hoiyat0210@gmail.com</h4>
         <div style={styles.socials}>
@@ -34,7 +52,7 @@ const Contact: React.FC = () => {
 
 const styles = {
   socials: {
-    marginTop: '64px'
+    marginTop: "64px",
   },
   icon: {
     width: "24px",
@@ -72,7 +90,7 @@ const styles = {
     borderRadius: "56px",
     maxWidth: "1376px",
     width: "100%",
-    paddingTop: '192px'
+    paddingTop: "192px",
   },
   imageContainer: {
     gridRowEnd: "span 1",
@@ -147,7 +165,7 @@ const styles = {
     margin: 0,
   },
   h4: {
-    fontWeight: 500,
+    fontWeight: 400,
     fontSize: "18px",
     color: "var(--text-primary)",
     textAlign: "start",

@@ -12,6 +12,8 @@ import Contact from "./sections/Contact/Contact";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import "animate.css/animate.min.css";
 
+const { innerWidth: width } = window;
+
 function useIsVisible(ref: any) {
   const [isIntersecting, setIntersecting] = useState(false);
 
@@ -31,7 +33,6 @@ function useIsVisible(ref: any) {
 
 const App: React.FC = () => {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const { innerWidth: width, innerHeight: height } = window;
   const [theme, setTheme] = useLocalStorage(
     "theme",
     defaultDark ? "dark" : "light"

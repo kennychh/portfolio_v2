@@ -6,6 +6,7 @@ import useWindowDimensions from "../../utils.js";
 import { AnimationOnScroll } from "react-animation-on-scroll/dist/js/components";
 import { width } from "@mui/system";
 import GithubLogo from "../../assets/icons/github.svg";
+import { TABLET_WIDTH, PHONE_WIDTH } from "../../constants.js";
 
 function useIsVisible(ref: any) {
   const [isIntersecting, setIntersecting] = useState(false);
@@ -29,93 +30,178 @@ const Portfolio: React.FC = () => {
   const isFlightVisible = useIsVisible(flightRef);
   const weatherRef = React.createRef<HTMLInputElement>();
   const isWeatherVisible = useIsVisible(weatherRef);
+  const { height, width } = useWindowDimensions();
 
+  const paragraph = ({
+    type = "Personal Project",
+    name = "Flight Search App",
+    description = "A mobile app implemented using Expo and utilized FlightLabs REST API. Allows users to search for the best flights search with prices.",
+    ref = flightRef,
+  }) => (
+    <AnimationOnScroll
+      animateIn="animate__fadeIn"
+      animateOut="animate_fadeOut"
+      style={
+        width >= PHONE_WIDTH
+          ? { ...styles.flightP, height: "100vh" }
+          : styles.flightP
+      }
+    >
+      <div ref={ref}>
+        <h3
+          style={
+            width >= TABLET_WIDTH
+              ? styles.h3
+              : width >= PHONE_WIDTH
+              ? { ...styles.h3, fontSize: "18px" }
+              : {
+                  ...styles.h3,
+                  fontSize: "18px",
+                  textAlign: "center",
+                  marginTop: "64px",
+                }
+          }
+        >
+          {type}
+        </h3>
+        <h2
+          style={
+            width >= TABLET_WIDTH
+              ? styles.h2
+              : width >= PHONE_WIDTH
+              ? { ...styles.h2, fontSize: "48px" }
+              : { ...styles.h2, fontSize: "48px", textAlign: "center" }
+          }
+        >
+          {name}
+        </h2>
+      </div>
+      <p
+        style={
+          width >= TABLET_WIDTH ? styles.p : { ...styles.p, fontSize: "18px" }
+        }
+      >
+        {description}
+      </p>
+      <div
+        className="link-button"
+        style={
+          width >= PHONE_WIDTH
+            ? { ...styles.iconContainer, marginLeft: "auto" }
+            : { ...styles.iconContainer, marginRight: "auto" }
+        }
+      >
+        <img src={GithubLogo} style={styles.icon} />
+      </div>
+    </AnimationOnScroll>
+  );
   return (
-    <div style={styles.portfolioContainer} className="portfolio-container">
+    <div
+      style={
+        width >= TABLET_WIDTH
+          ? styles.sectionContainer
+          : {
+              ...styles.sectionContainer,
+              paddingBottom: "160px",
+              paddingTop: "160px",
+            }
+      }
+      className="portfolio-container"
+    >
       <div style={styles.container}>
         <SectionTitle title={"Some things I built"} />
-        <div style={styles.rowContainer}>
-          <AnimationOnScroll
-            style={styles.phoneContainer}
-            animateIn="animate__fadeInLeft"
-          >
-            <div
-              style={{
-                ...styles.phoneContainer2,
-                ...{
-                  opacity: isFlightVisible ? "0" : "1",
-                  transition: "opacity 0.5s ease-in-out",
-                },
-              }}
+        {width >= PHONE_WIDTH ? (
+          <div style={styles.rowContainer}>
+            <AnimationOnScroll
+              style={styles.phoneContainer}
+              animateIn="animate__fadeInLeft"
             >
+              <div
+                style={{
+                  ...styles.phoneContainer2,
+                  ...{
+                    opacity: isFlightVisible ? "0" : "1",
+                    transition: "opacity 0.5s ease-in-out",
+                  },
+                }}
+              >
+                <img
+                  className="phone"
+                  src={require("../../assets/weather_app.png")}
+                  style={styles.phone}
+                />
+              </div>
               <img
                 className="phone"
-                src={require("../../assets/weather_app.png")}
-                style={styles.phone}
+                src={require("../../assets/flight_app.gif")}
+                style={{
+                  ...styles.phone,
+                  ...{
+                    opacity: !isFlightVisible ? "0" : "1",
+                    transition: "opacity 0.5s ease-in-out",
+                  },
+                }}
               />
+            </AnimationOnScroll>
+            <div style={{ gridColumn: "8 / span 5" }}>
+              {paragraph({})}
+              <div>
+                {paragraph({
+                  name: "Weather App",
+                  description:
+                    "A Flutter mobile app using OpenWeather's Weather API . Shows users the current temperature and weather information for the day.",
+                  ref: weatherRef,
+                })}
+              </div>
             </div>
+          </div>
+        ) : (
+          <div style={styles.phoneWidthContainer}>
             <img
               className="phone"
               src={require("../../assets/flight_app.gif")}
               style={{
                 ...styles.phone,
+                ...{ maxHeight: "400px", borderRadius: "24px" },
+              }}
+            />
+            {paragraph({})}
+            <img
+              className="phone"
+              src={require("../../assets/weather_app.png")}
+              style={{
+                ...styles.phone,
                 ...{
-                  opacity: !isFlightVisible ? "0" : "1",
-                  transition: "opacity 0.5s ease-in-out",
+                  maxHeight: "400px",
+                  borderRadius: "24px",
+                  marginTop: "128px",
                 },
               }}
             />
-          </AnimationOnScroll>
-          <div style={{ gridColumn: "8 / span 5"}}>
-            <AnimationOnScroll
-              animateIn="animate__fadeIn"
-              animateOut="animate_fadeOut"
-              style={{ ...styles.flightP }}
-            >
-              <div ref={flightRef}>
-                <h3 style={styles.h3}>Personal Project</h3>
-                <h2 style={styles.h2}>Flight Search App</h2>
-              </div>
-              <p style={styles.p}>
-                A mobile app implemented using Expo and utilized FlightLabs REST
-                API. Allows users to search for the best flights search with
-                prices.
-              </p>
-              <div className="link-button" style={styles.iconContainer}>
-                <img src={GithubLogo} style={styles.icon} />
-              </div>
-            </AnimationOnScroll>
-            <div>
-              <AnimationOnScroll
-                animateIn="animate__fadeIn"
-                animateOut="animate_fadeOut"
-                style={styles.flightP}
-              >
-                <div>
-                  <h3 style={styles.h3}>Personal Project</h3>
-                  <h2 style={styles.h2}>Weather App</h2>
-                </div>
-                <p style={styles.p} ref={weatherRef}>
-                  A Flutter mobile app using OpenWeather's Weather API . Shows
-                  users the current temperature and weather information for the
-                  day.
-                </p>
-                <div className="link-button" style={styles.iconContainer}>
-                  <img src={GithubLogo} style={styles.icon} />
-                </div>
-              </AnimationOnScroll>
-            </div>
+            {paragraph({
+              name: "Weather App",
+              description:
+                "A Flutter mobile app using OpenWeather's Weather API . Shows users the current temperature and weather information for the day.",
+              ref: weatherRef,
+            })}
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
 };
 
 const styles = {
+  phoneWidthContainer: {
+    textAlign: "center",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    display: "flex",
+  },
   icon: {
     width: "24px",
-    padding: '12px',
+    padding: "12px",
   },
   rowContainer: {
     display: "grid",
@@ -132,16 +218,16 @@ const styles = {
     justifyContent: "center",
     display: "flex",
     borderRadius: "50%",
-    marginLeft: "auto",
     marginTop: "16px",
     cursor: "pointer",
   },
-  portfolioContainer: {
+  sectionContainer: {
     textAlign: "center",
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: "240px",
+    paddingTop: "192px",
+    paddingBottom: "192px",
     margin: "auto",
   },
   phoneContainer: {
@@ -166,7 +252,7 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     margin: "0 auto",
-    padding: "0 32px 192px 32px",
+    padding: "0 32px 0px 32px",
   },
   phone: {
     maxHeight: "600px",
@@ -205,11 +291,9 @@ const styles = {
     float: "right",
   },
   flightP: {
-    height: "100vh",
     display: "flex",
     flexDirection: "column",
     maxWidth: "560px",
-    marginLeft: "auto",
   },
   h1: {
     fontWeight: 500,
