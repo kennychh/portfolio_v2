@@ -160,7 +160,7 @@ const styles = {
     alignItems: "flex-start",
   },
   container: {
-    maxWidth: "1280px",
+    maxWidth: "1216px",
     textAlign: "center",
     flexDirection: "column",
     alignItems: "center",
