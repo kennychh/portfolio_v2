@@ -70,7 +70,12 @@ const Portfolio: React.FC = () => {
               ? styles.h2
               : width >= PHONE_WIDTH
               ? { ...styles.h2, fontSize: "42px" }
-              : { ...styles.h2, fontSize: "42px", textAlign: "center" }
+              : {
+                  ...styles.h2,
+                  fontSize: "32px",
+                  textAlign: "center",
+                  marginBottom: "16px",
+                }
           }
         >
           {name}
@@ -78,7 +83,9 @@ const Portfolio: React.FC = () => {
       </div>
       <p
         style={
-          width >= TABLET_WIDTH ? styles.p : { ...styles.p, fontSize: "18px" }
+          width >= TABLET_WIDTH
+            ? styles.p
+            : { ...styles.p, fontSize: "18px", textAlign: "center" }
         }
       >
         {description}
@@ -88,7 +95,7 @@ const Portfolio: React.FC = () => {
         style={
           width >= PHONE_WIDTH
             ? { ...styles.iconContainer, marginLeft: "auto" }
-            : { ...styles.iconContainer, marginRight: "auto" }
+            : { ...styles.iconContainer, marginLeft: "auto", marginRight: "auto" }
         }
       >
         <img src={GithubLogo} style={styles.icon} />
@@ -315,7 +322,6 @@ const styles = {
   h3: {
     fontWeight: 500,
     fontSize: "22px",
-    lineHeight: "60px",
     color: "var(--text-primary)",
     textAlign: "start",
     margin: 0,

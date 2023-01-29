@@ -22,7 +22,7 @@ const Work: React.FC = () => {
             ? styles.h2
             : width >= PHONE_WIDTH
             ? { ...styles.h2, fontSize: "42px" }
-            : { ...styles.h2, fontSize: "42px", marginBottom: "16px" }
+            : { ...styles.h2, fontSize: "32px", marginBottom: "16px" }
         }
       >
         HelloFresh
@@ -219,7 +219,6 @@ const styles = {
     fontWeight: 500,
     fontSize: "52px",
     letterSpacing: "-2px",
-    lineHeight: "60px",
     color: "var(--text-primary)",
     textAlign: "start",
     marginTop: 0,
@@ -228,7 +227,6 @@ const styles = {
   h3: {
     fontWeight: 500,
     fontSize: "22px",
-    lineHeight: "60px",
     color: "var(--text-primary)",
     textAlign: "start",
     margin: 0,
