@@ -26,7 +26,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
       >
         <img src={background} className="cirlce-image" />
         <h1
-          style={width >= TABLET_WIDTH ? styles.h1 : { ...styles.h1, fontSize: "56px" }}
+          style={width >= TABLET_WIDTH ? styles.h1 : { ...styles.h1, fontSize: "48px" }}
         >
           Building elegant digital experiences
         </h1>
@@ -104,7 +104,7 @@ const styles = {
   },
   h1: {
     fontWeight: 500,
-    letterSpacing: "-4px",
+    letterSpacing: "-2px",
     maxWidth: "900px",
     fontSize: "72px",
     lineHeight: "80px",

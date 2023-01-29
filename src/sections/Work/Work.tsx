@@ -13,7 +13,7 @@ const Work: React.FC = () => {
       style={
         width >= TABLET_WIDTH
           ? styles.paragraph
-          : { ...styles.paragraph, alignItems: "center" }
+          : { ...styles.paragraph,  }
       }
     >
       <h2
@@ -22,7 +22,7 @@ const Work: React.FC = () => {
             ? styles.h2
             : width >= PHONE_WIDTH
             ? { ...styles.h2, fontSize: "42px" }
-            : { ...styles.h2, fontSize: "42px", textAlign: "center", marginBottom: "16px" }
+            : { ...styles.h2, fontSize: "42px", marginBottom: "16px" }
         }
       >
         HelloFresh
@@ -39,7 +39,7 @@ const Work: React.FC = () => {
         style={
           width >= TABLET_WIDTH
             ? styles.p
-            : { ...styles.p, fontSize: "18px", textAlign: "center" }
+            : { ...styles.p, fontSize: "18px", }
         }
       >
         Built and maintained front-end features for multi-brand application
@@ -58,7 +58,7 @@ const Work: React.FC = () => {
       style={
         width >= TABLET_WIDTH
           ? styles.ctaButton
-          : { ...styles.ctaButton, margin: "32px auto 0px auto" }
+          : { ...styles.ctaButton, margin: "64px auto 0px auto" }
       }
       className={"cta-button"}
     >
@@ -195,7 +195,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    margin: "32px 0px 0px 0px",
+    margin: "64px 0px 0px 0px",
     backgroundColor: "#056835",
     color: "white",
   },

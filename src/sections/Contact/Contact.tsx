@@ -27,7 +27,7 @@ const Contact: React.FC = () => {
           style={
             width >= TABLET_WIDTH
               ? styles.h2
-              : { ...styles.h2, fontSize: "42px" }
+              : { ...styles.h2, fontSize: "48px" }
           }
         >
           Thanks for stopping by!

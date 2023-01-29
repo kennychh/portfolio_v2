@@ -9,13 +9,19 @@ type SectionTitleProps = {
 };
 export const SectionTitle: React.FC<SectionTitleProps> = ({
   title = "Some things I've built",
-  style={}
+  style = {},
 }) => {
   const { width } = useWindowDimensions();
   return (
     <AnimationOnScroll animateIn="animate__fadeInUp" style={style}>
       <h1
-        style={width >= TABLET_WIDTH ? styles.h1 : width >= PHONE_WIDTH ? { ...styles.h1, fontSize: "56px", marginBottom: '160px' } : { ...styles.h1, fontSize: "42px", marginBottom: '160px' }}
+        style={
+          width >= TABLET_WIDTH
+            ? styles.h1
+            : width >= PHONE_WIDTH
+            ? { ...styles.h1, fontSize: "56px", marginBottom: "160px" }
+            : { ...styles.h1, fontSize: "48px", marginBottom: "160px" }
+        }
       >
         {title}
       </h1>
@@ -26,7 +32,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
 const styles = {
   h1: {
     fontWeight: 500,
-    letterSpacing: "-4px",
+    letterSpacing: "-2px",
     fontSize: "72px",
     lineHeight: "80px",
     color: "var(--text-primary)",

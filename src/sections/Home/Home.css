@@ -45,6 +45,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   transition: opacity 0.1s;
+  position: relative
 }
 
 .home-container {
@@ -132,10 +133,6 @@
   position: absolute;
   z-index: 0;
   opacity: 0.8;
-  left: 50%;
-top: 50%;
-transform: translate(-50%, -45%);
-
 }
 
 .email-textfield {

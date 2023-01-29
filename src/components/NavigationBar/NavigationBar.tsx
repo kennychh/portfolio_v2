@@ -4,7 +4,7 @@ import { FormControl, Grid } from "@mui/material";
 import { maxWidth } from "@mui/system";
 import zIndex from "@mui/material/styles/zIndex";
 import useWindowDimensions from "../../utils.js";
-import { TABLET_WIDTH } from "../../constants.js";
+import { TABLET_WIDTH, PHONE_WIDTH } from "../../constants.js";
 import { Menu } from "../../assets/icons/Menu.js";
 
 type NavigationBarProps = {
@@ -16,7 +16,13 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
 }) => {
   const { height, width } = useWindowDimensions();
   return (
-    <div style={styles.navigationBar(backgroundColor)}>
+    <div
+      style={
+        width >= PHONE_WIDTH
+          ? styles.navigationBar(backgroundColor)
+          : { ...styles.navigationBar(backgroundColor), height: "56px" }
+      }
+    >
       <Grid
         container
         direction="row"
@@ -24,7 +30,13 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
         alignItems="center"
         style={styles.navigationBarItems}
       >
-        <p style={styles.title}>Kenny Chan</p>
+        <p
+          style={
+            width >= PHONE_WIDTH ? styles.title : { ...styles.title, margin: 0 }
+          }
+        >
+          Kenny Chan
+        </p>
         {width >= TABLET_WIDTH ? (
           <div>
             <ul style={styles.sectionLinkContainer}>

@@ -10,6 +10,7 @@ import Portfolio from "./sections/Portfolio/Portfolio";
 import Work from "./sections/Work/Work";
 import Contact from "./sections/Contact/Contact";
 import { AnimationOnScroll } from "react-animation-on-scroll";
+import { PHONE_WIDTH } from "../../my-app/src/constants.js";
 import "animate.css/animate.min.css";
 
 const { innerWidth: width } = window;
@@ -66,7 +67,6 @@ const App: React.FC = () => {
     ".work-container"
   )!;
 
-  console.log(width);
   useEffect(() => {
     if (isWorkVisible && homeSqueeze) {
       homeContainerElement.style.animation =
@@ -133,7 +133,10 @@ const App: React.FC = () => {
     // @ts-ignore: Object is possibly 'null'.
   });
   return (
-    <div className="app">
+    <div
+      className="app"
+      style={width >= PHONE_WIDTH ? {} : { overflow: "hidden" }}
+    >
       <NavigationBar backgroundColor={navBarColor} />
       <Home theme={"light"} />
       <div ref={workRef}>
