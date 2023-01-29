@@ -44,7 +44,7 @@ const Work: React.FC = () => {
             </div>
             <div style={styles.ctaButton} className={"cta-button"}>
               Read more
-              <ArrowRight style={styles.icon} />
+              <ArrowRight style={styles.icon} stroke={'white'}/>
             </div>
           </div>
           <div style={styles.imageContainer}>
@@ -125,7 +125,8 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     marginTop: "32px",
-    backgroundColor: 'white'
+    backgroundColor: '#056835',
+    color: 'white'
   },
   p: {
     fontFamily: "Poppins",
