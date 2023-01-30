@@ -149,7 +149,7 @@ const styles = {
   },
   h2: {
     fontWeight: 500,
-    fontSize: "52px",
+    fontSize: "48px",
     letterSpacing: "-2px",
     lineHeight: "60px",
     color: "var(--text-primary)",

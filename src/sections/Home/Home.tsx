@@ -116,7 +116,7 @@ const styles = {
   h2: {
     fontWeight: 600,
     maxWidth: "900px",
-    fontSize: "52px",
+    fontSize: "48px",
     lineHeight: "60px",
     color: "var(--text-primary)",
     paddingBottom: "24px",

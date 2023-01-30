@@ -12,31 +12,39 @@ const Work: React.FC = () => {
     <div
       style={width >= TABLET_WIDTH ? styles.paragraph : { ...styles.paragraph }}
     >
+      <h4
+        style={
+          width >= PHONE_WIDTH ? styles.h4 : { ...styles.h4, marginTop: "32px", textAlign: 'start' }
+        }
+      >
+        May 2021 - August 2022{" "}
+      </h4>
       <h2
         style={
           width >= TABLET_WIDTH
             ? styles.h2
             : width >= PHONE_WIDTH
             ? { ...styles.h2, fontSize: "42px" }
-            : { ...styles.h2, fontSize: "32px", marginBottom: "16px" }
+            : { ...styles.h2, fontSize: "36px", marginBottom: "16px", textAlign: 'start' }
         }
       >
         HelloFresh
       </h2>
       <h3
         style={
-          width >= PHONE_WIDTH ? styles.h3 : { ...styles.h3, fontSize: "18px" }
+          width >= PHONE_WIDTH ? styles.h3 : { ...styles.h3, fontSize: "18px", textAlign: 'start' }
         }
       >
         Junior Software Developer
       </h3>
-      <h4 style={styles.h4}>May 2021 - August 2022 </h4>
       <p
         style={
-          width >= TABLET_WIDTH ? styles.p : { ...styles.p, fontSize: "18px" }
+          width >= TABLET_WIDTH
+            ? styles.p
+            : { ...styles.p, fontSize: "18px" }
         }
       >
-        Built and maintained front-end features for multi-brand application
+        Built and maintained front-end features for a multi-brand application
         using React Native.
       </p>
     </div>
@@ -84,25 +92,15 @@ const Work: React.FC = () => {
             <AnimationOnScroll
               style={{
                 ...styles.rowContainer,
-                gridTemplateColumns: "repeat(12, minmax(0px, 1fr))",
-                display: "grid",
-                gridAutoFlow: "row",
-                gridAutoRows: "minmax(5px, auto)",
-                gap: "3.2rem 0px",
-                columnGap: "32px",
               }}
               animateIn="animate__fadeIn"
               animateOnce
             >
-              <div style={{ gridColumnEnd: "span 6", gridRowEnd: "span 1" }}>
+              <div>
                 {paragraph}
                 {button}
               </div>
-              <div
-                style={{ ...styles.imageContainer, gridColumn: "8 / span 5" }}
-              >
-                {logo}
-              </div>
+              <div style={{ ...styles.imageContainer }}>{logo}</div>
             </AnimationOnScroll>
           </AnimationOnScroll>
         ) : (
@@ -125,6 +123,8 @@ const Work: React.FC = () => {
               animateOnce
             >
               <div>
+                {paragraph}
+                {button}
                 <div
                   style={
                     width >= PHONE_WIDTH
@@ -137,8 +137,6 @@ const Work: React.FC = () => {
                 >
                   {logo}
                 </div>
-                {paragraph}
-                {button}
               </div>
             </AnimationOnScroll>
           </AnimationOnScroll>
@@ -172,9 +170,9 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     alignSelf: "center",
-    margin: "auto",
     display: "flex",
     maxWidth: "400px",
+    margin: "80px auto 64px auto",
   },
   image: {
     maxWidth: "100%",
@@ -203,7 +201,7 @@ const styles = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    margin: "64px 0px 0px 0px",
+    margin: "64px auto 0px auto",
     backgroundColor: "#056835",
     color: "white",
   },
@@ -220,30 +218,29 @@ const styles = {
   paragraph: {
     display: "flex",
     flexDirection: "column",
-    maxWidth: "560px",
     marginLeft: "auto",
   },
   h2: {
     fontWeight: 500,
-    fontSize: "52px",
+    fontSize: "48px",
     letterSpacing: "-2px",
     color: "var(--text-primary)",
-    textAlign: "start",
-    marginTop: 0,
-    marginBottom: "32px",
+    textAlign: "center",
+    marginTop: "0px",
+    marginBottom: "16px",
   },
   h3: {
     fontWeight: 500,
     fontSize: "22px",
     color: "var(--text-primary)",
-    textAlign: "start",
+    textAlign: "center",
     margin: 0,
   },
   h4: {
     fontWeight: 400,
     fontSize: "18px",
     color: "var(--text-primary)",
-    textAlign: "start",
+    textAlign: "center",
     marginTop: 0,
     marginBottom: "0px",
   },

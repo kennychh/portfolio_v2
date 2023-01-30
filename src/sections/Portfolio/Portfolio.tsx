@@ -73,7 +73,7 @@ const Portfolio: React.FC = () => {
               ? { ...styles.h2, fontSize: "42px" }
               : {
                   ...styles.h2,
-                  fontSize: "32px",
+                  fontSize: "36px",
                   textAlign: "center",
                   marginBottom: "16px",
                 }
@@ -335,7 +335,7 @@ const styles = {
   },
   h2: {
     fontWeight: 500,
-    fontSize: "52px",
+    fontSize: "48px",
     letterSpacing: "-2px",
     color: "var(--text-primary)",
     textAlign: "start",
