@@ -35,7 +35,7 @@ const Work: React.FC = () => {
           width >= PHONE_WIDTH ? styles.h3 : { ...styles.h3, fontSize: "18px", textAlign: 'start' }
         }
       >
-        Junior Software Developer
+        Junior Software Developer Co-Op
       </h3>
       <p
         style={
