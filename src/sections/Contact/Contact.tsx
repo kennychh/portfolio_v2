@@ -33,7 +33,7 @@ const Contact: React.FC = () => {
         >
           Thanks for stopping by!
         </h2>
-        <h4 style={styles.h4}>Feel free to reach out or to say hello!</h4>
+        <h4 style={styles.h4}>Feel free to reach out or say hello!</h4>
         <h4 style={{...styles.h4, marginTop: '16px'}}>hoiyat0210@gmail.com</h4>
         <div style={styles.socials}>
           <div className="link-button" style={styles.iconContainer}>

@@ -10,11 +10,7 @@ const Work: React.FC = () => {
   const { height, width } = useWindowDimensions();
   const paragraph = (
     <div
-      style={
-        width >= TABLET_WIDTH
-          ? styles.paragraph
-          : { ...styles.paragraph,  }
-      }
+      style={width >= TABLET_WIDTH ? styles.paragraph : { ...styles.paragraph }}
     >
       <h2
         style={
@@ -37,9 +33,7 @@ const Work: React.FC = () => {
       <h4 style={styles.h4}>May 2021 - August 2022 </h4>
       <p
         style={
-          width >= TABLET_WIDTH
-            ? styles.p
-            : { ...styles.p, fontSize: "18px", }
+          width >= TABLET_WIDTH ? styles.p : { ...styles.p, fontSize: "18px" }
         }
       >
         Built and maintained front-end features for multi-brand application
@@ -82,7 +76,11 @@ const Work: React.FC = () => {
       <div style={{ padding: "0 32px 0px 32px" }}>
         <SectionTitle title={"Work experience"} />
         {width >= PHONE_WIDTH ? (
-          <div style={styles.container}>
+          <AnimationOnScroll
+            style={styles.container}
+            animateIn="animate__fadeIn"
+            animateOnce
+          >
             <AnimationOnScroll
               style={{
                 ...styles.rowContainer,
@@ -106,9 +104,17 @@ const Work: React.FC = () => {
                 {logo}
               </div>
             </AnimationOnScroll>
-          </div>
+          </AnimationOnScroll>
         ) : (
-          <div style={width >= PHONE_WIDTH ? styles.container : {...styles.container, borderRadius: '32px'}}>
+          <AnimationOnScroll
+            style={
+              width >= PHONE_WIDTH
+                ? styles.container
+                : { ...styles.container, borderRadius: "32px" }
+            }
+            animateIn="animate__fadeIn"
+            animateOnce
+          >
             <AnimationOnScroll
               style={
                 width >= PHONE_WIDTH
@@ -126,7 +132,6 @@ const Work: React.FC = () => {
                       : {
                           ...styles.imageContainer,
                           padding: "32px 32px 32px 32px",
-
                         }
                   }
                 >
@@ -136,7 +141,7 @@ const Work: React.FC = () => {
                 {button}
               </div>
             </AnimationOnScroll>
-          </div>
+          </AnimationOnScroll>
         )}
       </div>
     </div>

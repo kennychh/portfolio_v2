@@ -86,6 +86,8 @@ const Portfolio: React.FC = () => {
         style={
           width >= TABLET_WIDTH
             ? styles.p
+            : width >= PHONE_WIDTH
+            ? { ...styles.p, fontSize: "18px" }
             : { ...styles.p, fontSize: "18px", textAlign: "center" }
         }
       >
@@ -96,7 +98,11 @@ const Portfolio: React.FC = () => {
         style={
           width >= PHONE_WIDTH
             ? { ...styles.iconContainer, marginLeft: "auto" }
-            : { ...styles.iconContainer, marginLeft: "auto", marginRight: "auto" }
+            : {
+                ...styles.iconContainer,
+                marginLeft: "auto",
+                marginRight: "auto",
+              }
         }
       >
         <img src={GithubLogo} style={styles.icon} />
@@ -137,19 +143,34 @@ const Portfolio: React.FC = () => {
                 <img
                   className="phone"
                   src={require("../../assets/weather_app.png")}
-                  style={styles.phone}
+                  style={
+                    width >= TABLET_WIDTH
+                      ? styles.phone
+                      : { ...styles.phone, maxHeight: "500px" }
+                  }
                 />
               </div>
               <img
                 className="phone"
                 src={require("../../assets/flight_app.gif")}
-                style={{
-                  ...styles.phone,
-                  ...{
-                    opacity: !isFlightVisible ? "0" : "1",
-                    transition: "opacity 0.5s ease-in-out",
-                  },
-                }}
+                style={
+                  width >= TABLET_WIDTH
+                    ? {
+                        ...styles.phone,
+                        ...{
+                          opacity: !isFlightVisible ? "0" : "1",
+                          transition: "opacity 0.5s ease-in-out",
+                        },
+                      }
+                    : {
+                        ...styles.phone,
+                        ...{
+                          opacity: !isFlightVisible ? "0" : "1",
+                          transition: "opacity 0.5s ease-in-out",
+                          maxHeight: "500px",
+                        },
+                      }
+                }
               />
             </AnimationOnScroll>
             <div style={{ gridColumn: "8 / span 5" }}>
