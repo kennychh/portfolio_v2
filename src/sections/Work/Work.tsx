@@ -56,7 +56,7 @@ const Work: React.FC = () => {
   const button = (
     <div
       style={
-        width >= TABLET_WIDTH
+        width >= PHONE_WIDTH
           ? styles.ctaButton
           : { ...styles.ctaButton, margin: "64px auto 32px auto" }
       }
@@ -81,7 +81,7 @@ const Work: React.FC = () => {
     >
       <div style={{ padding: "0 32px 0px 32px" }}>
         <SectionTitle title={"Work experience"} />
-        {width >= TABLET_WIDTH ? (
+        {width >= PHONE_WIDTH ? (
           <div style={styles.container}>
             <AnimationOnScroll
               style={{
@@ -125,7 +125,8 @@ const Work: React.FC = () => {
                       ? { ...styles.imageContainer, aspectRatio: "1/1" }
                       : {
                           ...styles.imageContainer,
-                          margin: "32px 32px 32px 32px",
+                          padding: "32px 32px 32px 32px",
+
                         }
                   }
                 >
