@@ -125,7 +125,7 @@ const Work: React.FC = () => {
               <div>
                 {paragraph}
                 {button}
-                <div
+                {/* <div
                   style={
                     width >= PHONE_WIDTH
                       ? { ...styles.imageContainer, aspectRatio: "1/1" }
@@ -136,7 +136,7 @@ const Work: React.FC = () => {
                   }
                 >
                   {logo}
-                </div>
+                </div> */}
               </div>
             </AnimationOnScroll>
           </AnimationOnScroll>
