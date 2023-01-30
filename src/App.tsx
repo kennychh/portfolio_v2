@@ -122,7 +122,7 @@ const App: React.FC = () => {
     } else {
       opacity = 0;
     }
-    if (currentScroll >= 100) {
+    if (currentScroll >= 50) {
       setNavBarColor("var(--background)");
     } else {
       setNavBarColor("");

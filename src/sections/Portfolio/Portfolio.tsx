@@ -41,6 +41,7 @@ const Portfolio: React.FC = () => {
     <AnimationOnScroll
       animateIn="animate__fadeIn"
       animateOut="animate_fadeOut"
+      animateOnce
       style={
         width >= PHONE_WIDTH
           ? { ...styles.flightP, height: "100vh" }
@@ -122,6 +123,7 @@ const Portfolio: React.FC = () => {
             <AnimationOnScroll
               style={styles.phoneContainer}
               animateIn="animate__fadeInLeft"
+              animateOnce
             >
               <div
                 style={{

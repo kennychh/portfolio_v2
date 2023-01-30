@@ -13,7 +13,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
 }) => {
   const { width } = useWindowDimensions();
   return (
-    <AnimationOnScroll animateIn="animate__fadeInUp" style={style}>
+    <AnimationOnScroll animateIn="animate__fadeInUp" animateOnce style={style}>
       <h1
         style={
           width >= TABLET_WIDTH

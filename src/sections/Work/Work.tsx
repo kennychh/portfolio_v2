@@ -58,7 +58,7 @@ const Work: React.FC = () => {
       style={
         width >= TABLET_WIDTH
           ? styles.ctaButton
-          : { ...styles.ctaButton, margin: "64px auto 0px auto" }
+          : { ...styles.ctaButton, margin: "64px auto 32px auto" }
       }
       className={"cta-button"}
     >
@@ -94,6 +94,7 @@ const Work: React.FC = () => {
                 columnGap: "32px",
               }}
               animateIn="animate__fadeIn"
+              animateOnce
             >
               <div style={{ gridColumnEnd: "span 6", gridRowEnd: "span 1" }}>
                 {paragraph}
@@ -107,7 +108,7 @@ const Work: React.FC = () => {
             </AnimationOnScroll>
           </div>
         ) : (
-          <div style={styles.container}>
+          <div style={width >= PHONE_WIDTH ? styles.container : {...styles.container, borderRadius: '32px'}}>
             <AnimationOnScroll
               style={
                 width >= PHONE_WIDTH
@@ -115,6 +116,7 @@ const Work: React.FC = () => {
                   : { ...styles.rowContainer, margin: "32px" }
               }
               animateIn="animate__fadeIn"
+              animateOnce
             >
               <div>
                 <div

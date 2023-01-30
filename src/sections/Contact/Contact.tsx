@@ -14,6 +14,7 @@ const Contact: React.FC = () => {
     <div style={{ padding: "0px 32px 0px 32px" }}>
       <AnimationOnScroll
         animateIn="animate__fadeIn"
+        animateOnce
         style={
           width >= TABLET_WIDTH
             ? styles.sectionContainer
