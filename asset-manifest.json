@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.880979c8.css",
+    "main.css": "/static/css/main.b801e405.css",
     "main.js": "/static/js/main.a26ac51f.js",
     "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
     "static/media/flight_app.gif": "/static/media/flight_app.37a2d9419aac4b8d5db4.gif",
@@ -12,12 +12,12 @@
     "static/media/Euclid Circular A SemiBold.ttf": "/static/media/Euclid Circular A SemiBold.ae11344face2a74d2042.ttf",
     "index.html": "/index.html",
     "static/media/github.svg": "/static/media/github.8d9b21b232cb5feca7a267000fdf86a9.svg",
-    "main.880979c8.css.map": "/static/css/main.880979c8.css.map",
+    "main.b801e405.css.map": "/static/css/main.b801e405.css.map",
     "main.a26ac51f.js.map": "/static/js/main.a26ac51f.js.map",
     "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.880979c8.css",
+    "static/css/main.b801e405.css",
     "static/js/main.a26ac51f.js"
   ]
 }
