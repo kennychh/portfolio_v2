@@ -328,7 +328,6 @@ const styles = {
   h1: {
     fontWeight: 600,
     fontSize: "72px",
-    lineHeight: "80px",
     color: "var(--text-primary)",
     marginBottom: "192px",
   },

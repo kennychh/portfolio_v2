@@ -150,7 +150,6 @@ const styles = {
   h2: {
     fontWeight: 600,
     fontSize: "48px",
-    lineHeight: "60px",
     color: "var(--text-primary)",
     textAlign: "start",
     marginTop: 0,
@@ -159,7 +158,6 @@ const styles = {
   h3: {
     fontWeight: 500,
     fontSize: "22px",
-    lineHeight: "60px",
     color: "var(--text-primary)",
     textAlign: "start",
     margin: 0,
