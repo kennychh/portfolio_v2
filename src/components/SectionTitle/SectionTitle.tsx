@@ -31,8 +31,7 @@ export const SectionTitle: React.FC<SectionTitleProps> = ({
 
 const styles = {
   h1: {
-    fontWeight: 500,
-    letterSpacing: "-2px",
+    fontWeight: 600,
     fontSize: "72px",
     lineHeight: "80px",
     color: "var(--text-primary)",

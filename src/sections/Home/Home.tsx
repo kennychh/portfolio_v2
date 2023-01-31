@@ -104,8 +104,7 @@ const styles = {
     color: "var(--text-primary)",
   },
   h1: {
-    fontWeight: 500,
-    letterSpacing: "-2px",
+    fontWeight: 600,
     maxWidth: "900px",
     fontSize: "72px",
     lineHeight: "80px",

@@ -148,9 +148,8 @@ const styles = {
     marginLeft: "auto",
   },
   h2: {
-    fontWeight: 500,
+    fontWeight: 600,
     fontSize: "48px",
-    letterSpacing: "-2px",
     lineHeight: "60px",
     color: "var(--text-primary)",
     textAlign: "start",

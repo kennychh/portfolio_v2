@@ -221,9 +221,8 @@ const styles = {
     marginLeft: "auto",
   },
   h2: {
-    fontWeight: 500,
+    fontWeight: 600,
     fontSize: "48px",
-    letterSpacing: "-2px",
     color: "var(--text-primary)",
     textAlign: "center",
     marginTop: "0px",
