@@ -22,15 +22,31 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
     <div className="home-container">
       <div
         className="Home"
-        style={width >= TABLET_WIDTH ? styles.homeContainer : {...styles.homeContainer, paddingBottom: '160px'}}
+        style={
+          width >= TABLET_WIDTH
+            ? styles.homeContainer
+            : {
+                ...styles.homeContainer,
+                paddingBottom: "160px",
+                marginTop: "-60px",
+              }
+        }
       >
         <img src={background} className="cirlce-image" />
         <h1
-          style={width >= TABLET_WIDTH ? styles.h1 : { ...styles.h1, fontSize: "48px" }}
+          style={
+            width >= TABLET_WIDTH
+              ? styles.h1
+              : { ...styles.h1, fontSize: "48px" }
+          }
         >
           Building elegant digital experiences
         </h1>
-        <p style={width >= TABLET_WIDTH ? styles.p : { ...styles.p, fontSize: "18px" }}>
+        <p
+          style={
+            width >= TABLET_WIDTH ? styles.p : { ...styles.p, fontSize: "18px" }
+          }
+        >
           Hey there! I'm Kenny, a Front End Developer with a passion for
           creating beautiful digital applications.
         </p>
@@ -49,11 +65,11 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
 
 const styles = {
   homeContainer: {
-    marginTop: '-80px',
+    marginTop: "-80px",
     paddingLeft: "32px",
     paddingRight: "32px",
-    paddingBottom: '192px',
-    overflow: 'hidden'
+    paddingBottom: "192px",
+    overflow: "hidden",
   },
   more: {
     position: "absolute",
@@ -94,8 +110,9 @@ const styles = {
     fontSize: "22px",
     maxWidth: "600px",
     color: "var(--text-primary)",
-    paddingBottom: "48px",
+    paddingBottom: "64px",
     zIndex: 1,
+    margin: 0,
   },
   moreText: {
     fontFamily: "Poppins",
@@ -107,7 +124,6 @@ const styles = {
     fontWeight: 600,
     maxWidth: "900px",
     fontSize: "72px",
-    lineHeight: "80px",
     color: "var(--text-primary)",
     paddingBottom: "32px",
     zIndex: 1,
@@ -116,7 +132,6 @@ const styles = {
     fontWeight: 600,
     maxWidth: "900px",
     fontSize: "48px",
-    lineHeight: "60px",
     color: "var(--text-primary)",
     paddingBottom: "24px",
     margin: 0,
