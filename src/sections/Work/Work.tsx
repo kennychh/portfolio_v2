@@ -172,7 +172,7 @@ const styles = {
     alignSelf: "center",
     display: "flex",
     maxWidth: "400px",
-    margin: "80px auto 64px auto",
+    margin: "64px auto 0px auto",
   },
   image: {
     maxWidth: "100%",
