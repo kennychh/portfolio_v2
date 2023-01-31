@@ -172,7 +172,7 @@ const styles = {
     alignSelf: "center",
     display: "flex",
     maxWidth: "400px",
-    margin: "64px auto 0px auto",
+    margin: "128px auto 0px auto",
   },
   image: {
     maxWidth: "100%",
@@ -241,7 +241,7 @@ const styles = {
     color: "var(--text-primary)",
     textAlign: "center",
     marginTop: 0,
-    marginBottom: "0px",
+    marginBottom: "16px",
   },
 };
 

@@ -288,30 +288,6 @@ const styles = {
     maxHeight: "600px",
     borderRadius: "32px",
   },
-  ctaButton: {
-    backgroundColor: "var(--on-background)",
-    color: "var(--background)",
-    fontSize: 16,
-    fontWeight: 500,
-    fontFamily: "Poppins",
-    padding: "12.5px 26px",
-    borderRadius: "16px",
-    borderWidth: "0px",
-    cursor: "pointer",
-    zIndex: 1,
-  },
-  secondaryButton: {
-    backgroundColor: "var(--container-primary)",
-    color: "var(--on-container-primary)",
-    fontSize: 16,
-    fontWeight: 500,
-    fontFamily: "Poppins",
-    padding: "12.5px 26px",
-    borderRadius: "16px",
-    borderWidth: "0px",
-    cursor: "pointer",
-    marginLeft: "16px",
-  },
   p: {
     fontFamily: "Poppins",
     fontWeight: "400",
@@ -324,12 +300,6 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     maxWidth: "560px",
-  },
-  h1: {
-    fontWeight: 600,
-    fontSize: "72px",
-    color: "var(--text-primary)",
-    marginBottom: "192px",
   },
   h2: {
     fontWeight: 600,
@@ -345,12 +315,6 @@ const styles = {
     color: "var(--text-primary)",
     textAlign: "start",
     margin: 0,
-  },
-  homeLowerSection: {
-    height: "800px",
-    alignItems: "center",
-    display: "flex",
-    justifyContent: "center",
   },
 };
 

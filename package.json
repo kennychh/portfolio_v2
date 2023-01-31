@@ -21,6 +21,7 @@
     "react-animation-on-scroll": "^5.1.0",
     "react-collapsed": "^3.3.2",
     "react-dom": "^18.1.0",
+    "react-router-dom": "^6.8.0",
     "react-scripts": "5.0.1",
     "react-scroll-parallax": "^3.2.0",
     "react-svg": "^15.1.21",

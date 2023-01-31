@@ -11,6 +11,7 @@ import Work from "./sections/Work/Work";
 import Contact from "./sections/Contact/Contact";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import { TABLET_WIDTH } from "../../my-app/src/constants.js";
+import { Routes, Route } from "react-router-dom";
 import "animate.css/animate.min.css";
 
 const { innerWidth: width } = window;
@@ -133,21 +134,19 @@ const App: React.FC = () => {
     // @ts-ignore: Object is possibly 'null'.
   });
   return (
-    <div
-      className="app"
-    >
-      <NavigationBar backgroundColor={navBarColor} />
-      <Home theme={"light"} />
-      <div ref={workRef}>
-        <Work />
-      </div>
-      <div ref={portfolioRef}>
-        <Portfolio />
-      </div>
-      <div ref={xRef}>
-        <Contact />
-      </div>
-    </div>
+    <div className="app">
+            <NavigationBar backgroundColor={navBarColor} />
+            <Home theme={"light"} />
+            <div ref={workRef}>
+              <Work />
+            </div>
+            <div ref={portfolioRef}>
+              <Portfolio />
+            </div>
+            <div ref={xRef}>
+              <Contact />
+            </div>
+          </div>
   );
 };
 

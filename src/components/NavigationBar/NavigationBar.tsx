@@ -6,6 +6,7 @@ import zIndex from "@mui/material/styles/zIndex";
 import useWindowDimensions from "../../utils.js";
 import { TABLET_WIDTH, PHONE_WIDTH } from "../../constants.js";
 import { Menu } from "../../assets/icons/Menu.js";
+import { Link } from "react-router-dom";
 
 type NavigationBarProps = {
   backgroundColor: string;
@@ -40,17 +41,24 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
         {width >= TABLET_WIDTH ? (
           <div>
             <ul style={styles.sectionLinkContainer}>
-              <li style={styles.sectionLink}>Projects</li>
               <li style={styles.sectionLink}>Work</li>
+              <li style={styles.sectionLink}>Projects</li>
               <li style={styles.sectionLink}>About</li>
               <li style={styles.sectionLink}>Contact</li>
             </ul>
             <div style={styles.navItems}>
               <li style={styles.navLink}>Resume</li>
-              <button className="navbar-cta-button" style={styles.ctaButton}>
-                {" "}
-                Let's chat{" "}
-              </button>
+              <Link
+                className="navbar-cta-button"
+                style={styles.ctaButton}
+                to="#"
+                onClick={(e) => {
+                  window.location.href = "mailto:hoiyat0210@gmail.com";
+                  e.preventDefault();
+                }}
+              >
+                Let's chat
+              </Link>
             </div>
           </div>
         ) : (
@@ -82,6 +90,7 @@ const styles = {
     borderWidth: "0px",
     cursor: "pointer",
     margin: "0 0 0 1.2rem",
+    textDecoration: "none",
   },
   navigationBar: (backgroundColor: string) => ({
     outlineWidth: "0px",

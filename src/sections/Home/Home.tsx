@@ -11,12 +11,19 @@ import Star from "../../assets/star.svg";
 import background from "../../assets/Slide 16_9 - 1.png";
 import useWindowDimensions from "../../utils.js";
 import { AnimationOnScroll } from "react-animation-on-scroll/dist/js/components";
+import { Link } from 'react-router-dom'
 import { TABLET_WIDTH } from "../../constants.js";
 type HomeProps = {
   theme: string;
 };
 const Home: React.FC<HomeProps> = ({ theme }) => {
   const { height, width } = useWindowDimensions();
+  const openInNewTab = (url: string): void => {
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
+  }
+  
+  const onClickUrl = (url: string): (() => void) => () => openInNewTab(url)
 
   return (
     <div className="home-container">
@@ -50,10 +57,13 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
           Hey there! I'm Kenny, a Front End Developer with a passion for
           creating beautiful digital applications.
         </p>
-        <button className="cta-button" style={styles.ctaButton}>
-          {" "}
-          Connect with me{" "}
-        </button>
+        <Link className="cta-button" style={styles.ctaButton} to='#'
+            onClick={(e) => {
+                window.location.href = "mailto:hoiyat0210@gmail.com";
+                e.preventDefault();
+            }}>
+          Connect with me
+        </Link>
         {/* <div style={styles.more}>
           <img src={Star} alt="Star" style={styles.star} />
           <p style={styles.moreText}>Scroll for more</p>
@@ -91,6 +101,7 @@ const styles = {
     borderWidth: "0px",
     cursor: "pointer",
     zIndex: 1,
+    textDecoration: 'none'
   },
   secondaryButton: {
     backgroundColor: "var(--container-primary)",
