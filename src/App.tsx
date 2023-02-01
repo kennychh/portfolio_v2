@@ -135,18 +135,20 @@ const App: React.FC = () => {
   });
   return (
     <div className="app">
-            <NavigationBar backgroundColor={navBarColor} />
-            <Home theme={"light"} />
-            <div ref={workRef}>
-              <Work />
-            </div>
-            <div ref={portfolioRef}>
-              <Portfolio />
-            </div>
-            <div ref={xRef}>
-              <Contact />
-            </div>
-          </div>
+      <NavigationBar backgroundColor={navBarColor} />
+      <div id="section-home">
+        <Home theme={"light"} />
+      </div>
+      <div ref={workRef} id="section-work">
+        <Work />
+      </div>
+      <div ref={portfolioRef} id="section-projects">
+        <Portfolio />
+      </div>
+      <div ref={xRef}  id="section-contact">
+        <Contact />
+      </div>
+    </div>
   );
 };
 

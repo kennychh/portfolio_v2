@@ -86,7 +86,6 @@ const styles = {
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    margin: "0 auto 32px",
     minHeight: "350px",
     borderRadius: "56px",
     maxWidth: "1376px",

@@ -7,6 +7,7 @@ import { AnimationOnScroll } from "react-animation-on-scroll/dist/js/components"
 import { width } from "@mui/system";
 import GithubLogo from "../../assets/icons/github.svg";
 import { TABLET_WIDTH, PHONE_WIDTH } from "../../constants.js";
+import { Link } from "react-router-dom";
 
 function useIsVisible(ref: any) {
   const [isIntersecting, setIntersecting] = useState(false);
@@ -37,6 +38,7 @@ const Portfolio: React.FC = () => {
     name = "Flight Search App",
     description = "A mobile app implemented using Expo and utilized FlightLabs REST API. Allows users to search for the best flights search with prices.",
     ref = flightRef,
+    link = "https://github.com/kennychh/FlightSearchApp",
   }) => (
     <AnimationOnScroll
       animateIn="animate__fadeIn"
@@ -93,20 +95,18 @@ const Portfolio: React.FC = () => {
       >
         {description}
       </p>
-      <div
+      <a
         className="link-button"
         style={
           width >= PHONE_WIDTH
-            ? { ...styles.iconContainer, marginLeft: "auto" }
-            : {
-                ...styles.iconContainer,
-                marginLeft: "auto",
-                marginRight: "auto",
-              }
+            ? { ...styles.ctaButton, margin: "64px 0px 0px auto" }
+            : styles.ctaButton
         }
+        href={link}
+        target="_blank"
       >
-        <img src={GithubLogo} style={styles.icon} />
-      </div>
+        View on GitHub
+      </a>
     </AnimationOnScroll>
   );
   return (
@@ -181,6 +181,7 @@ const Portfolio: React.FC = () => {
                   description:
                     "A Flutter mobile app using OpenWeather's Weather API . Shows users the current temperature and weather information for the day.",
                   ref: weatherRef,
+                  link: "https://github.com/kennychh/Weather",
                 })}
               </div>
             </div>
@@ -230,8 +231,9 @@ const styles = {
     display: "flex",
   },
   icon: {
-    width: "24px",
-    padding: "12px",
+    paddingLeft: "4px",
+    justifyContent: "center",
+    display: "flex",
   },
   rowContainer: {
     display: "grid",
@@ -250,6 +252,22 @@ const styles = {
     borderRadius: "50%",
     marginTop: "16px",
     cursor: "pointer",
+  },
+  ctaButton: {
+    fontSize: 16,
+    fontWeight: 500,
+    fontFamily: "Poppins",
+    padding: "16px 32px",
+    borderRadius: "32px",
+    borderWidth: "0px",
+    cursor: "pointer",
+    width: "fit-content",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "64px auto 0px auto",
+    color: "black",
+    textDecoration: "none",
   },
   sectionContainer: {
     textAlign: "center",
