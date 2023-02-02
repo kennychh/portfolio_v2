@@ -179,7 +179,7 @@ const Portfolio: React.FC = () => {
                 {paragraph({
                   name: "Weather App",
                   description:
-                    "A Flutter mobile app using OpenWeather's Weather API . Shows users the current temperature and weather information for the day.",
+                    "A Flutter mobile app using OpenWeather's Weather API. Shows users the current temperature and weather information for the day.",
                   ref: weatherRef,
                   link: "https://github.com/kennychh/Weather",
                 })}
