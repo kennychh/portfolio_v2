@@ -58,12 +58,12 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
             >
               Projects
             </li>
-            <li
+            {/* <li
               style={styles.sectionLink}
               onClick={() => handleClickScroll({ section: "section-about" })}
             >
               About
-            </li>
+            </li> */}
             <li
               style={styles.sectionLink}
               onClick={() => handleClickScroll({ section: "section-contact" })}
@@ -163,18 +163,17 @@ const styles = {
     margin: "0 auto",
   },
   sectionLinkContainer: {
-    position: "absolute",
-    left: 0,
-    right: 0,
+    // position: "absolute",
+    // left: 0,
+    // right: 0,
     marginLeft: "auto",
-    marginRight: "auto",
-    width: "100%",
+    // marginRight: "auto",
+    // width: "100%",
     display: "flex",
     justifyContent: "center",
     top: 0,
     bottom: 0,
     listStyleType: "none",
-    padding: "0",
     zIndex: 2,
   },
   sectionLink: {

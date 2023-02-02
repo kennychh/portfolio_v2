@@ -54,7 +54,7 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
             width >= TABLET_WIDTH ? styles.p : { ...styles.p, fontSize: "18px" }
           }
         >
-          Hey there! I'm Kenny, a Front End Developer with a passion for
+          Hey there! I'm Kenny, a Software Developer with a passion for
           creating beautiful digital applications.
         </p>
         <Link className="cta-button" style={styles.ctaButton} to='#'

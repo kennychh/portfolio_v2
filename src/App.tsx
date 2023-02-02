@@ -72,14 +72,14 @@ const App: React.FC = () => {
     if (isWorkVisible && homeSqueeze) {
       homeContainerElement.style.animation =
         width >= 1360
-          ? "container-squeeze 1 0.5s ease-in-out forwards"
-          : "container-shadow 1 0.5s ease-in-out forwards";
+          ? "container-squeeze 1 0.75s ease-in-out forwards"
+          : "container-shadow 1 0.75s ease-in-out forwards";
       setHomeSqueeze(false);
     } else if (!isWorkVisible && !homeSqueeze) {
       homeContainerElement.style.animation =
         width >= 1360
-          ? "container-unsqueeze 1 0.5s ease-in-out forwards"
-          : "container-unshadow 1 0.5s ease-in-out forwards";
+          ? "container-unsqueeze 1 0.75s ease-in-out forwards"
+          : "container-unshadow 1 0.75s ease-in-out forwards";
       setHomeSqueeze(true);
     }
   }, [isWorkVisible]);
@@ -88,14 +88,14 @@ const App: React.FC = () => {
     if (isPortfolioVisible && workSqueeze) {
       workContainerElement.style.animation =
         width >= 1360
-          ? "container-squeeze 1 0.5s ease-in-out forwards"
-          : "container-shadow 1 0.5s ease-in-out forwards";
+          ? "container-squeeze 1 0.75s ease-in-out forwards"
+          : "container-shadow 1 0.75s ease-in-out forwards";
       setWorkSqueeze(false);
     } else if (!isPortfolioVisible && !workSqueeze) {
       workContainerElement.style.animation =
         width >= 1360
-          ? "container-unsqueeze 1 0.5s ease-in-out forwards"
-          : "container-unshadow 1 0.5s ease-in-out forwards";
+          ? "container-unsqueeze 1 0.75s ease-in-out forwards"
+          : "container-unshadow 1 0.75s ease-in-out forwards";
       setWorkSqueeze(true);
     }
   }, [isPortfolioVisible]);
@@ -104,14 +104,14 @@ const App: React.FC = () => {
     if (isXVisible && portfolioSqueeze) {
       portfolioContainerElement.style.animation =
         width >= 1360
-          ? "container-squeeze 1 0.5s ease-in-out forwards"
-          : "container-shadow 1 0.5s ease-in-out forwards";
+          ? "container-squeeze 1 0.75s ease-in-out forwards"
+          : "container-shadow 1 0.75s ease-in-out forwards";
       setPortfolioSqueeze(false);
     } else if (!isXVisible && !portfolioSqueeze) {
       portfolioContainerElement.style.animation =
         width >= 1360
-          ? "container-unsqueeze 1 0.5s ease-in-out forwards"
-          : "container-unshadow 1 0.5s ease-in-out forwards";
+          ? "container-unsqueeze 1 0.75s ease-in-out forwards"
+          : "container-unshadow 1 0.75s ease-in-out forwards";
       setPortfolioSqueeze(true);
     }
   }, [isXVisible]);

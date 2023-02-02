@@ -14,7 +14,9 @@ const Work: React.FC = () => {
     >
       <h4
         style={
-          width >= PHONE_WIDTH ? styles.h4 : { ...styles.h4, marginTop: "32px", textAlign: 'start' }
+          width >= PHONE_WIDTH
+            ? styles.h4
+            : { ...styles.h4, marginTop: "32px", textAlign: "start" }
         }
       >
         May 2021 - August 2022{" "}
@@ -25,28 +27,50 @@ const Work: React.FC = () => {
             ? styles.h2
             : width >= PHONE_WIDTH
             ? { ...styles.h2, fontSize: "42px" }
-            : { ...styles.h2, fontSize: "36px", marginBottom: "16px", textAlign: 'start' }
+            : {
+                ...styles.h2,
+                fontSize: "36px",
+                marginBottom: "16px",
+                textAlign: "start",
+              }
         }
       >
         HelloFresh
       </h2>
       <h3
         style={
-          width >= PHONE_WIDTH ? styles.h3 : { ...styles.h3, fontSize: "18px", textAlign: 'start' }
+          width >= PHONE_WIDTH
+            ? styles.h3
+            : { ...styles.h3, fontSize: "18px", textAlign: "start" }
         }
       >
         Junior Software Developer Co-Op
       </h3>
       <p
         style={
-          width >= TABLET_WIDTH
-            ? styles.p
-            : { ...styles.p, fontSize: "18px" }
+          width >= TABLET_WIDTH ? styles.p : { ...styles.p, fontSize: "18px" }
         }
-      >
-        Built and maintained front-end features for a multi-brand application
-        using React Native.
-      </p>
+      />
+      <ul style={styles.list}>
+        <li>
+          Built and maintained front-end features for their multi-brand
+          application using
+          <b> React Native</b> and <b>SwiftUI</b>
+        </li>
+        <li>
+          Collaborated with the back-end development and design team to ensure
+          seamless integration and communication
+        </li>
+        <li>
+          Provided <b>unit and automated tests</b> to components and screens to
+          maintain app functionality
+        </li>
+        <li>
+          Released and maintained applications to Google Play Store and Apple
+          App Store
+        </li>
+        <li>Developed iOS widget using <b>WidgetKit</b></li>
+      </ul>
     </div>
   );
   const logo = (
@@ -98,7 +122,7 @@ const Work: React.FC = () => {
             >
               <div>
                 {paragraph}
-                {button}
+                {/* {button} */}
               </div>
               <div style={{ ...styles.imageContainer }}>{logo}</div>
             </AnimationOnScroll>
@@ -124,7 +148,7 @@ const Work: React.FC = () => {
             >
               <div>
                 {paragraph}
-                {button}
+                {/* {button} */}
                 {/* <div
                   style={
                     width >= PHONE_WIDTH
@@ -147,6 +171,13 @@ const Work: React.FC = () => {
 };
 
 const styles = {
+  list: {
+    fontWeight: 400,
+    fontSize: "16px",
+    textAlign: "start",
+    paddingInlineStart: "16px",
+    maxWidth: '800px'
+  },
   icon: {
     paddingLeft: "4px",
     justifyContent: "center",
@@ -172,7 +203,7 @@ const styles = {
     alignSelf: "center",
     display: "flex",
     maxWidth: "400px",
-    margin: "128px auto 0px auto",
+    margin: "64px auto 0px auto",
   },
   image: {
     maxWidth: "100%",

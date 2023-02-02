@@ -6,6 +6,7 @@ import { ArrowRight } from "../../assets/icons/ArrowRight.js";
 import GithubLogo from "../../assets/icons/github.svg";
 import { InstagramLogo, LinkedinLogo } from "../../assets/icons";
 import useWindowDimensions from "../../utils.js";
+import { Link } from 'react-router-dom'
 import { TABLET_WIDTH } from "../../constants.js";
 
 const Contact: React.FC = () => {
@@ -34,17 +35,39 @@ const Contact: React.FC = () => {
           Thanks for stopping by!
         </h2>
         <h4 style={styles.h4}>Feel free to reach out or say hello!</h4>
-        <h4 style={{...styles.h4, marginTop: '16px'}}>hoiyat0210@gmail.com</h4>
+        <Link style={{ ...styles.h4, marginTop: "16px" }} to='#'
+            onClick={(e) => {
+                window.location.href = "mailto:hoiyat0210@gmail.com";
+                e.preventDefault();
+            }}>
+          hoiyat0210@gmail.com
+        </Link>
+
         <div style={styles.socials}>
-          <div className="link-button" style={styles.iconContainer}>
+          <a
+            className="link-button"
+            style={styles.iconContainer}
+            href={"https://www.instagram.com/_kennychan_/"}
+            target="_blank"
+          >
             <InstagramLogo style={styles.icon} />
-          </div>
-          <div className="link-button" style={styles.iconContainer}>
+          </a>
+          <a
+            className="link-button"
+            style={styles.iconContainer}
+            href={"https://github.com/kennychh"}
+            target="_blank"
+          >
             <img src={GithubLogo} style={styles.icon} />
-          </div>
-          <div className="link-button" style={styles.iconContainer}>
+          </a>
+          <a
+            className="link-button"
+            style={styles.iconContainer}
+            href={"https://www.linkedin.com/in/kenny-chan-2ab991195/"}
+            target="_blank"
+          >
             <LinkedinLogo style={styles.icon} />
-          </div>
+          </a>
         </div>
       </AnimationOnScroll>
     </div>
@@ -82,9 +105,9 @@ const styles = {
     columnGap: "32px",
   },
   sectionContainer: {
-    textAlign: "center",
+    textAlign: "start",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "start",
     justifyContent: "center",
     minHeight: "350px",
     borderRadius: "56px",
@@ -166,7 +189,7 @@ const styles = {
     fontSize: "18px",
     color: "var(--text-primary)",
     textAlign: "start",
-    margin: 0,
+    textDecoration: 'none',
   },
 };
 
