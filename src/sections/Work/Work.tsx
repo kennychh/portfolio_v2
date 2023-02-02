@@ -58,8 +58,8 @@ const Work: React.FC = () => {
           <b> React Native</b> and <b>SwiftUI</b>
         </li>
         <li>
-          Collaborated with the back-end development and design team to ensure
-          seamless integration and communication
+          Collaborated with back-end development and design team to ensure
+          seamless integration
         </li>
         <li>
           Provided <b>unit and automated tests</b> to components and screens to
