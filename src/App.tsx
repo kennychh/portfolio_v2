@@ -9,6 +9,7 @@ import Home from "./sections/Home/Home";
 import Portfolio from "./sections/Portfolio/Portfolio";
 import Work from "./sections/Work/Work";
 import Contact from "./sections/Contact/Contact";
+import About from "./sections/About/About";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import { TABLET_WIDTH } from "../../my-app/src/constants.js";
 import { Routes, Route } from "react-router-dom";
@@ -51,10 +52,13 @@ const App: React.FC = () => {
   const [homeSqueeze, setHomeSqueeze] = useState(true);
   const [portfolioSqueeze, setPortfolioSqueeze] = useState(true);
   const [workSqueeze, setWorkSqueeze] = useState(true);
+  const [aboutSqueeze, setAboutSqueeze] = useState(true);
   const portfolioRef = React.createRef<HTMLInputElement>();
   const isPortfolioVisible = useIsVisible(portfolioRef);
   const workRef = React.createRef<HTMLInputElement>();
   const isWorkVisible = useIsVisible(workRef);
+  const aboutRef = React.createRef<HTMLInputElement>();
+  const isAboutVisible = useIsVisible(aboutRef);
   const xRef = React.createRef<HTMLInputElement>();
   const isXVisible = useIsVisible(xRef);
   const homeContainerElement = document.querySelector<HTMLElement>(
@@ -66,6 +70,9 @@ const App: React.FC = () => {
 
   const workContainerElement = document.querySelector<HTMLElement>(
     ".work-container"
+  )!;
+  const aboutContainerElement = document.querySelector<HTMLElement>(
+    ".about-container"
   )!;
 
   useEffect(() => {
@@ -101,18 +108,34 @@ const App: React.FC = () => {
   }, [isPortfolioVisible]);
 
   useEffect(() => {
-    if (isXVisible && portfolioSqueeze) {
+    if (isAboutVisible && portfolioSqueeze) {
       portfolioContainerElement.style.animation =
         width >= 1360
           ? "container-squeeze 1 0.75s ease-in-out forwards"
           : "container-shadow 1 0.75s ease-in-out forwards";
       setPortfolioSqueeze(false);
-    } else if (!isXVisible && !portfolioSqueeze) {
+    } else if (!isAboutVisible && !portfolioSqueeze) {
       portfolioContainerElement.style.animation =
         width >= 1360
           ? "container-unsqueeze 1 0.75s ease-in-out forwards"
           : "container-unshadow 1 0.75s ease-in-out forwards";
       setPortfolioSqueeze(true);
+    }
+  }, [isAboutVisible]);
+
+  useEffect(() => {
+    if (isXVisible && aboutSqueeze) {
+      aboutContainerElement.style.animation =
+        width >= 1360
+          ? "container-squeeze 1 0.75s ease-in-out forwards"
+          : "container-shadow 1 0.75s ease-in-out forwards";
+      setAboutSqueeze(false);
+    } else if (!isXVisible && !aboutSqueeze) {
+      aboutContainerElement.style.animation =
+        width >= 1360
+          ? "container-unsqueeze 1 0.75s ease-in-out forwards"
+          : "container-unshadow 1 0.75s ease-in-out forwards";
+          setAboutSqueeze(true);
     }
   }, [isXVisible]);
 
@@ -144,6 +167,9 @@ const App: React.FC = () => {
       </div>
       <div ref={portfolioRef} id="section-projects">
         <Portfolio />
+      </div>
+      <div ref={aboutRef}  id="section-contact">
+        <About />
       </div>
       <div ref={xRef}  id="section-contact">
         <Contact />
