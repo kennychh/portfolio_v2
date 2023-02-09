@@ -81,7 +81,7 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
               Resume
             </a>
             <Link
-              className="navbar-cta-button"
+              className="cta-button"
               style={styles.ctaButton}
               to="#"
               onClick={(e) => {
@@ -129,8 +129,8 @@ const styles = {
     width: width,
   }),
   ctaButton: {
-    backgroundColor: "var(--container-primary)",
-    color: "var(--on-container-primary)",
+    backgroundColor: "black",
+    color: "white",
     fontSize: 16,
     fontWeight: 500,
     fontFamily: "Poppins",
@@ -175,7 +175,7 @@ const styles = {
     bottom: 0,
     listStyleType: "none",
     zIndex: 2,
-    paddingInlineStart: '0px'
+    paddingInlineStart: "0px",
   },
   sectionLink: {
     margin: "0 1.2rem",

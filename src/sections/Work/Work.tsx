@@ -16,7 +16,7 @@ const Work: React.FC = () => {
         style={
           width >= PHONE_WIDTH
             ? styles.h4
-            : { ...styles.h4, marginTop: "32px", textAlign: "start" }
+            : { ...styles.h4, textAlign: "start" }
         }
       >
         May 2021 - August 2022{" "}

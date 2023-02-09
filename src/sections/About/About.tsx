@@ -25,6 +25,7 @@ import git from "../../assets/git.png";
 import jira from "../../assets/jira.png";
 import confluence from "../../assets/confluence.png";
 import slack from "../../assets/slack.png";
+import fun from "../../assets/fun.png";
 
 const About: React.FC = () => {
   const { height, width } = useWindowDimensions();
@@ -69,7 +70,13 @@ const About: React.FC = () => {
               animateOnce
             >
               <div style={styles.descriptionContainer}>
-                <div style={width >= TABLET_WIDTH ? styles.description : {margin: '32px'}}>
+                <div
+                  style={
+                    width >= TABLET_WIDTH
+                      ? styles.description
+                      : { margin: "32px" }
+                  }
+                >
                   <h2
                     style={
                       width >= TABLET_WIDTH
@@ -97,23 +104,13 @@ const About: React.FC = () => {
                     }
                   >
                     I have a Bachelor of Science degree in Cognitive Science
-                    with minors in Psychology and Computer Science from the
+                    with minors in Computer Science and Psychology from the
                     University of Toronto.
-                  </p>
-                  <p
-                    style={
-                      width >= TABLET_WIDTH
-                        ? styles.p
-                        : { ...styles.p, fontSize: "18px" }
-                    }
-                  >
-                    Outside of work, I enjoy swimming, watching shows, listening
-                    to music, and playing video games with my friends!
                   </p>
                 </div>
               </div>
-              <div style={styles.photoContainer}> 
-              <img src={face} style={styles.skills} />
+              <div style={styles.photoContainer}>
+                <img src={face} style={styles.skills} />
               </div>
             </AnimationOnScroll>
           ) : (
@@ -127,7 +124,7 @@ const About: React.FC = () => {
               animateOnce
             >
               <div style={styles.mobilePhotoContainer}>
-              <img src={face} style={styles.skills} />
+                <img src={face} style={styles.skills} />
               </div>
               <div style={styles.mobileDescriptionContainer}>
                 <div style={{ margin: "32px" }}>
@@ -159,23 +156,58 @@ const About: React.FC = () => {
                     }
                   >
                     I have a Bachelor of Science degree in Cognitive Science
-                    with minors in Psychology and Computer Science from the
+                    with minors in Computer Science and Psychology from the
                     University of Toronto.
-                  </p>
-                  <p
-                    style={
-                      width >= TABLET_WIDTH
-                        ? styles.p
-                        : { ...styles.p, fontSize: "18px" }
-                    }
-                  >
-                    Outside of work, I enjoy swimming, watching shows, listening
-                    to music, and playing video games with my friends!
                   </p>
                 </div>
               </div>
             </AnimationOnScroll>
           )}
+          <div
+            style={
+              width >= TABLET_WIDTH
+                ? styles.funContainer
+                : {
+                    ...styles.funContainer,
+                    padding: "32px",
+                    marginBottom: "160px",
+                  }
+            }
+          >
+            <h2
+              style={
+                width >= TABLET_WIDTH
+                  ? styles.h2
+                  : width >= PHONE_WIDTH
+                  ? { ...styles.h2, fontSize: "42px", marginBottom: 0 }
+                  : { ...styles.h2, fontSize: "36px", marginBottom: 0 }
+              }
+            >
+              Lay back and relax
+            </h2>
+            <p
+              style={
+                width >= TABLET_WIDTH
+                  ? { ...styles.p, textAlign: "center", maxWidth: "800px" }
+                  : { ...styles.p, fontSize: "18px", textAlign: "center" }
+              }
+            >
+              Outside of school, I enjoy swimming, drawing, watching shows,
+              listening to music, and playing video games with my friends!
+            </p>
+            <div
+              style={
+                width >= TABLET_WIDTH
+                  ? styles.funImageContainer
+                  : {
+                      ...styles.funImageContainer,
+                      margin: "32px auto 32px auto",
+                    }
+              }
+            >
+              <img src={fun} style={styles.funImage} />
+            </div>
+          </div>
           <h1
             style={
               width >= TABLET_WIDTH
@@ -212,7 +244,7 @@ const About: React.FC = () => {
             <LogoTitle src={xcode} title={"XCode"} />
             <LogoTitle src={pycharm} title={"PyCharm"} />
           </div>
-          {skillsTitle({ title: "Other tools" })}
+          {skillsTitle({ title: "More tools" })}
           <div style={styles.skillsContainer}>
             <LogoTitle src={npm} title={"Npm"} />
             <LogoTitle src={yarn} title={"Yarn"} />
@@ -229,6 +261,25 @@ const About: React.FC = () => {
 };
 
 const styles = {
+  funImage: {
+    width: "100%",
+  },
+  funImageContainer: {
+    maxWidth: "600px",
+    margin: "64px auto 64px auto",
+  },
+  funContainer: {
+    maxWidth: "1216px",
+    textAlign: "center",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "64px",
+    display: "flex",
+    backgroundColor: "#F1F9FF",
+    borderRadius: "56px",
+    marginBottom: "192px",
+  },
   logoTitle: {
     maxWidth: "80px",
     display: "flex",
@@ -239,8 +290,8 @@ const styles = {
   },
   skills: {
     width: "100%",
-    height: '100%',
-    objectFit: 'cover',
+    height: "100%",
+    objectFit: "cover",
   },
   skillsContainer: {
     display: "flex",
@@ -257,19 +308,19 @@ const styles = {
     flexBasis: 100,
     backgroundColor: "#F4EFF5",
     borderRadius: "56px",
-    aspectRatio: '1/1',
-    overflow: 'hidden'
+    aspectRatio: "1/1",
+    overflow: "hidden",
   },
   mobilePhotoContainer: {
     backgroundColor: "#F4EFF5",
     borderRadius: "32px",
-    width: '100%',
-    aspectRatio: '1/1',
-    marginBottom: '32px',
-    overflow: 'hidden'
+    width: "100%",
+    aspectRatio: "1/1",
+    marginBottom: "32px",
+    overflow: "hidden",
   },
   mobileDescriptionContainer: {
-    backgroundColor: "#F4EFF5",
+    backgroundColor: "#FBEEE6",
     borderRadius: "32px",
   },
   descriptionContainer: {
@@ -279,7 +330,7 @@ const styles = {
     flexGrow: 2,
     flexShrink: 0,
     flexBasis: 100,
-    backgroundColor: "#F4EFF5",
+    backgroundColor: "#FBEEE6",
     borderRadius: "56px",
     marginRight: "32px",
   },
@@ -331,7 +382,7 @@ const styles = {
     justifyContent: "center",
     margin: "0 auto",
     display: "flex",
-    marginBottom: "192px",
+    marginBottom: "32px",
   },
   columnContainer: {
     maxWidth: "1216px",

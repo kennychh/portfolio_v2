@@ -11,19 +11,19 @@ import Star from "../../assets/star.svg";
 import background from "../../assets/Slide 16_9 - 1.png";
 import useWindowDimensions from "../../utils.js";
 import { AnimationOnScroll } from "react-animation-on-scroll/dist/js/components";
-import { Link } from 'react-router-dom'
-import { TABLET_WIDTH } from "../../constants.js";
+import { Link } from "react-router-dom";
+import { TABLET_WIDTH, PHONE_WIDTH } from "../../constants.js";
 type HomeProps = {
   theme: string;
 };
 const Home: React.FC<HomeProps> = ({ theme }) => {
   const { height, width } = useWindowDimensions();
   const openInNewTab = (url: string): void => {
-    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
-    if (newWindow) newWindow.opener = null
-  }
-  
-  const onClickUrl = (url: string): (() => void) => () => openInNewTab(url)
+    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+    if (newWindow) newWindow.opener = null;
+  };
+
+  const onClickUrl = (url: string): (() => void) => () => openInNewTab(url);
 
   return (
     <div className="home-container">
@@ -32,6 +32,11 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
         style={
           width >= TABLET_WIDTH
             ? styles.homeContainer
+            : width >= PHONE_WIDTH
+            ? {
+                ...styles.homeContainer,
+                paddingBottom: "160px",
+              }
             : {
                 ...styles.homeContainer,
                 paddingBottom: "160px",
@@ -54,14 +59,18 @@ const Home: React.FC<HomeProps> = ({ theme }) => {
             width >= TABLET_WIDTH ? styles.p : { ...styles.p, fontSize: "18px" }
           }
         >
-          Hey there! I'm Kenny, a Software Developer with a passion for
-          creating beautiful digital applications.
+          Hey there! I'm Kenny, a Software Developer with a passion for creating
+          beautiful digital applications.
         </p>
-        <Link className="cta-button" style={styles.ctaButton} to='#'
-            onClick={(e) => {
-                window.location.href = "mailto:hoiyat0210@gmail.com";
-                e.preventDefault();
-            }}>
+        <Link
+          className="cta-button"
+          style={styles.ctaButton}
+          to="#"
+          onClick={(e) => {
+            window.location.href = "mailto:hoiyat0210@gmail.com";
+            e.preventDefault();
+          }}
+        >
           Connect with me
         </Link>
         {/* <div style={styles.more}>
@@ -101,7 +110,7 @@ const styles = {
     borderWidth: "0px",
     cursor: "pointer",
     zIndex: 1,
-    textDecoration: 'none'
+    textDecoration: "none",
   },
   secondaryButton: {
     backgroundColor: "var(--container-primary)",
