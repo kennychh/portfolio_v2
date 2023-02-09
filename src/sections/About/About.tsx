@@ -9,7 +9,8 @@ import { LogoTitle } from "../../components/LogoTitle/LogoTitle";
 import js from "../../assets/javascript.png";
 import ts from "../../assets/typescript.png";
 import python from "../../assets/python.png";
-import htmlcss from "../../assets/htmlcss.png";
+import html from "../../assets/html.png";
+import css from "../../assets/css.png";
 import pycharm from "../../assets/pycharm.png";
 import react from "../../assets/react.png";
 import swift from "../../assets/swift.png";
@@ -20,6 +21,10 @@ import node from "../../assets/node.png";
 import yarn from "../../assets/yarn.png";
 import expo from "../../assets/expo.png";
 import face from "../../assets/face.png";
+import git from "../../assets/git.png";
+import jira from "../../assets/jira.png";
+import confluence from "../../assets/confluence.png";
+import slack from "../../assets/slack.png";
 
 const About: React.FC = () => {
   const { height, width } = useWindowDimensions();
@@ -82,9 +87,7 @@ const About: React.FC = () => {
                     }
                   >
                     My name is Kenny and I enjoy crafting digital experiences
-                    through stunning design and front-end development. My
-                    interest in software development started in 2016 after
-                    taking my first computer science class.
+                    through stunning design and front-end development.
                   </p>
                   <p
                     style={
@@ -95,7 +98,7 @@ const About: React.FC = () => {
                   >
                     I have a Bachelor of Science degree in Cognitive Science
                     with minors in Psychology and Computer Science from the
-                    University of Toronto
+                    University of Toronto.
                   </p>
                   <p
                     style={
@@ -146,9 +149,7 @@ const About: React.FC = () => {
                     }
                   >
                     My name is Kenny and I enjoy crafting digital experiences
-                    through stunning design and front-end development. My
-                    interest in software development started in 2016 after
-                    taking my first computer science class.
+                    through stunning design and front-end development.
                   </p>
                   <p
                     style={
@@ -159,7 +160,7 @@ const About: React.FC = () => {
                   >
                     I have a Bachelor of Science degree in Cognitive Science
                     with minors in Psychology and Computer Science from the
-                    University of Toronto
+                    University of Toronto.
                   </p>
                   <p
                     style={
@@ -196,12 +197,13 @@ const About: React.FC = () => {
             <LogoTitle src={ts} title={"TypeScript"} />
             <LogoTitle src={swift} title={"SwiftUI"} />
             <LogoTitle src={python} title={"Python"} />
-            <LogoTitle src={htmlcss} title={"HTML & CSS"} />
+            <LogoTitle src={html} title={"HTML"} />
+            <LogoTitle src={css} title={"CSS"} />
           </div>
           {skillsTitle({ title: "Libraries" })}
           <div style={styles.skillsContainer}>
             <LogoTitle src={react} title={"React"} />
-            <LogoTitle src={react} title={"React Native"} />
+            <LogoTitle src={react} title={"RN"} />
             <LogoTitle src={expo} title={"Expo"} />
           </div>
           {skillsTitle({ title: "IDEs" })}
@@ -214,6 +216,10 @@ const About: React.FC = () => {
           <div style={styles.skillsContainer}>
             <LogoTitle src={npm} title={"Npm"} />
             <LogoTitle src={yarn} title={"Yarn"} />
+            <LogoTitle src={git} title={"Git"} />
+            <LogoTitle src={jira} title={"Jira"} />
+            <LogoTitle src={confluence} title={"Confluence"} />
+            <LogoTitle src={slack} title={"Slack"} />
             <LogoTitle src={node} title={"Node.js"} />
           </div>
         </div>

@@ -34,7 +34,10 @@ const styles = {
   },
   skills: {
     width: "100%",
+    height: '100%',
     marginBottom: "16px",
+    aspectRatio: '1/1',
+    objectFit: 'contain'
   },
   h3: {
     fontWeight: 500,
