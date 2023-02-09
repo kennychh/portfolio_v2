@@ -36,7 +36,7 @@ const Portfolio: React.FC = () => {
   const paragraph = ({
     type = "Personal Project",
     name = "Flight Search App",
-    description = "A mobile app implemented using Expo and utilized FlightLabs REST API. Allows users to search for the best flights search with prices.",
+    description = "A mobile app implemented using Expo and FlightLabs REST API. Allows users to search for round trip or one-way trips and find the best deals.",
     ref = flightRef,
     link = "https://github.com/kennychh/FlightSearchApp",
   }) => (
@@ -179,7 +179,7 @@ const Portfolio: React.FC = () => {
                 {paragraph({
                   name: "Weather App",
                   description:
-                    "A Flutter mobile app using OpenWeather's Weather API. Shows users the current temperature and weather information for the day.",
+                    "A Flutter mobile app using OpenWeather's Weather API. Shows users the current temperature and weather information of the day.",
                   ref: weatherRef,
                   link: "https://github.com/kennychh/Weather",
                 })}
@@ -212,7 +212,7 @@ const Portfolio: React.FC = () => {
             {paragraph({
               name: "Weather App",
               description:
-                "A Flutter mobile app using OpenWeather's Weather API. Shows users the current temperature and weather information for the day.",
+                "A Flutter mobile app using OpenWeather's Weather API. Shows users the current temperature and weather information of the day.",
               ref: weatherRef,
             })}
           </div>
