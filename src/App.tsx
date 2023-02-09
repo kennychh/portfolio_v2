@@ -168,7 +168,7 @@ const App: React.FC = () => {
       <div ref={portfolioRef} id="section-projects">
         <Portfolio />
       </div>
-      <div ref={aboutRef}  id="section-contact">
+      <div ref={aboutRef}  id="section-about">
         <About />
       </div>
       <div ref={xRef}  id="section-contact">

@@ -5,9 +5,24 @@ import { Grid } from "@mui/material";
 import { ArrowRight } from "../../assets/icons/ArrowRight.js";
 import useWindowDimensions from "../../utils.js";
 import { TABLET_WIDTH, PHONE_WIDTH } from "../../constants.js";
+import { LogoTitle } from "../../components/LogoTitle/LogoTitle";
+import js from "../../assets/javascript.png";
+import ts from "../../assets/typescript.png";
+import python from "../../assets/python.png";
+import htmlcss from "../../assets/htmlcss.png";
+import pycharm from "../../assets/pycharm.png";
+import react from "../../assets/react.png";
+import swift from "../../assets/swift.png";
+import xcode from "../../assets/xcode.png";
+import vscode from "../../assets/vscode.png";
+import npm from "../../assets/npm.png";
+import node from "../../assets/node.png";
+import yarn from "../../assets/yarn.png";
+import expo from "../../assets/expo.png";
 
 const About: React.FC = () => {
   const { height, width } = useWindowDimensions();
+
   return (
     <div
       style={
@@ -23,57 +38,89 @@ const About: React.FC = () => {
     >
       <div style={{ padding: "0 32px 0px 32px" }}>
         <SectionTitle title={"About me"} />
-        {width >= PHONE_WIDTH ? (
-          <div style={styles.columnContainer}>
-            <AnimationOnScroll
-              style={styles.container}
-              animateIn="animate__fadeIn"
-              animateOnce
-            >
-              <div style={styles.descriptionContainer}>
-                <div style={styles.description}>
-                  <h2 style={styles.h2}>Hey there!</h2>
-                  <p style={styles.p}>
-                    My name is Kenny and I enjoy crafting digital experiences
-                    through stunning design and front-end development. My
-                    interest in software development started in 2016 after
-                    taking my first computer science class.
-                  </p>
-                  <p style={styles.p}>
-                    I have a Bachelor of Science degree in Cognitive Science
-                    with minors in Psychology and Computer Science from the
-                    University of Toronto
-                  </p>
-                  <p style={styles.p}>
-                    Outside of work, I enjoy swimming, watching shows, listening
-                    to music, and playing video games with my friends!
-                  </p>
-                </div>
-              </div>
-              <div style={styles.photoContainer} />
-            </AnimationOnScroll>
-            <h1 style={styles.h1}>Technical skills</h1>
-          </div>
-        ) : (
+        <div style={styles.columnContainer}>
           <AnimationOnScroll
-            style={
-              width >= PHONE_WIDTH
-                ? styles.container
-                : { ...styles.container, borderRadius: "32px" }
-            }
+            style={styles.container}
             animateIn="animate__fadeIn"
             animateOnce
-          />
-        )}
+          >
+            <div style={styles.descriptionContainer}>
+              <div style={styles.description}>
+                <h2 style={styles.h2}>Hey there!</h2>
+                <p style={styles.p}>
+                  My name is Kenny and I enjoy crafting digital experiences
+                  through stunning design and front-end development. My interest
+                  in software development started in 2016 after taking my first
+                  computer science class.
+                </p>
+                <p style={styles.p}>
+                  I have a Bachelor of Science degree in Cognitive Science with
+                  minors in Psychology and Computer Science from the University
+                  of Toronto
+                </p>
+                <p style={styles.p}>
+                  Outside of work, I enjoy swimming, watching shows, listening
+                  to music, and playing video games with my friends!
+                </p>
+              </div>
+            </div>
+            <div style={styles.photoContainer} />
+          </AnimationOnScroll>
+          <h1 style={styles.h1}>Technical skills</h1>
+          <h2 style={styles.h2}>Languages</h2>
+          <div style={styles.skillsContainer}>
+            <LogoTitle src={js} title={"JavaScript"} styles={styles} />
+            <LogoTitle src={ts} title={"TypeScript"} styles={styles} />
+            <LogoTitle src={swift} title={"SwiftUI"} styles={styles} />
+            <LogoTitle src={python} title={"Python"} styles={styles} />
+            <LogoTitle src={htmlcss} title={"HTML & CSS"} styles={styles} />
+          </div>
+          <h2 style={styles.h2}>Libraries</h2>
+          <div style={styles.skillsContainer}>
+            <LogoTitle src={react} title={"React"} styles={styles} />
+            <LogoTitle src={react} title={"React Native"} styles={styles} />
+            <LogoTitle src={expo} title={"Expo"} styles={styles} />
+          </div>
+          <h2 style={styles.h2}>IDEs</h2>
+          <div style={styles.skillsContainer}>
+            <LogoTitle src={vscode} title={"VSCode"} styles={styles} />
+            <LogoTitle src={xcode} title={"XCode"} styles={styles} />
+            <LogoTitle src={pycharm} title={"PyCharm"} styles={styles} />
+          </div>
+          <h2 style={styles.h2}>Other tools</h2>
+          <div style={styles.skillsContainer}>
+            <LogoTitle src={npm} title={"Npm"} styles={styles} />
+            <LogoTitle src={yarn} title={"Yarn"} styles={styles} />
+            <LogoTitle src={node} title={"Node.js"} styles={styles} />
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
 const styles = {
+  logoTitle: {
+    maxWidth: "80px",
+    display: "flex",
+    flexDirection: "column",
+    marginBottom: "32px",
+    marginRight: "64px",
+    flex: "0 0 auto",
+  },
+  skills: {
+    width: "100%",
+    marginBottom: "16px",
+  },
+  skillsContainer: {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "nowrap",
+    overflowX: "auto",
+  },
   photoContainer: {
     minWidth: "100px",
-    minHeight: "600px",
+    height: "600px",
     flex: 1,
     flexGrow: 1,
     flexShrink: 0,
@@ -83,7 +130,7 @@ const styles = {
   },
   descriptionContainer: {
     minWidth: "100px",
-    minHeight: "600px",
+    height: "600px",
     flex: 1,
     flexGrow: 2,
     flexShrink: 0,
@@ -182,7 +229,7 @@ const styles = {
     fontWeight: 600,
     fontSize: "72px",
     color: "var(--text-primary)",
-    marginBottom: "192px",
+    marginBottom: "80px",
   },
   h2: {
     fontWeight: 600,
@@ -190,11 +237,11 @@ const styles = {
     color: "var(--text-primary)",
     textAlign: "start",
     marginTop: "0px",
-    marginBottom: "16px",
+    marginBottom: "32px",
   },
   h3: {
     fontWeight: 500,
-    fontSize: "22px",
+    fontSize: "12px",
     color: "var(--text-primary)",
     textAlign: "center",
     margin: 0,
