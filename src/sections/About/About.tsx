@@ -93,8 +93,10 @@ const About: React.FC = () => {
                         : { ...styles.p, fontSize: "18px" }
                     }
                   >
-                    My name is Kenny and I enjoy crafting digital experiences
-                    through stunning design and front-end development.
+                    I enjoy crafting digital experiences through stunning
+                    design. My interest for software development started in
+                    highschool after getting A's in my computer science classes
+                    (and enjoying it too, of course)!
                   </p>
                   <p
                     style={
@@ -104,8 +106,8 @@ const About: React.FC = () => {
                     }
                   >
                     I have a Bachelor of Science degree in Cognitive Science
-                    with minors in Computer Science and Psychology from the
-                    University of Toronto.
+                    (Computational Cognition Stream) with minors in Computer
+                    Science and Psychology from the University of Toronto.
                   </p>
                 </div>
               </div>
@@ -118,7 +120,7 @@ const About: React.FC = () => {
               style={{
                 ...styles.container,
                 flexDirection: "column",
-                marginBottom: "160px",
+                marginBottom: "32px",
               }}
               animateIn="animate__fadeIn"
               animateOnce
@@ -145,8 +147,10 @@ const About: React.FC = () => {
                         : { ...styles.p, fontSize: "18px" }
                     }
                   >
-                    My name is Kenny and I enjoy crafting digital experiences
-                    through stunning design and front-end development.
+                    I enjoy crafting digital experiences through stunning
+                    design. My interest for software development started in
+                    highschool after getting A's in my computer science classes
+                    (and enjoying it too, of course)!
                   </p>
                   <p
                     style={
@@ -156,8 +160,8 @@ const About: React.FC = () => {
                     }
                   >
                     I have a Bachelor of Science degree in Cognitive Science
-                    with minors in Computer Science and Psychology from the
-                    University of Toronto.
+                    (Computational Cognition Stream) with minors in Computer
+                    Science and Psychology from the University of Toronto.
                   </p>
                 </div>
               </div>
@@ -183,7 +187,7 @@ const About: React.FC = () => {
                   : { ...styles.h2, fontSize: "36px", marginBottom: 0 }
               }
             >
-              Lay back and relax
+              Sit back and relax
             </h2>
             <p
               style={
