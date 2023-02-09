@@ -175,6 +175,7 @@ const styles = {
     bottom: 0,
     listStyleType: "none",
     zIndex: 2,
+    paddingInlineStart: '0px'
   },
   sectionLink: {
     margin: "0 1.2rem",
