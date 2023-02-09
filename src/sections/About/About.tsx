@@ -19,10 +19,28 @@ import npm from "../../assets/npm.png";
 import node from "../../assets/node.png";
 import yarn from "../../assets/yarn.png";
 import expo from "../../assets/expo.png";
+import face from "../../assets/face.png";
 
 const About: React.FC = () => {
   const { height, width } = useWindowDimensions();
-
+  const skillsTitle = ({ title = "Languages" }) => {
+    return (
+      <h2
+        style={
+          width >= TABLET_WIDTH
+            ? styles.h2
+            : width >= PHONE_WIDTH
+            ? { ...styles.h2, fontSize: "42px" }
+            : {
+                ...styles.h2,
+                fontSize: "36px",
+              }
+        }
+      >
+        {title}
+      </h2>
+    );
+  };
   return (
     <div
       style={
@@ -39,59 +57,164 @@ const About: React.FC = () => {
       <div style={{ padding: "0 32px 0px 32px" }}>
         <SectionTitle title={"About me"} />
         <div style={styles.columnContainer}>
-          <AnimationOnScroll
-            style={styles.container}
-            animateIn="animate__fadeIn"
-            animateOnce
-          >
-            <div style={styles.descriptionContainer}>
-              <div style={styles.description}>
-                <h2 style={styles.h2}>Hey there!</h2>
-                <p style={styles.p}>
-                  My name is Kenny and I enjoy crafting digital experiences
-                  through stunning design and front-end development. My interest
-                  in software development started in 2016 after taking my first
-                  computer science class.
-                </p>
-                <p style={styles.p}>
-                  I have a Bachelor of Science degree in Cognitive Science with
-                  minors in Psychology and Computer Science from the University
-                  of Toronto
-                </p>
-                <p style={styles.p}>
-                  Outside of work, I enjoy swimming, watching shows, listening
-                  to music, and playing video games with my friends!
-                </p>
+          {width >= PHONE_WIDTH ? (
+            <AnimationOnScroll
+              style={styles.container}
+              animateIn="animate__fadeIn"
+              animateOnce
+            >
+              <div style={styles.descriptionContainer}>
+                <div style={width >= TABLET_WIDTH ? styles.description : {margin: '32px'}}>
+                  <h2
+                    style={
+                      width >= TABLET_WIDTH
+                        ? styles.h2
+                        : { ...styles.h2, fontSize: "42px" }
+                    }
+                  >
+                    Hey there!
+                  </h2>
+                  <p
+                    style={
+                      width >= TABLET_WIDTH
+                        ? styles.p
+                        : { ...styles.p, fontSize: "18px" }
+                    }
+                  >
+                    My name is Kenny and I enjoy crafting digital experiences
+                    through stunning design and front-end development. My
+                    interest in software development started in 2016 after
+                    taking my first computer science class.
+                  </p>
+                  <p
+                    style={
+                      width >= TABLET_WIDTH
+                        ? styles.p
+                        : { ...styles.p, fontSize: "18px" }
+                    }
+                  >
+                    I have a Bachelor of Science degree in Cognitive Science
+                    with minors in Psychology and Computer Science from the
+                    University of Toronto
+                  </p>
+                  <p
+                    style={
+                      width >= TABLET_WIDTH
+                        ? styles.p
+                        : { ...styles.p, fontSize: "18px" }
+                    }
+                  >
+                    Outside of work, I enjoy swimming, watching shows, listening
+                    to music, and playing video games with my friends!
+                  </p>
+                </div>
               </div>
-            </div>
-            <div style={styles.photoContainer} />
-          </AnimationOnScroll>
-          <h1 style={styles.h1}>Technical skills</h1>
-          <h2 style={styles.h2}>Languages</h2>
+              <div style={styles.photoContainer}> 
+              <img src={face} style={styles.skills} />
+              </div>
+            </AnimationOnScroll>
+          ) : (
+            <AnimationOnScroll
+              style={{
+                ...styles.container,
+                flexDirection: "column",
+                marginBottom: "160px",
+              }}
+              animateIn="animate__fadeIn"
+              animateOnce
+            >
+              <div style={styles.mobilePhotoContainer}>
+              <img src={face} style={styles.skills} />
+              </div>
+              <div style={styles.mobileDescriptionContainer}>
+                <div style={{ margin: "32px" }}>
+                  <h2
+                    style={{
+                      ...styles.h2,
+                      fontSize: "36px",
+                      marginBottom: "16px",
+                      textAlign: "start",
+                    }}
+                  >
+                    Hey there!
+                  </h2>
+                  <p
+                    style={
+                      width >= TABLET_WIDTH
+                        ? styles.p
+                        : { ...styles.p, fontSize: "18px" }
+                    }
+                  >
+                    My name is Kenny and I enjoy crafting digital experiences
+                    through stunning design and front-end development. My
+                    interest in software development started in 2016 after
+                    taking my first computer science class.
+                  </p>
+                  <p
+                    style={
+                      width >= TABLET_WIDTH
+                        ? styles.p
+                        : { ...styles.p, fontSize: "18px" }
+                    }
+                  >
+                    I have a Bachelor of Science degree in Cognitive Science
+                    with minors in Psychology and Computer Science from the
+                    University of Toronto
+                  </p>
+                  <p
+                    style={
+                      width >= TABLET_WIDTH
+                        ? styles.p
+                        : { ...styles.p, fontSize: "18px" }
+                    }
+                  >
+                    Outside of work, I enjoy swimming, watching shows, listening
+                    to music, and playing video games with my friends!
+                  </p>
+                </div>
+              </div>
+            </AnimationOnScroll>
+          )}
+          <h1
+            style={
+              width >= TABLET_WIDTH
+                ? styles.h1
+                : width >= PHONE_WIDTH
+                ? { ...styles.h1, fontSize: "56px" }
+                : {
+                    ...styles.h1,
+                    fontSize: "48px",
+                    marginBottom: "48px",
+                  }
+            }
+          >
+            Technical skills
+          </h1>
+          {skillsTitle({ title: "Languages" })}
           <div style={styles.skillsContainer}>
-            <LogoTitle src={js} title={"JavaScript"} styles={styles} />
-            <LogoTitle src={ts} title={"TypeScript"} styles={styles} />
-            <LogoTitle src={swift} title={"SwiftUI"} styles={styles} />
-            <LogoTitle src={python} title={"Python"} styles={styles} />
-            <LogoTitle src={htmlcss} title={"HTML & CSS"} styles={styles} />
+            <LogoTitle src={js} title={"JavaScript"} />
+            <LogoTitle src={ts} title={"TypeScript"} />
+            <LogoTitle src={swift} title={"SwiftUI"} />
+            <LogoTitle src={python} title={"Python"} />
+            <LogoTitle src={htmlcss} title={"HTML & CSS"} />
           </div>
-          <h2 style={styles.h2}>Libraries</h2>
+          {skillsTitle({ title: "Libraries" })}
           <div style={styles.skillsContainer}>
-            <LogoTitle src={react} title={"React"} styles={styles} />
-            <LogoTitle src={react} title={"React Native"} styles={styles} />
-            <LogoTitle src={expo} title={"Expo"} styles={styles} />
+            <LogoTitle src={react} title={"React"} />
+            <LogoTitle src={react} title={"React Native"} />
+            <LogoTitle src={expo} title={"Expo"} />
           </div>
-          <h2 style={styles.h2}>IDEs</h2>
+          {skillsTitle({ title: "IDEs" })}
           <div style={styles.skillsContainer}>
-            <LogoTitle src={vscode} title={"VSCode"} styles={styles} />
-            <LogoTitle src={xcode} title={"XCode"} styles={styles} />
-            <LogoTitle src={pycharm} title={"PyCharm"} styles={styles} />
+            <LogoTitle src={vscode} title={"VSCode"} />
+            <LogoTitle src={xcode} title={"XCode"} />
+            <LogoTitle src={pycharm} title={"PyCharm"} />
           </div>
-          <h2 style={styles.h2}>Other tools</h2>
+          {skillsTitle({ title: "Other tools" })}
           <div style={styles.skillsContainer}>
-            <LogoTitle src={npm} title={"Npm"} styles={styles} />
-            <LogoTitle src={yarn} title={"Yarn"} styles={styles} />
-            <LogoTitle src={node} title={"Node.js"} styles={styles} />
+            <LogoTitle src={npm} title={"Npm"} />
+            <LogoTitle src={yarn} title={"Yarn"} />
+            <LogoTitle src={node} title={"Node.js"} />
           </div>
         </div>
       </div>
@@ -110,7 +233,8 @@ const styles = {
   },
   skills: {
     width: "100%",
-    marginBottom: "16px",
+    height: '100%',
+    objectFit: 'cover',
   },
   skillsContainer: {
     display: "flex",
@@ -120,17 +244,31 @@ const styles = {
   },
   photoContainer: {
     minWidth: "100px",
-    height: "600px",
+    minHeight: "600px",
     flex: 1,
     flexGrow: 1,
     flexShrink: 0,
     flexBasis: 100,
     backgroundColor: "#F4EFF5",
     borderRadius: "56px",
+    aspectRatio: '1/1',
+    overflow: 'hidden'
+  },
+  mobilePhotoContainer: {
+    backgroundColor: "#F4EFF5",
+    borderRadius: "32px",
+    width: '100%',
+    aspectRatio: '1/1',
+    marginBottom: '32px',
+    overflow: 'hidden'
+  },
+  mobileDescriptionContainer: {
+    backgroundColor: "#F4EFF5",
+    borderRadius: "32px",
   },
   descriptionContainer: {
     minWidth: "100px",
-    height: "600px",
+    minHeight: "600px",
     flex: 1,
     flexGrow: 2,
     flexShrink: 0,

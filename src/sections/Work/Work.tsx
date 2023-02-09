@@ -69,7 +69,9 @@ const Work: React.FC = () => {
           Released and maintained applications to Google Play Store and Apple
           App Store
         </li>
-        <li>Developed iOS widget using <b>WidgetKit</b></li>
+        <li>
+          Developed iOS widget using <b>WidgetKit</b>
+        </li>
       </ul>
     </div>
   );
@@ -114,9 +116,11 @@ const Work: React.FC = () => {
             animateOnce
           >
             <AnimationOnScroll
-              style={{
-                ...styles.rowContainer,
-              }}
+              style={
+                width >= TABLET_WIDTH
+                  ? styles.rowContainer
+                  : { ...styles.rowContainer, margin: "32px" }
+              }
               animateIn="animate__fadeIn"
               animateOnce
             >
@@ -138,11 +142,7 @@ const Work: React.FC = () => {
             animateOnce
           >
             <AnimationOnScroll
-              style={
-                width >= PHONE_WIDTH
-                  ? styles.rowContainer
-                  : { ...styles.rowContainer, margin: "32px" }
-              }
+              style={{ ...styles.rowContainer, margin: "32px" }}
               animateIn="animate__fadeIn"
               animateOnce
             >
@@ -176,7 +176,7 @@ const styles = {
     fontSize: "16px",
     textAlign: "start",
     paddingInlineStart: "16px",
-    maxWidth: '800px'
+    maxWidth: "800px",
   },
   icon: {
     paddingLeft: "4px",
