@@ -193,7 +193,7 @@ const About: React.FC = () => {
               style={
                 width >= TABLET_WIDTH
                   ? { ...styles.p, textAlign: "center", maxWidth: "800px" }
-                  : { ...styles.p, fontSize: "18px", textAlign: "center" }
+                  : { ...styles.p, fontSize: "18px" }
               }
             >
               Outside of school, I enjoy swimming, drawing, watching shows,
