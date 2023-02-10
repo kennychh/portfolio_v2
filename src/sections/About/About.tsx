@@ -280,7 +280,7 @@ const styles = {
     justifyContent: "center",
     padding: "64px",
     display: "flex",
-    backgroundColor: "#F1F9FF",
+    backgroundColor: "#F4EFF5",
     borderRadius: "56px",
     marginBottom: "192px",
   },
@@ -324,7 +324,7 @@ const styles = {
     overflow: "hidden",
   },
   mobileDescriptionContainer: {
-    backgroundColor: "#FBEEE6",
+    backgroundColor: "#F1F9FF",
     borderRadius: "32px",
   },
   descriptionContainer: {
@@ -334,7 +334,7 @@ const styles = {
     flexGrow: 2,
     flexShrink: 0,
     flexBasis: 100,
-    backgroundColor: "#FBEEE6",
+    backgroundColor: "#F1F9FF",
     borderRadius: "56px",
     marginRight: "32px",
   },
