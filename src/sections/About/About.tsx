@@ -205,7 +205,7 @@ const About: React.FC = () => {
                   ? styles.funImageContainer
                   : {
                       ...styles.funImageContainer,
-                      margin: "32px auto 32px auto",
+                      margin: "32px auto 0px auto",
                     }
               }
             >
@@ -270,7 +270,7 @@ const styles = {
   },
   funImageContainer: {
     maxWidth: "600px",
-    margin: "64px auto 64px auto",
+    margin: "64px auto 0px auto",
   },
   funContainer: {
     maxWidth: "1216px",
