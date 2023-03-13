@@ -1,10 +1,11 @@
 {
   "files": {
     "main.css": "/static/css/main.edf61c0b.css",
-    "main.js": "/static/js/main.79288017.js",
+    "main.js": "/static/js/main.390b8b15.js",
     "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
     "static/media/flight_app.gif": "/static/media/flight_app.37a2d9419aac4b8d5db4.gif",
     "static/media/Slide 16_9 - 1.png": "/static/media/Slide 16_9 - 1.7b85e10c2991bd8c4b69.png",
+    "static/media/face.png": "/static/media/face.125399b2112f1d38519e.png",
     "static/media/hellofresh_logo.png": "/static/media/hellofresh_logo.5dee720b7119e7ba0367.png",
     "static/media/vscode.png": "/static/media/vscode.1ad71a9ec72211c63108.png",
     "static/media/Resume.pdf": "/static/media/Resume.1cdf6bc6bc59982a0f44.pdf",
@@ -15,7 +16,6 @@
     "static/media/fun.png": "/static/media/fun.397e13fb0f64d7fef50e.png",
     "static/media/slack.png": "/static/media/slack.4a161eaaa49d7472c7fa.png",
     "static/media/pycharm.png": "/static/media/pycharm.3fbd17b0425f44a94f03.png",
-    "static/media/face.png": "/static/media/face.47000bc4a23fa26c0305.png",
     "static/media/xcode.png": "/static/media/xcode.b2748bf5e6d333dba4f0.png",
     "static/media/node.png": "/static/media/node.dd5c1e29b892b92608b9.png",
     "static/media/expo.png": "/static/media/expo.7ad00d9e2563376cf8c1.png",
@@ -25,11 +25,11 @@
     "index.html": "/index.html",
     "static/media/github.svg": "/static/media/github.8d9b21b232cb5feca7a267000fdf86a9.svg",
     "main.edf61c0b.css.map": "/static/css/main.edf61c0b.css.map",
-    "main.79288017.js.map": "/static/js/main.79288017.js.map",
+    "main.390b8b15.js.map": "/static/js/main.390b8b15.js.map",
     "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.edf61c0b.css",
-    "static/js/main.79288017.js"
+    "static/js/main.390b8b15.js"
   ]
 }
