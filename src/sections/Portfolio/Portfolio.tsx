@@ -27,6 +27,8 @@ function useIsVisible(ref: any) {
 }
 
 const Portfolio: React.FC = () => {
+  const firstRef = React.createRef<HTMLInputElement>();
+  const isFirstVisible = useIsVisible(firstRef);
   const flightRef = React.createRef<HTMLInputElement>();
   const isFlightVisible = useIsVisible(flightRef);
   const weatherRef = React.createRef<HTMLInputElement>();
@@ -135,7 +137,7 @@ const Portfolio: React.FC = () => {
                 style={{
                   ...styles.phoneContainer2,
                   ...{
-                    opacity: isFlightVisible ? "0" : "1",
+                    opacity: isFirstVisible || !isWeatherVisible ? "0" : "1",
                     transition: "opacity 0.5s ease-in-out",
                   },
                 }}
@@ -150,22 +152,41 @@ const Portfolio: React.FC = () => {
                   }
                 />
               </div>
+              <div
+                style={{
+                  ...styles.phoneContainer2,
+                  ...{
+                    opacity: !isFlightVisible || isFirstVisible ? "0" : "1",
+                    transition: "opacity 0.5s ease-in-out",
+                  },
+                }}
+              >
+                <img
+                  className="phone"
+                  src={require("../../assets/flight_app.gif")}
+                  style={
+                    width >= TABLET_WIDTH
+                      ? styles.phone
+                      : { ...styles.phone, maxHeight: "500px" }
+                  }
+                />
+              </div>
               <img
                 className="phone"
-                src={require("../../assets/flight_app.gif")}
+                src={require("../../assets/chatgpt_edit.gif")}
                 style={
                   width >= TABLET_WIDTH
                     ? {
                         ...styles.phone,
                         ...{
-                          opacity: !isFlightVisible ? "0" : "1",
+                          opacity: !isFirstVisible ? "0" : "1",
                           transition: "opacity 0.5s ease-in-out",
                         },
                       }
                     : {
                         ...styles.phone,
                         ...{
-                          opacity: !isFlightVisible ? "0" : "1",
+                          opacity: !isFirstVisible ? "0" : "1",
                           transition: "opacity 0.5s ease-in-out",
                           maxHeight: "500px",
                         },
@@ -174,6 +195,15 @@ const Portfolio: React.FC = () => {
               />
             </AnimationOnScroll>
             <div style={{ gridColumn: "8 / span 5" }}>
+              <div>
+                {paragraph({
+                  name: "ChatGPT App",
+                  description:
+                    "A React Native app that mimics ChatGPT. Utilizes the Node.js client for the official ChatGPT API, and OpenAI API Quickstart.",
+                  ref: firstRef,
+                  link: "https://github.com/kennychh/chatgpt-mobile",
+                })}
+              </div>
               {paragraph({})}
               <div>
                 {paragraph({
@@ -190,10 +220,31 @@ const Portfolio: React.FC = () => {
           <div style={styles.phoneWidthContainer}>
             <img
               className="phone"
-              src={require("../../assets/flight_app.gif")}
+              src={require("../../assets/chatgpt_edit.gif")}
               style={{
                 ...styles.phone,
                 ...{ maxHeight: "400px", borderRadius: "24px" },
+              }}
+            />
+            <div>
+              {paragraph({
+                name: "ChatGPT App",
+                description:
+                  "A React Native app that mimics ChatGPT. Utilizes the Node.js client for the official ChatGPT API, and OpenAI API Quickstart.",
+                ref: firstRef,
+                link: "https://github.com/kennychh/chatgpt-mobile",
+              })}
+            </div>
+            <img
+              className="phone"
+              src={require("../../assets/flight_app.gif")}
+              style={{
+                ...styles.phone,
+                ...{
+                  maxHeight: "400px",
+                  borderRadius: "24px",
+                  marginTop: "128px",
+                },
               }}
             />
             {paragraph({})}

@@ -55,22 +55,22 @@ const Work: React.FC = () => {
         <li>
           Built and maintained front-end features for their multi-brand
           application using
-          <b> React Native</b> and <b>SwiftUI</b>
+          <b> React Native</b>
         </li>
         <li>
-          Collaborated with back-end development and design team to ensure
-          seamless integration
+          Collaborated with back-end development, design team, and other
+          stakeholders to ensure seamless integration
         </li>
         <li>
           Provided <b>unit and automated tests</b> to components and screens to
-          maintain app functionality
+          maintain app functionality using <b>Jest</b> and <b>Enzyme</b>
         </li>
         <li>
           Released and maintained applications to Google Play Store and Apple
           App Store
         </li>
         <li>
-          Developed iOS widget using <b>WidgetKit</b>
+          Developed iOS widget using <b>SwiftUI</b> and <b>WidgetKit</b>
         </li>
       </ul>
     </div>

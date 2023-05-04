@@ -280,7 +280,7 @@ const styles = {
     justifyContent: "center",
     padding: "64px",
     display: "flex",
-    backgroundColor: "#F4EFF5",
+    backgroundColor: "#F8EEF2",
     borderRadius: "56px",
     marginBottom: "192px",
   },
@@ -316,7 +316,6 @@ const styles = {
     overflow: "hidden",
   },
   mobilePhotoContainer: {
-    backgroundColor: "#F4EFF5",
     borderRadius: "32px",
     width: "100%",
     aspectRatio: "1/1",
