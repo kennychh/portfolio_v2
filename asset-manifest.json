@@ -1,19 +1,20 @@
 {
   "files": {
     "main.css": "/static/css/main.edf61c0b.css",
-    "main.js": "/static/js/main.390b8b15.js",
+    "main.js": "/static/js/main.2d46dd8d.js",
     "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
     "static/media/flight_app.gif": "/static/media/flight_app.37a2d9419aac4b8d5db4.gif",
+    "static/media/chatgpt_edit.gif": "/static/media/chatgpt_edit.4d9d02511f4371435390.gif",
     "static/media/Slide 16_9 - 1.png": "/static/media/Slide 16_9 - 1.7b85e10c2991bd8c4b69.png",
-    "static/media/face.png": "/static/media/face.125399b2112f1d38519e.png",
     "static/media/hellofresh_logo.png": "/static/media/hellofresh_logo.5dee720b7119e7ba0367.png",
     "static/media/vscode.png": "/static/media/vscode.1ad71a9ec72211c63108.png",
-    "static/media/Resume.pdf": "/static/media/Resume.1cdf6bc6bc59982a0f44.pdf",
+    "static/media/Resume.pdf": "/static/media/Resume.cee7cd60b2e2b4fd48d8.pdf",
     "static/media/weather_app.png": "/static/media/weather_app.c53013e933caf433e033.png",
     "static/media/Euclid Circular A Medium.ttf": "/static/media/Euclid Circular A Medium.a5befbfcb71cd093cc56.ttf",
     "static/media/Euclid Circular A Regular.ttf": "/static/media/Euclid Circular A Regular.d54600880dc63db716f2.ttf",
     "static/media/Euclid Circular A SemiBold.ttf": "/static/media/Euclid Circular A SemiBold.ae11344face2a74d2042.ttf",
     "static/media/fun.png": "/static/media/fun.397e13fb0f64d7fef50e.png",
+    "static/media/face.png": "/static/media/face.4f3b7e089800d0bb3e9b.png",
     "static/media/slack.png": "/static/media/slack.4a161eaaa49d7472c7fa.png",
     "static/media/pycharm.png": "/static/media/pycharm.3fbd17b0425f44a94f03.png",
     "static/media/xcode.png": "/static/media/xcode.b2748bf5e6d333dba4f0.png",
@@ -25,11 +26,11 @@
     "index.html": "/index.html",
     "static/media/github.svg": "/static/media/github.8d9b21b232cb5feca7a267000fdf86a9.svg",
     "main.edf61c0b.css.map": "/static/css/main.edf61c0b.css.map",
-    "main.390b8b15.js.map": "/static/js/main.390b8b15.js.map",
+    "main.2d46dd8d.js.map": "/static/js/main.2d46dd8d.js.map",
     "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.edf61c0b.css",
-    "static/js/main.390b8b15.js"
+    "static/js/main.2d46dd8d.js"
   ]
 }
